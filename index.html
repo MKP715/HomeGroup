@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Group — Where It All Begins | District 22 NETA 65</title>
+<style>
+  /* ===== CSS RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a5c;
+    --primary-light: #2c5f8a;
+    --accent: #d4a84b;
+    --accent-glow: #f0c96e;
+    --bg-dark: #0d1b2a;
+    --bg-card: #13293d;
+    --bg-card-alt: #1b3a52;
+    --text: #e8e8e8;
+    --text-muted: #99aabb;
+    --text-quote: #f5e6c8;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #e74c3c;
+    --border: rgba(212,168,75,0.25);
+    --shadow: 0 8px 32px rgba(0,0,0,0.4);
+    --radius: 12px;
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVIGATION ===== */
+  .top-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(13,27,42,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 60px;
+    transition: transform 0.3s;
+  }
+  .top-nav.hidden { transform: translateY(-100%); }
+  .nav-brand {
+    font-size: 1.15rem; font-weight: 700; color: var(--accent);
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .nav-controls { display: flex; gap: 12px; align-items: center; }
+  .nav-btn {
+    background: var(--primary); border: 1px solid var(--border);
+    color: var(--text); padding: 8px 18px; border-radius: 6px;
+    cursor: pointer; font-size: 0.9rem; transition: var(--transition);
+  }
+  .nav-btn:hover { background: var(--accent); color: var(--bg-dark); }
+  .nav-btn.active { background: var(--accent); color: var(--bg-dark); font-weight: 600; }
+
+  /* ===== PROGRESS BAR ===== */
+  .progress-bar {
+    position: fixed; top: 60px; left: 0; right: 0; z-index: 999;
+    height: 4px; background: rgba(255,255,255,0.08);
+  }
+  .progress-fill {
+    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+    width: 0%; transition: width 0.5s ease;
+  }
+
+  /* ===== SLIDE CONTAINER ===== */
+  .slide {
+    display: none; min-height: 100vh;
+    padding: 100px 5vw 60px;
+    animation: fadeSlideIn 0.6s ease;
+  }
+  .slide.active { display: block; }
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .slide-inner {
+    max-width: 1600px; margin: 0 auto; width: 100%;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  .section-number {
+    display: inline-block; background: var(--accent);
+    color: var(--bg-dark); font-weight: 800; font-size: 0.85rem;
+    padding: 5px 16px; border-radius: 20px;
+    margin-bottom: 14px; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .slide-title {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: #fff; margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-glow) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .slide-subtitle {
+    font-size: 1.25rem; color: var(--text-muted);
+    margin-bottom: 40px; font-weight: 400;
+  }
+  h3 {
+    font-size: 1.55rem; color: var(--accent);
+    margin: 36px 0 18px; font-weight: 700;
+  }
+  h4 {
+    font-size: 1.2rem; color: #fff;
+    margin: 24px 0 12px; font-weight: 600;
+  }
+  p { margin-bottom: 18px; color: var(--text); font-size: 1.05rem; }
+
+  /* ===== CARDS ===== */
+  .card-grid { display: grid; gap: 24px; margin: 28px 0; }
+  .card-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+  .card-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px; transition: var(--transition);
+    position: relative; overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+  }
+  .card-icon {
+    font-size: 2.8rem; margin-bottom: 18px;
+    display: block;
+  }
+  .card-title {
+    font-size: 1.25rem; font-weight: 700;
+    color: #fff; margin-bottom: 10px;
+  }
+  .card-text { color: var(--text-muted); font-size: 1rem; }
+
+  /* ===== QUOTE BLOCKS ===== */
+  .quote-block {
+    background: linear-gradient(135deg, rgba(212,168,75,0.08), rgba(212,168,75,0.03));
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 28px 32px; margin: 28px 0;
+    position: relative;
+  }
+  .quote-block::before {
+    content: '\201C'; position: absolute;
+    top: -10px; left: 12px; font-size: 4rem;
+    color: var(--accent); opacity: 0.3;
+    font-family: Georgia, serif;
+  }
+  .quote-text {
+    font-style: italic; font-size: 1.15rem;
+    color: var(--text-quote); line-height: 1.8;
+  }
+  .quote-source {
+    margin-top: 12px; font-size: 0.9rem;
+    color: var(--accent); font-weight: 600;
+    font-style: normal;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 40px; margin: 32px 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 14px; top: 0; bottom: 0;
+    width: 3px; background: linear-gradient(180deg, var(--accent), var(--primary-light));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 32px;
+    opacity: 0; transform: translateX(-20px);
+    transition: all 0.5s ease;
+  }
+  .timeline-item.visible {
+    opacity: 1; transform: translateX(0);
+  }
+  .timeline-item::before {
+    content: ''; position: absolute;
+    left: -33px; top: 6px;
+    width: 16px; height: 16px;
+    background: var(--accent);
+    border: 3px solid var(--bg-dark);
+    border-radius: 50%;
+  }
+  .timeline-year {
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--accent); text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 4px;
+  }
+  .timeline-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .timeline-title { font-weight: 700; color: #fff; margin-bottom: 8px; font-size: 1.1rem; }
+
+  /* ===== INTERACTIVE ACTIVITY BOXES ===== */
+  .activity-box {
+    background: linear-gradient(135deg, #1a3a5c, #0d2137);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius);
+    padding: 32px; margin: 32px 0;
+    text-align: center;
+  }
+  .activity-label {
+    display: inline-block;
+    background: var(--accent); color: var(--bg-dark);
+    font-weight: 800; font-size: 0.8rem;
+    padding: 5px 18px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+  .activity-title {
+    font-size: 1.55rem; font-weight: 700;
+    color: #fff; margin-bottom: 14px;
+  }
+  .activity-desc {
+    color: var(--text-muted); font-size: 1.1rem;
+    max-width: 1000px; margin: 0 auto 20px;
+  }
+  .activity-timer {
+    font-size: 3rem; font-weight: 800;
+    color: var(--accent); font-variant-numeric: tabular-nums;
+    margin: 20px 0;
+  }
+  .timer-btn {
+    background: var(--accent); color: var(--bg-dark);
+    border: none; padding: 12px 32px;
+    border-radius: 8px; font-size: 1.05rem;
+    font-weight: 700; cursor: pointer;
+    transition: var(--transition); margin: 4px;
+  }
+  .timer-btn:hover { background: var(--accent-glow); transform: scale(1.05); }
+  .timer-btn.stop { background: var(--danger); color: #fff; }
+
+  /* ===== SERVICE TRIANGLE SVG ===== */
+  .triangle-container {
+    display: flex; justify-content: center;
+    margin: 40px 0;
+  }
+  .triangle-svg text { font-family: 'Segoe UI', sans-serif; }
+
+  /* ===== INVERTED PYRAMID ===== */
+  .pyramid { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 40px 0; }
+  .pyramid-level {
+    padding: 16px 24px; text-align: center;
+    font-weight: 600; font-size: 1.05rem;
+    color: #fff; border: 1px solid rgba(255,255,255,0.1);
+    transition: var(--transition); cursor: default;
+    position: relative;
+  }
+  .pyramid-level:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba(212,168,75,0.3);
+  }
+  .pyramid-level:nth-child(1) { width: 90%; background: linear-gradient(135deg, #d4a84b, #c49a3f); color: var(--bg-dark); border-radius: 12px 12px 0 0; font-size: 1.25rem; font-weight: 800; }
+  .pyramid-level:nth-child(2) { width: 78%; background: #2c5f8a; }
+  .pyramid-level:nth-child(3) { width: 66%; background: #245078; }
+  .pyramid-level:nth-child(4) { width: 54%; background: #1d4266; }
+  .pyramid-level:nth-child(5) { width: 42%; background: #173555; }
+  .pyramid-level:nth-child(6) { width: 30%; background: #122a44; }
+  .pyramid-level:nth-child(7) { width: 22%; background: #0d1f33; border-radius: 0 0 12px 12px; }
+
+  /* ===== TABLE ===== */
+  .ref-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; border-radius: var(--radius); overflow: hidden; }
+  .ref-table thead th {
+    background: var(--primary); color: var(--accent);
+    padding: 16px 22px; text-align: left;
+    font-size: 0.9rem; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 700;
+  }
+  .ref-table tbody td {
+    padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 1rem;
+  }
+  .ref-table tbody tr { background: var(--bg-card); transition: var(--transition); }
+  .ref-table tbody tr:nth-child(even) { background: var(--bg-card-alt); }
+  .ref-table tbody tr:hover { background: rgba(212,168,75,0.1); }
+
+  /* ===== REVEAL ITEMS (click to expand) ===== */
+  .reveal-group { margin: 24px 0; }
+  .reveal-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 8px; overflow: hidden;
+    transition: var(--transition);
+  }
+  .reveal-header {
+    padding: 18px 24px; cursor: pointer;
+    display: flex; justify-content: space-between;
+    align-items: center; font-weight: 600; font-size: 1.05rem;
+    color: #fff; transition: var(--transition);
+  }
+  .reveal-header:hover { background: rgba(212,168,75,0.05); }
+  .reveal-arrow {
+    color: var(--accent); transition: transform 0.3s;
+    font-size: 1.2rem;
+  }
+  .reveal-item.open .reveal-arrow { transform: rotate(180deg); }
+  .reveal-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 24px;
+  }
+  .reveal-item.open .reveal-body {
+    max-height: 600px;
+    padding: 0 24px 24px;
+  }
+
+  /* ===== CHECKLIST ===== */
+  .checklist { list-style: none; margin: 16px 0; }
+  .checklist li {
+    padding: 12px 0 12px 40px;
+    position: relative; color: var(--text);
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    cursor: pointer; transition: var(--transition);
+  }
+  .checklist li::before {
+    content: ''; position: absolute;
+    left: 0; top: 14px;
+    width: 22px; height: 22px;
+    border: 2px solid var(--accent);
+    border-radius: 4px; transition: var(--transition);
+  }
+  .checklist li.checked::before {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 2px var(--bg-dark);
+  }
+  .checklist li.checked { color: var(--text-muted); text-decoration: line-through; }
+
+  /* ===== STAT COUNTERS ===== */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 32px 0; }
+  .stat-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px 36px;
+    text-align: center; min-width: 180px;
+    transition: var(--transition);
+  }
+  .stat-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .stat-number {
+    font-size: 3rem; font-weight: 800;
+    color: var(--accent); display: block;
+  }
+  .stat-label {
+    font-size: 0.9rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-top: 6px;
+  }
+
+  /* ===== TRADITION CARDS ===== */
+  .tradition-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px; margin-bottom: 16px;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  .tradition-card:hover { border-color: var(--accent); }
+  .tradition-num {
+    display: inline-block; background: var(--accent);
+    color: var(--bg-dark); font-weight: 800;
+    width: 36px; height: 36px; line-height: 36px;
+    text-align: center; border-radius: 50%;
+    margin-right: 14px; font-size: 0.95rem;
+  }
+  .tradition-name { font-weight: 700; color: #fff; font-size: 1.15rem; }
+  .tradition-detail { margin-top: 12px; display: none; }
+  .tradition-card.open .tradition-detail { display: block; }
+
+  /* ===== SLIDE TOC PANEL ===== */
+  .toc-overlay {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    display: none; align-items: center; justify-content: center;
+  }
+  .toc-overlay.open { display: flex; }
+  .toc-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px;
+    max-width: 900px; width: 90%;
+    max-height: 85vh; overflow-y: auto;
+  }
+  .toc-title {
+    font-size: 1.6rem; font-weight: 800;
+    color: var(--accent); margin-bottom: 28px;
+    text-align: center;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 12px 16px; border-radius: 8px;
+    cursor: pointer; transition: var(--transition);
+    margin-bottom: 4px;
+  }
+  .toc-item:hover { background: rgba(212,168,75,0.1); }
+  .toc-item-num {
+    background: var(--primary); color: var(--accent);
+    width: 32px; height: 32px; line-height: 32px;
+    text-align: center; border-radius: 8px;
+    font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+  }
+  .toc-item.visited .toc-item-num { background: var(--accent); color: var(--bg-dark); }
+  .toc-item-label { font-size: 1.05rem; color: var(--text); }
+  .toc-item-time { font-size: 0.85rem; color: var(--text-muted); margin-left: auto; }
+
+  /* ===== HERO SLIDE ===== */
+  .hero {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; min-height: calc(100vh - 80px);
+    padding-top: 0;
+  }
+  .hero-badge {
+    display: inline-block; background: rgba(212,168,75,0.15);
+    color: var(--accent); border: 1px solid var(--border);
+    padding: 8px 24px; border-radius: 24px;
+    font-size: 0.9rem; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-title {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900; line-height: 1.1;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-glow) 50%, var(--accent) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px; max-width: 1100px;
+  }
+  .hero-sub {
+    font-size: 1.35rem; color: var(--text-muted);
+    max-width: 900px; margin-bottom: 40px; line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    justify-content: center; margin-bottom: 40px;
+  }
+  .hero-meta-item {
+    text-align: center;
+  }
+  .hero-meta-value {
+    font-size: 1.7rem; font-weight: 800; color: var(--accent);
+    display: block;
+  }
+  .hero-meta-label {
+    font-size: 0.8rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .hero-start {
+    background: var(--accent); color: var(--bg-dark);
+    border: none; padding: 16px 48px;
+    border-radius: 12px; font-size: 1.2rem;
+    font-weight: 700; cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 24px rgba(212,168,75,0.3);
+  }
+  .hero-start:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(212,168,75,0.5); }
+
+  /* ===== FOOTER NAV ===== */
+  .slide-footer {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-top: 60px;
+    padding-top: 24px; border-top: 1px solid var(--border);
+  }
+  .slide-footer .nav-btn { font-size: 1rem; padding: 12px 28px; }
+
+  /* ===== TIMING BADGE ===== */
+  .timing-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(76,175,80,0.12); color: var(--success);
+    border: 1px solid rgba(76,175,80,0.2);
+    padding: 5px 16px; border-radius: 20px;
+    font-size: 0.85rem; font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  /* ===== DISCUSSION PROMPT ===== */
+  .discussion-prompt {
+    background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(76,175,80,0.02));
+    border: 1px solid rgba(76,175,80,0.2);
+    border-radius: var(--radius);
+    padding: 24px 28px; margin: 24px 0;
+  }
+  .discussion-prompt-label {
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--success); text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 10px;
+  }
+  .discussion-prompt-text {
+    color: #fff; font-size: 1.15rem; font-weight: 500;
+  }
+
+  /* ===== PILL TAGS ===== */
+  .pill {
+    display: inline-block; background: rgba(212,168,75,0.12);
+    color: var(--accent); border: 1px solid var(--border);
+    padding: 4px 14px; border-radius: 16px;
+    font-size: 0.85rem; font-weight: 600; margin: 3px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .card-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    .slide { padding: 80px 16px 40px; }
+    .card-grid.cols-2, .card-grid.cols-3 { grid-template-columns: 1fr; }
+    .hero-meta { gap: 20px; }
+    .stat-row { flex-direction: column; align-items: center; }
+    .pyramid-level { font-size: 0.8rem !important; padding: 10px 14px; }
+    .ref-table { font-size: 0.85rem; }
+    .toc-panel { padding: 24px; }
+    .hero-title { max-width: 100%; }
+    .hero-sub { max-width: 100%; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .top-nav, .progress-bar, .slide-footer, .nav-btn, .timer-btn, .toc-overlay { display: none !important; }
+    .slide { display: block !important; page-break-after: always; min-height: auto; padding: 20px; }
+    body { background: #fff; color: #000; }
+    .slide-title, h3, h4 { -webkit-text-fill-color: #000; color: #000; }
+    .card, .quote-block, .activity-box, .tradition-card { border-color: #ccc; background: #f9f9f9; }
+  }
+
+  /* ===== SCROLL ANIMATION ===== */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== NOTES PANEL ===== */
+  .notes-toggle {
+    position: fixed; bottom: 20px; right: 20px; z-index: 999;
+    background: var(--accent); color: var(--bg-dark);
+    width: 48px; height: 48px; border-radius: 50%;
+    border: none; font-size: 1.3rem; cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    transition: var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .notes-toggle:hover { transform: scale(1.1); }
+  .presenter-notes {
+    position: fixed; bottom: 80px; right: 20px; z-index: 998;
+    background: var(--bg-card); border: 1px solid var(--accent);
+    border-radius: var(--radius); padding: 20px;
+    width: 420px; max-height: 50vh; overflow-y: auto;
+    display: none; box-shadow: var(--shadow);
+  }
+  .presenter-notes.open { display: block; }
+  .presenter-notes h4 { color: var(--accent); margin: 0 0 14px; font-size: 1.1rem; }
+  .presenter-notes ul { padding-left: 20px; }
+  .presenter-notes li { font-size: 0.95rem; margin-bottom: 7px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAVIGATION ===== -->
+<nav class="top-nav" id="topNav">
+  <div class="nav-brand">District 22 &bull; NETA 65</div>
+  <div class="nav-controls">
+    <button class="nav-btn" onclick="openTOC()">Contents</button>
+    <button class="nav-btn" onclick="prevSlide()">&#9664; Prev</button>
+    <span id="slideCounter" style="color:var(--text-muted); font-size:0.85rem; min-width:60px; text-align:center;">1 / 14</span>
+    <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+  </div>
+</nav>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ===== TABLE OF CONTENTS OVERLAY ===== -->
+<div class="toc-overlay" id="tocOverlay" onclick="if(event.target===this)closeTOC()">
+  <div class="toc-panel">
+    <div class="toc-title">Workshop Sections</div>
+    <div id="tocList"></div>
+  </div>
+</div>
+
+<!-- ===== PRESENTER NOTES TOGGLE ===== -->
+<button class="notes-toggle" onclick="toggleNotes()" title="Presenter Notes">&#128221;</button>
+<div class="presenter-notes" id="presenterNotes"></div>
+
+<!-- ============================================================ -->
+<!-- SLIDE 0: TITLE / HERO -->
+<!-- ============================================================ -->
+<section class="slide active" data-slide="0" data-title="Welcome" data-time="5 min"
+  data-notes="SETUP: Have laptop on projector, F11 for fullscreen. Stand center. Ask everyone to rise for Serenity Prayer. Introduce yourself: first name, alcoholic, your home group, your service position. Say: 'Welcome to the District 22 Mini Conference here at Los Tres Patrillos in Greenville on this beautiful April 4th. We're part of NETA Area 65 — the North East Texas Area — one of 93 Areas in AA's General Service structure. Today's theme is Home Group: Where It All Begins. Everything comes from Conference-approved literature — Big Book, 12&12, pamphlets, Service Manual.' ENGAGEMENT: 'By show of hands: How many have a home group? Keep hands up if you hold a service position.' Note the drop. '89% of AA members have a home group. Let's explore why.' Click next.">
+  <div class="hero">
+    <div class="hero-badge">District 22 &bull; NETA Area 65 &bull; Mini Conference</div>
+    <h1 class="hero-title">Home Group:<br>Where It All Begins</h1>
+    <p class="hero-sub">A comprehensive workshop exploring the foundation, fellowship, and service of the AA Home Group &mdash; drawn entirely from Conference-approved literature.</p>
+    <p style="color:var(--accent); font-size:0.95rem; font-weight:600; margin-bottom:24px;">Saturday, April 4, 2026 &bull; Los Tres Patrillos &bull; 2520 E I-30 Frontage Rd, Greenville, TX 75401</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">120 min</span>
+        <span class="hero-meta-label">Presentation</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">22</span>
+        <span class="hero-meta-label">Sections</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">10+</span>
+        <span class="hero-meta-label">AA Sources</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">89%</span>
+        <span class="hero-meta-label">Members w/ Home Group</span>
+      </div>
+    </div>
+    <button class="hero-start" onclick="nextSlide()">Begin Workshop &rarr;</button>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 1: OPENING & OVERVIEW -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="1" data-title="Opening & Overview" data-time="10 min"
+  data-notes="READ the P-16 quote slowly with weight. Walk through 3 theme cards: History, Benefits, Service. Point to literature pills: 'Everything I share today has a page number. This isn't my opinion — it's what our literature says.' HANDS-UP: 'How many attended your home group's last BUSINESS MEETING?' 'How many know who your GSR is?' 'How many know what District 22 does?' Don't judge — just note: 'By the end of today, you'll understand why all three questions matter for your sobriety.' ACTIVITY: Opening Show of Hands on screen. Mention P-16 and P-15 are on the literature table. TRANSITION: 'To understand why the home group matters so deeply, we need to go back to a living room in Akron, Ohio.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 1</span>
+    <h2 class="slide-title">Opening &amp; Workshop Overview</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Setting the foundation for our exploration of the AA Home Group</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"Traditionally, most A.A. members through the years have found it important to belong to one group that they call their 'home group.' This is the group where they accept service responsibilities and try to sustain friendships."</p>
+      <p class="quote-source">&mdash; "The A.A. Group...Where It All Begins" (P-16), page 15</p>
+    </div>
+
+    <h3>What We Will Cover Today</h3>
+    <div class="card-grid cols-3">
+      <div class="card">
+        <span class="card-icon">&#128218;</span>
+        <div class="card-title">History &amp; Origins</div>
+        <div class="card-text">From the Smith Home in Akron to modern home groups &mdash; tracing the evolution through AA literature.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#9829;</span>
+        <div class="card-title">Spiritual &amp; Practical Benefits</div>
+        <div class="card-text">Why belonging transforms recovery: fellowship, accountability, and spiritual growth.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128736;</span>
+        <div class="card-title">Service &amp; Structure</div>
+        <div class="card-text">Positions, responsibilities, Traditions, group conscience, and AA's service architecture.</div>
+      </div>
+    </div>
+
+    <h3>Literature Sources for This Workshop</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;">
+      <span class="pill">Alcoholics Anonymous (Big Book)</span>
+      <span class="pill">Twelve Steps &amp; Twelve Traditions</span>
+      <span class="pill">P-16 "The A.A. Group"</span>
+      <span class="pill">P-15 "Sponsorship Q&amp;A"</span>
+      <span class="pill">Living Sober</span>
+      <span class="pill">As Bill Sees It</span>
+      <span class="pill">AA Comes of Age</span>
+      <span class="pill">Dr. Bob &amp; the Good Oldtimers</span>
+      <span class="pill">AA Service Manual</span>
+      <span class="pill">Grapevine: Home Group Heartbeat</span>
+    </div>
+
+    <div class="activity-box" style="margin-top: 40px;">
+      <div class="activity-label">Opening Activity</div>
+      <div class="activity-title">Show of Hands</div>
+      <div class="activity-desc">Ask the room: "How many of you currently have a home group?" &mdash; Follow up: "How many of you hold a service position in your home group?" &mdash; Note the 2022 AA Membership Survey found <strong>89% of members</strong> have a home group.</div>
+    </div>
+
+    <div class="activity-box" style="border-color: var(--primary-light);">
+      <div class="activity-label" style="background: var(--primary-light);">District 22 Connection</div>
+      <div class="activity-title">Our Place in the Fellowship</div>
+      <div class="activity-desc">District 22 is one of 29 districts in NETA Area 65 (North East Texas Area). NETA 65 covers from the Oklahoma, Arkansas, and Louisiana borders to Hamilton and Sabine counties. We are one of 93 Areas represented at the annual General Service Conference &mdash; serving all A.A. in North America. AA came to Dallas in <strong>1943</strong> when Esther E. started the first group in her living room. Today, NETA 65 encompasses <strong>512+ groups</strong>. Your home group is part of that legacy.</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 2: HISTORICAL EVOLUTION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="2" data-title="Historical Evolution" data-time="15 min"
+  data-notes="OPEN WITH: 'The term home group does NOT appear in the Big Book or the 12&12. It emerged organically from decades of practice.' SMITH HOME 1935-39: 'Picture 855 Ardmore Ave, Akron. Bill W. lived there months. Anne Smith led morning readings from the Book of James. They hospitalized new prospects before meetings — that's how serious early support was.' READ: Dr. Bob p.101. CLEVELAND 1939: 'First group to use the name AA.' READ Clarence S. quote from p.167 — note the balance of spiritual + social. AKRON MANUAL 1940: 'Earliest documented home group language — written by Dr. Bob's Home Group, Akron AA group #1.' 1993-2000: 'It took until 1993 for Grapevine to publish a book called The Home Group. The lesson: AA doesn't impose from the top. Practices emerge from group experience over decades.' SCENARIO: 'Think about YOUR home group's history. When was it founded? Who started it? That story matters.' DISCUSSION: Read the prompt on screen. Let 2-3 people share. TRANSITION: 'So what actually MAKES a home group different from just going to meetings? Let's look at P-16.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 2</span>
+    <h2 class="slide-title">Historical Evolution</h2>
+    <div class="timing-badge">&#9200; 15 minutes</div>
+    <p class="slide-subtitle">From living fellowship to structured home groups &mdash; the term "home group" does not appear in AA's earliest literature</p>
+
+    <div class="timeline">
+      <div class="timeline-item visible">
+        <div class="timeline-year">1935 &ndash; 1939</div>
+        <div class="timeline-content">
+          <div class="timeline-title">The Smith Home Era &mdash; The Prototype</div>
+          <p>Dr. Bob and Anne Smith's residence at 855 Ardmore Avenue, Akron functioned as meeting house, laboratory of recovery, and refuge. Bill W. lived there several months. Meetings included "quiet time, prayer, and bible readings" with Anne conducting morning readings from the Book of James. Members hospitalized prospects before allowing them to join.</p>
+          <p class="quote-source">Dr. Bob and the Good Oldtimers, p. 101</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">May 1939</div>
+        <div class="timeline-content">
+          <div class="timeline-title">First Group Named "Alcoholics Anonymous"</div>
+          <p>Cleveland, Ohio. Clarence S. wrote to Bill W. describing their approach: <em>"Not too much emphasis on spiritual business at meetings. Have discussions after meetings of any business or questions arising. Plenty of fellowship all the time."</em></p>
+          <p class="quote-source">Dr. Bob and the Good Oldtimers, p. 167</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1940</div>
+        <div class="timeline-content">
+          <div class="timeline-title">The Akron Manual &mdash; Earliest "Home Group" Language</div>
+          <p>Written and distributed by "Dr. Bob's Home Group, Akron AA group #1." It stated: <em>"Meetings provide a means for an exchange of ideas, the renewing of fellowships... a sense of security"</em> and <em>"Remember that attendance at meetings is one of the most important requisites of remaining sober."</em></p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1946 &ndash; 1950</div>
+        <div class="timeline-content">
+          <div class="timeline-title">The Twelve Traditions Developed</div>
+          <p>Bill W. wrote the Traditions (first published in the Grapevine, April 1946), codifying decades of group experience. These became the spiritual principles governing how groups &mdash; including home groups &mdash; relate to each other and to AA as a whole.</p>
+          <p class="quote-source">Twelve Steps and Twelve Traditions (1953)</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1993</div>
+        <div class="timeline-content">
+          <div class="timeline-title">First Grapevine Book: "The Home Group"</div>
+          <p>The concept formally crystallized with this publication collecting member stories about their home group experiences. This marked the first dedicated AA publication on the topic.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">September 2000</div>
+        <div class="timeline-content">
+          <div class="timeline-title">"The Home Group" Becomes Grapevine Department</div>
+          <p>Due to overwhelming reader response, "The Home Group" became a permanent dedicated department in AA Grapevine magazine.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Present Day</div>
+        <div class="timeline-content">
+          <div class="timeline-title">30th Anniversary Edition &mdash; Including Virtual Meetings</div>
+          <p>"The Home Group: Heartbeat of AA" now includes content on virtual meetings, demonstrating the concept continues to evolve while its core purpose remains unchanged.</p>
+          <p class="quote-source">Grapevine publication (not pamphlet P-88 as sometimes misidentified)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Discussion Prompt</div>
+      <div class="discussion-prompt-text">"The term 'home group' emerged organically from decades of practice, not from a rule book. What does this tell us about how AA works?"</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 3: WHAT DISTINGUISHES A HOME GROUP -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="3" data-title="What Makes a Home Group" data-time="10 min"
+  data-notes="KEY CONCEPT: 'This slide draws a clear line between ATTENDING meetings and BELONGING to a home group.' READ both P-16 quotes (pp.12-13 and p.13) slowly. THREE ELEMENTS: 1) Accountability — 'At your home group, people NOTICE when you're not there. That's not surveillance — that's love.' 2) Service — 'This is where you learn that making coffee can save your life.' 3) Voting — 'Most people don't think about this one. You get to VOTE. On format changes, spending, who your GSR is.' SCENARIO — THE FLOATING MEMBER: 'A member has 5 years sober, attends 4-5 meetings a week at different locations, knows everyone, but has no home group. Never voted. Never held a service position. What are they missing?' Let 2-3 respond. TABLE DISCUSSION (3 min timer): 'Which of these three elements has been most meaningful in YOUR recovery?' TRANSITION: 'Now let's look at what the home group actually GIVES us.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 3</span>
+    <h2 class="slide-title">What Distinguishes a Home Group from Mere Attendance</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">The difference between visiting a place and making it home</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"A.A. groups generally continue to exist outside the prescribed meeting hours, ready to provide Twelfth Step help when needed."</p>
+      <p class="quote-source">&mdash; P-16 "The A.A. Group," pages 12&ndash;13</p>
+    </div>
+
+    <h3>Membership Is Self-Declared</h3>
+    <div class="quote-block">
+      <p class="quote-text">"Just as we are members of A.A. if we say we are, so are we members of a group if we say we are."</p>
+      <p class="quote-source">&mdash; P-16, page 13 (reflecting Tradition Three)</p>
+    </div>
+
+    <h3>Three Elements That Set the Home Group Apart</h3>
+    <div class="card-grid cols-3">
+      <div class="card">
+        <span class="card-icon">&#128101;</span>
+        <div class="card-title">1. Accountability &amp; Expectation</div>
+        <div class="card-text">"Part of my commitment is to show up at my home group meetings, greet newcomers at the door, and be available to them... My fellow group members are the people who know me, listen to me, and steer me straight when I am off in left field."</div>
+        <p style="margin-top:8px;"><span class="pill">P-16 member testimonial</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#9881;</span>
+        <div class="card-title">2. Service Responsibility</div>
+        <div class="card-text">"A.A.'s take turns doing the services needed for group meetings and other functions... within the A.A. group, these services are easy to do, and they do wonders for us. They build a sturdy backbone for our recovery."</div>
+        <p style="margin-top:8px;"><span class="pill">Living Sober, pp. 14&ndash;15</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#9989;</span>
+        <div class="card-title">3. Voting &amp; Group Conscience</div>
+        <div class="card-text">"With membership comes the right to vote on issues that might affect the group and might also affect A.A. as a whole &mdash; a process that forms the very cornerstone of A.A.'s service structure."</div>
+        <p style="margin-top:8px;"><span class="pill">P-16, pp. 15&ndash;16</span></p>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Table Discussion &mdash; 3 Minutes</div>
+      <div class="discussion-prompt-text">"Which of these three elements &mdash; accountability, service, or voting &mdash; has been most meaningful in your own recovery? Share briefly with those near you."</div>
+    </div>
+    <div style="text-align:center; margin-top:8px;">
+      <div class="activity-timer" id="timer3">3:00</div>
+      <button class="timer-btn" onclick="startTimer('timer3', 180)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer3')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 4: SPIRITUAL & PRACTICAL BENEFITS -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="4" data-title="Benefits of Belonging" data-time="15 min"
+  data-notes="EMOTIONAL HEART of presentation. Read quotes slowly with pauses. SPIRITUAL: READ 12&12 p.129 — pause — 'Our lives DEPEND on it. Unity isn't a nice idea — it's a survival mechanism.' READ As Bill Sees It p.9. FELLOWSHIP: READ Big Book p.17 (shipwreck metaphor) — 'I love that metaphor. We're all survivors of the same shipwreck. The home group is the lifeboat.' LONELINESS: READ As Bill Sees It p.90 — PAUSE. Let the room feel it. Optional: 'Raise your hand if you felt profoundly alone before you got sober.' Don't force it — just offer the space. 'The home group is the antidote. Not just meetings — BELONGING.' PRACTICAL: READ P-16 extended family quote. PAIR & SHARE (5 min timer): 'Turn to the person next to you. What has your home group given you that you could not have gotten by just attending meetings?' After timer: 2-3 volunteers share with whole room. TRANSITION: 'The home group is also where sponsorship relationships take root.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 4</span>
+    <h2 class="slide-title">The Spiritual &amp; Practical Benefits of Belonging</h2>
+    <div class="timing-badge">&#9200; 15 minutes</div>
+    <p class="slide-subtitle">Why the home group transforms recovery at every level</p>
+
+    <!-- SPIRITUAL -->
+    <h3>Spiritual Benefits</h3>
+
+    <div class="quote-block">
+      <p class="quote-text">"THE unity of Alcoholics Anonymous is the most cherished quality our Society has. Our lives, the lives of all to come, depend squarely upon it."</p>
+      <p class="quote-source">&mdash; Twelve Steps and Twelve Traditions, p. 129 (Tradition One)</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"The moment Twelfth Step work forms a group, a discovery is made &mdash; that most individuals cannot recover unless there is a group. Realization dawns on each member that he is but a small part of a great whole... It becomes plain that the group must survive or the individual will not."</p>
+      <p class="quote-source">&mdash; As Bill Sees It, p. 9</p>
+    </div>
+
+    <p>Through home group participation, members experience a Higher Power working through collective wisdom rather than isolated individual judgment. Tradition Two places God at the center: <em>"For our group purpose there is but one ultimate authority &mdash; a loving God as He may express Himself in our group conscience."</em></p>
+
+    <!-- FELLOWSHIP -->
+    <h3>Fellowship Benefits</h3>
+
+    <div class="quote-block">
+      <p class="quote-text">"We are people who normally would not mix. But there exists among us a fellowship, a friendliness, and an understanding which is indescribably wonderful. We are like the passengers of a great liner the moment after rescue from shipwreck when camaraderie, joyousness and democracy pervade the vessel from steerage to Captain's table."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 17</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"Almost without exception, alcoholics are tortured by loneliness. Even before our drinking got bad and people began to cut us off, nearly all of us suffered the feeling that we didn't quite belong... Life takes on new meaning in A.A. To watch people recover, to see them help others, to watch loneliness vanish, to see a fellowship grow up about you, to have a host of friends &mdash; this is an experience not to be missed."</p>
+      <p class="quote-source">&mdash; As Bill Sees It, p. 90</p>
+    </div>
+
+    <!-- PRACTICAL -->
+    <h3>Practical Benefits</h3>
+
+    <div class="quote-block">
+      <p class="quote-text">"Over the years, the very essence of A.A. strength has remained with our home group, which, for many members, becomes our extended family. Once isolated by our drinking, we find in the home group a solid, continuing support system, friends and, very often, a sponsor."</p>
+      <p class="quote-source">&mdash; P-16 "The A.A. Group"</p>
+    </div>
+
+    <div class="stat-row fade-up">
+      <div class="stat-item">
+        <span class="stat-number" data-target="89">0</span>
+        <span class="stat-label">% with Home Group</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">&#9829;</span>
+        <span class="stat-label">Extended Family</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">&#128170;</span>
+        <span class="stat-label">Sturdy Backbone</span>
+      </div>
+    </div>
+
+    <div class="activity-box">
+      <div class="activity-label">Reflection Activity</div>
+      <div class="activity-title">Pair &amp; Share</div>
+      <div class="activity-desc">Turn to the person next to you. Share: "What has your home group given you that you could not have gotten by just attending meetings?" <strong>5 minutes.</strong></div>
+      <div class="activity-timer" id="timer4">5:00</div>
+      <button class="timer-btn" onclick="startTimer('timer4', 300)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer4')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 5: SPONSORSHIP CONNECTION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="5" data-title="Sponsorship Connection" data-time="10 min"
+  data-notes="KEY: 'Sponsorship and the home group are symbiotic. Each strengthens the other.' Walk through both cards. READ P-15 pp.23-25 quote on active sponsorship programs. SCENARIO — THE NEWCOMER AT THE DOOR: 'Someone walks in for the first time. Shaking. Doesn't know anyone. Sits in back. Meeting starts. Meeting ends. Nobody talks to them. They leave. They never come back. How many of us have seen this?' Now picture the alternative: greeter meets them, introduces to 3 people, hands phone list, 2 members invite for coffee, one offers temporary sponsorship. 'Which scenario reflects our primary purpose?' SCENARIO — THE SERVICE SPONSOR: 'How many have heard the term service sponsor? Someone who guides you through the service structure — not the Steps, but the Traditions and Concepts. P-15 says it begins in the home group with simple things: coffee, literature, cleanup.' TRANSITION: 'That brings us to the full picture of home group service.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 5</span>
+    <h2 class="slide-title">The Home Group &amp; Sponsorship Connection</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">A symbiotic relationship &mdash; each strengthens the other</p>
+
+    <p>The pamphlet "Questions and Answers on Sponsorship" (P-15) explicitly connects home group and sponsorship, describing sponsorship as <em>"the bridge enabling the new person to meet other alcoholics &mdash; in a home group and other groups visited."</em></p>
+
+    <div class="card-grid cols-2">
+      <div class="card">
+        <span class="card-icon">&#127919;</span>
+        <div class="card-title">Guiding Newcomers</div>
+        <div class="card-text">P-15 states a sponsor:
+          <ul style="margin-top:8px; padding-left:18px;">
+            <li>"Encourages, and if necessary, helps the newcomer to attend a variety of A.A. meetings"</li>
+            <li>"Introduces the newcomer to other members"</li>
+            <li>"Urges the newcomer to join in group activities as soon as possible"</li>
+          </ul>
+        </div>
+        <p style="margin-top:8px;"><span class="pill">P-15, pp. 7&ndash;8, 12</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128295;</span>
+        <div class="card-title">Service Sponsorship</div>
+        <div class="card-text">P-15 recommends: <em>"The service sponsor begins by encouraging the member to become active in their home group &mdash; coffee, literature, cleanup, attending business or intergroup meetings, etc."</em>
+          <br><br>Service sponsors should: <em>"Be familiar with the AA Service Manual, Twelve Steps and Twelve Traditions, Circles of Love and Service, and The AA Home Group pamphlet."</em>
+        </div>
+        <p style="margin-top:8px;"><span class="pill">P-15, pp. 25&ndash;26</span></p>
+      </div>
+    </div>
+
+    <h3>Building Sponsorship Programs Within the Group</h3>
+    <div class="quote-block">
+      <p class="quote-text">"Active sponsorship programs within a group remind all members of the group's primary purpose. They serve to unite a group and keep it mindful of First Things First."</p>
+      <p class="quote-source">&mdash; P-15, pp. 23&ndash;25</p>
+    </div>
+
+    <p>Suggested practices: regular beginners meetings, member assignments to greet newcomers, and announcements offering temporary sponsors.</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"...he finds he cannot keep this priceless gift unless he carries the A.A. message... the moment this Twelfth Step work forms a group, another discovery is made &mdash; that most individuals cannot recover unless there is a group."</p>
+      <p class="quote-source">&mdash; Twelve Steps and Twelve Traditions, p. 130</p>
+    </div>
+
+    <h3>Real-World Scenarios</h3>
+    <div class="card-grid cols-2">
+      <div class="card" style="border-left: 3px solid var(--warning);">
+        <div class="card-title">&#127917; Scenario: The Newcomer at the Door</div>
+        <div class="card-text">Someone walks into your home group for the very first time. They're shaking. They don't know anyone. They sit in the back. The meeting starts. The meeting ends. <strong>Nobody talks to them. They leave. They never come back.</strong><br><br>Now picture the alternative: A greeter meets them. Introduces them to three people. Hands them a phone list. After the meeting, two members invite them for coffee. One offers to be a temporary sponsor.<br><br><em>Which scenario reflects our primary purpose?</em></div>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--success);">
+        <div class="card-title">&#128218; Scenario: The Service Sponsor</div>
+        <div class="card-text">A member with 3 years of sobriety has worked all 12 Steps but has never held a service position beyond coffee maker. Their Step sponsor suggests finding a <strong>"service sponsor"</strong> &mdash; someone to guide them through the Traditions, the Concepts, and how to be a trusted servant.<br><br>P-15 says service sponsorship begins in the home group with simple things: coffee, literature, cleanup, attending business meetings.<br><br><em>Does your home group encourage service sponsorship?</em></div>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Quick Share &mdash; 2 Minutes</div>
+      <div class="discussion-prompt-text">"How does your home group welcome newcomers? Is there a formal greeter? Do members stay after the meeting to connect?"</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 6: SERVICE POSITIONS -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="6" data-title="Service Positions" data-time="12 min"
+  data-notes="READ Big Book p.97 quote. INTERACTIVE: Go through checklist. Hands up for each: 'Who has made coffee?' (most hands) 'Greeter?' 'Secretary?' 'Treasurer?' 'GSR?' (fewer) 'Intergroup rep?' 'Area committee?' 'Notice how hands drop. That's not criticism — it's an invitation. There are service positions waiting for you.' Walk through table — emphasize suggested sobriety times are SUGGESTIONS not requirements. Highlight GSR: 'Most important service position most people have never heard of.' READ Living Sober p.15 quote. 'Making coffee is as spiritually significant as being a delegate.' SCENARIO — THE EMPTY SERVICE SHEET: 'Your business meeting: 4 open service positions. Nobody volunteers. Same 3 people do everything. They burn out. Group suffers. How do we break this cycle?' Let 2-3 respond. TRANSITION: 'Every position exists within a larger structure. Let's see where YOUR home group sits.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 6</span>
+    <h2 class="slide-title">Home Group Service: Responsibilities &amp; Positions</h2>
+    <div class="timing-badge">&#9200; 12 minutes</div>
+    <p class="slide-subtitle">Service as the foundation stone of recovery</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"Helping others is the foundation stone of your recovery. A kindly act once in a while isn't enough. You have to act the Good Samaritan every day, if need be."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 97</p>
+    </div>
+
+    <h3>What AA Group Members Do (P-16, pp. 18&ndash;19)</h3>
+    <ul class="checklist" id="serviceChecklist">
+      <li>Provide and maintain a meeting place</li>
+      <li>Arrange programs for meetings</li>
+      <li>Collect and properly allocate Seventh Tradition contributions</li>
+      <li>Maintain Conference-approved literature</li>
+      <li>Provide Grapevine/La Vi&ntilde;a materials and meeting lists</li>
+      <li>Offer refreshments</li>
+      <li>Assist alcoholics in finding meetings</li>
+      <li>Answer calls for help</li>
+      <li>Air and resolve group problems</li>
+      <li>Sustain contact with A.A. locally and internationally</li>
+    </ul>
+
+    <h3>Core Service Positions (P-16, pp. 19&ndash;27)</h3>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Position</th><th>Key Responsibilities</th><th>Typical Sobriety</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Chairperson</strong></td><td>Coordinate activities with other officers</td><td>1+ year</td></tr>
+        <tr><td><strong>Secretary</strong></td><td>Maintain records, announcements, correspondence</td><td>6 months&ndash;1 year</td></tr>
+        <tr><td><strong>Treasurer</strong></td><td>Manage funds and financial records</td><td>1&ndash;2+ years</td></tr>
+        <tr><td><strong>GSR</strong></td><td>Group's link to General Service Conference</td><td>2&ndash;3 years</td></tr>
+        <tr><td><strong>Intergroup Rep</strong></td><td>Links group to local intergroup/central office</td><td>1&ndash;2 years</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Additional representative positions:</strong> Grapevine/La Vi&ntilde;a Rep, Literature Rep, and liaisons for Corrections, Treatment, Public Information, Cooperation with Professional Community, and Accessibilities committees.</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"In A.A., no one is 'above' or 'below' anyone else. There are no classes or strata or hierarchies among the members."</p>
+      <p class="quote-source">&mdash; Living Sober, p. 15</p>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Engagement Question</div>
+      <div class="discussion-prompt-text">"Raise your hand if you've served as: Greeter? Coffee maker? Secretary? Treasurer? GSR? What did that service teach you about recovery?"</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 7: UPSIDE-DOWN SERVICE STRUCTURE -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="7" data-title="AA Service Structure" data-time="10 min"
+  data-notes="KEY VISUAL: 'This is the single most important diagram in AA. Look at it. The GROUPS are on top. Not the Board. Not New York. Not the Conference. The GROUPS.' READ AA Service Manual p.S15 quote. Walk through each level: 'Groups — your home group. GSRs — your elected rep. Districts — that's us, DISTRICT 22. Area Assemblies — NETA 65, one of 93 areas. General Service Conference — 93 delegates meet annually. Board, AAWS, Grapevine — they serve US, not the other way around.' CONCRETE EXAMPLE: 'Say your group thinks AA needs better young people's literature. You bring it to business meeting. GSR carries to District 22. DCM brings to NETA 65 area committee. If area supports, delegate takes to Conference. EVERY AA member through their home group can influence AA's worldwide policies.' SCENARIO — THE DISCONNECTED GROUP: 'A group meets 10 years. No GSR. No one goes to district. Conference actions reach them months late by accident. Is that group fulfilling its responsibilities? What Traditions apply?' (T1 common welfare, T2 group conscience, T9 service.) TRANSITION: 'The Traditions hold this whole structure together.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 7</span>
+    <h2 class="slide-title">The Home Group Within AA's "Upside-Down" Service Structure</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Authority flows upward from groups, not downward from leadership</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"Alcoholics Anonymous has been called an upside-down organization because... the groups are on top and the [service entities] are at the bottom."</p>
+      <p class="quote-source">&mdash; AA Service Manual, p. S15</p>
+    </div>
+
+    <h3>The Inverted Triangle &mdash; Groups Hold Ultimate Authority</h3>
+    <div class="pyramid">
+      <div class="pyramid-level">A.A. GROUPS &mdash; Ultimate Authority</div>
+      <div class="pyramid-level">Group GSRs (General Service Representatives)</div>
+      <div class="pyramid-level">Districts (DCMs)</div>
+      <div class="pyramid-level">Area Assemblies</div>
+      <div class="pyramid-level">General Service Conference</div>
+      <div class="pyramid-level">General Service Board</div>
+      <div class="pyramid-level">A.A.W.S. / AA Grapevine</div>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"The final responsibility and the ultimate authority for A.A. world services should always reside in the collective conscience of our whole Fellowship."</p>
+      <p class="quote-source">&mdash; Concept I, Twelve Concepts for World Service</p>
+    </div>
+
+    <h3>The GSR: Your Group's Voice</h3>
+    <div class="quote-block">
+      <p class="quote-text">"The strength of our whole A.A. service structure starts with the group and with the general service representative (G.S.R.) the group elects. We cannot emphasize too strongly the G.S.R.'s importance."</p>
+      <p class="quote-source">&mdash; Bill W., AA Service Manual, p. S1</p>
+    </div>
+
+    <h3>How Ideas Travel Through the Structure</h3>
+    <div class="card-grid cols-2">
+      <div class="card" style="text-align:center;">
+        <div class="card-title" style="font-size:1.3rem;">&#128161; From Member to World</div>
+        <div class="card-text" style="text-align:left; margin-top:12px;">
+          <strong>1.</strong> Member brings idea to Home Group business meeting<br>
+          <strong>2.</strong> Group supports it &rarr; GSR carries to District<br>
+          <strong>3.</strong> District approves &rarr; DCM takes to Area Committee<br>
+          <strong>4.</strong> Area &rarr; Delegate &rarr; General Service Conference<br>
+          <strong>5.</strong> Conference action flows back through the same path
+        </div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card-title" style="font-size:1.3rem;">&#128260; Conference Actions Return</div>
+        <div class="card-text" style="text-align:left; margin-top:12px;">
+          <strong>1.</strong> Conference takes action<br>
+          <strong>2.</strong> Delegate reports to Area Assembly<br>
+          <strong>3.</strong> DCM shares at District meeting<br>
+          <strong>4.</strong> GSR reports back to Home Group<br>
+          <strong>5.</strong> Every member stays informed &amp; connected
+        </div>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Discussion Prompt</div>
+      <div class="discussion-prompt-text">"Does your home group have an active GSR? Does the GSR regularly report back from district? How does this connect you to AA as a whole?"</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 8: THE TWELVE TRADITIONS -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="8" data-title="Twelve Traditions & Home Group" data-time="15 min"
+  data-notes="Click each tradition card on screen to expand. TRADITION 1 — UNITY: READ 12&12 p.129. 'This isn't abstract. When your group is divided by personality conflicts, people stop coming. Newcomers don't feel welcome. The group dies. When a group dies, people die.' TRADITION 2 — GROUP CONSCIENCE: READ AA Comes of Age p.99. 'Even Bill W. submitted to group conscience. We'll see a powerful example next section.' TRADITION 3 — MEMBERSHIP: 'The only requirement is DESIRE. Not sobriety. Not belief in God. Not good behavior. Your home group cannot kick someone out for relapsing, being difficult, or having different beliefs. That's hard. And essential.' TRADITION 4 — AUTONOMY: 'That's why no two home groups are alike. Big Book meetings, speaker meetings, step studies, candlelight meetings — each reflects Tradition Four.' TRADITION 5 — PRIMARY PURPOSE: READ 12&12 p.150. 'When your group drifts into therapy discussions, politics, or relationship advice, Tradition Five is the compass. We have ONE job.' GROUP ACTIVITY (5 min timer): 'Which Tradition has your home group STRUGGLED with most? Share at your table, identify one concrete example.' 2-3 tables report back. TRANSITION: 'Tradition Two introduced group conscience. Let's see how it actually works.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 8</span>
+    <h2 class="slide-title">The Twelve Traditions as Home Group Guidance</h2>
+    <div class="timing-badge">&#9200; 15 minutes</div>
+    <p class="slide-subtitle">Five Traditions that most directly shape home group life &mdash; click each to expand</p>
+
+    <div class="tradition-card" onclick="this.classList.toggle('open')">
+      <span class="tradition-num">1</span>
+      <span class="tradition-name">Unity &mdash; Common Welfare Comes First</span>
+      <div class="tradition-detail">
+        <div class="quote-block">
+          <p class="quote-text">"Each member of Alcoholics Anonymous is but a small part of a great whole. A.A. must continue to live or most of us will surely die. Hence our common welfare comes first. But individual welfare follows close afterward."</p>
+          <p class="quote-source">&mdash; Tradition One (Long Form), 12&amp;12, p. 189</p>
+        </div>
+        <p>The 12&amp;12 elaborates (p. 129): <em>"Without unity, the heart of A.A. would cease to beat; our world arteries would no longer carry the life-giving grace of God; His gift to us would be spent aimlessly."</em></p>
+      </div>
+    </div>
+
+    <div class="tradition-card" onclick="this.classList.toggle('open')">
+      <span class="tradition-num">2</span>
+      <span class="tradition-name">Group Conscience &mdash; One Ultimate Authority</span>
+      <div class="tradition-detail">
+        <div class="quote-block">
+          <p class="quote-text">"For our group purpose there is but one ultimate authority &mdash; a loving God as He may express Himself in our group conscience. Our leaders are but trusted servants; they do not govern."</p>
+          <p class="quote-source">&mdash; Tradition Two</p>
+        </div>
+        <p>Bill W. explained in AA Comes of Age (p. 99): <em>"Harder still to accept was the now proven fact that the conscience of the group, when properly informed of the facts and issues and principles involved, was often wiser than any leader, self-appointed or not."</em></p>
+      </div>
+    </div>
+
+    <div class="tradition-card" onclick="this.classList.toggle('open')">
+      <span class="tradition-num">3</span>
+      <span class="tradition-name">Membership &mdash; The Only Requirement</span>
+      <div class="tradition-detail">
+        <div class="quote-block">
+          <p class="quote-text">"The only requirement for A.A. membership is a desire to stop drinking."</p>
+          <p class="quote-source">&mdash; Tradition Three</p>
+        </div>
+        <p>The long form adds (12&amp;12, p. 139): <em>"Any two or three alcoholics gathered together for sobriety may call themselves an A.A. group, provided that, as a group, they have no other affiliation."</em></p>
+        <p>This means: <em>"You are an A.A. member if you say so. You can declare yourself in; nobody can keep you out."</em></p>
+      </div>
+    </div>
+
+    <div class="tradition-card" onclick="this.classList.toggle('open')">
+      <span class="tradition-num">4</span>
+      <span class="tradition-name">Autonomy &mdash; Each Group Is Self-Governing</span>
+      <div class="tradition-detail">
+        <div class="quote-block">
+          <p class="quote-text">"Each group should be autonomous except in matters affecting other groups or A.A. as a whole."</p>
+          <p class="quote-source">&mdash; Tradition Four</p>
+        </div>
+        <p>This allows each home group to develop its own character &mdash; meeting format, literature used, procedures followed &mdash; while maintaining connection to AA's principles. No two home groups are alike, and that is by design.</p>
+      </div>
+    </div>
+
+    <div class="tradition-card" onclick="this.classList.toggle('open')">
+      <span class="tradition-num">5</span>
+      <span class="tradition-name">Primary Purpose &mdash; Carry the Message</span>
+      <div class="tradition-detail">
+        <div class="quote-block">
+          <p class="quote-text">"Each group has but one primary purpose &mdash; to carry its message to the alcoholic who still suffers."</p>
+          <p class="quote-source">&mdash; Tradition Five, 12&amp;12, p. 150</p>
+        </div>
+        <p>The 12&amp;12 explains: <em>"'Shoemaker, stick to thy last!'...better do one thing supremely well than many badly. That is the central theme of this Tradition."</em></p>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Group Activity &mdash; 5 Minutes</div>
+      <div class="discussion-prompt-text">"Which of these five Traditions has your home group struggled with the most? Share with your table and identify one concrete example."</div>
+    </div>
+    <div style="text-align:center; margin-top:8px;">
+      <div class="activity-timer" id="timer8">5:00</div>
+      <button class="timer-btn" onclick="startTimer('timer8', 300)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer8')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 9: GROUP CONSCIENCE -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="9" data-title="Informed Group Conscience" data-time="10 min"
+  data-notes="READ P-16 pp.28-30 definition slowly — it's dense but important. Click each expandable element. KEY POINTS: 'Substantial unanimity' = not 51%, most groups use two-thirds. 'Minority opinions' = CRITICAL: after a vote, the minority is ASKED to share why. Sometimes the group changes its mind. 'Deliberation time' = 'If it's big, table it. Come back next month. Let people pray and think.' THE BILL W. STORY: READ AA Comes of Age p.101 in full. Pause after. 'If group conscience can overrule the CO-FOUNDER of AA, it can overrule anyone. That's the beauty of Tradition Two.' SCENARIO — THE CONTROVERSIAL PROPOSAL: 'Business meeting: someone proposes allowing non-conference-approved literature. Walk through how you'd handle it. What information would you gather? What Traditions are relevant? How do you ensure all voices are heard?' Let room discuss 2 min. SCENARIO — THE DOMINANT PERSONALITY: 'One member talks most at every business meeting. 20 years sober. When they speak, newer members go quiet. How does your group handle this while honoring Tradition Two?' TRANSITION: 'All of this comes together in choosing where to make your home.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 9</span>
+    <h2 class="slide-title">Participating in Informed Group Conscience</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">The process that distinguishes AA from other organizations</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"The 'group conscience' is the collective conscience of the group membership and thus represents substantial unanimity on an issue before definitive action is taken. This is achieved by the group members through the sharing of full information, individual points of view, and the practice of A.A. principles. To be fully 'informed' requires a willingness to listen to minority opinions with an open mind."</p>
+      <p class="quote-source">&mdash; P-16 "The A.A. Group," pp. 28&ndash;30</p>
+    </div>
+
+    <h3>Essential Elements of the Process</h3>
+    <div class="reveal-group">
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#128269; Information Gathering</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>All pertinent facts are presented before discussion begins. This may include reading relevant Traditions, reviewing precedents from other groups, or consulting Conference-approved literature.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#128172; Full Discussion</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>All views are heard, including minority opinions. Every home group member who wishes to speak has the opportunity. No voice is silenced.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#9203; Deliberation Time</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>On sensitive issues, groups work slowly. There is no rush. Some groups table important issues for a month to allow reflection and prayer.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#9878; Avoiding Dominant Voices</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Membership remains wary of dominating personalities. Tradition Two reminds us that leaders are trusted servants &mdash; they do not govern.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#9989; Substantial Unanimity</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Results rest on more than a simple "yes" or "no" count. Substantial unanimity (typically two-thirds) ensures that the group truly speaks with one voice.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>When Even a Co-Founder Was Overruled</h3>
+    <div class="quote-block">
+      <p class="quote-text">"'Bill, haven't you often said right here in this meeting that sometimes the good is the enemy of the best? Well, this is a plain case of it. You can't do this thing to us!' So spoke the group conscience. The group was right and I was wrong... Here was the true voice, welling up out of my friends. I listened and &mdash; thank God &mdash; I obeyed."</p>
+      <p class="quote-source">&mdash; Bill W., AA Comes of Age, p. 101</p>
+    </div>
+
+    <p>Business meetings typically occur monthly or quarterly, with voting restricted to those who identify the group as their home group. Each member has one vote &mdash; the foundation of AA's democratic character.</p>
+
+    <h3>Practice Scenarios &mdash; What Would Your Group Do?</h3>
+    <div class="card-grid cols-2">
+      <div class="card" style="border-left: 3px solid var(--warning);">
+        <div class="card-title">&#127917; The Controversial Proposal</div>
+        <div class="card-text">At the business meeting, a member proposes allowing non-Conference-approved literature to be read during meetings. Several members support it; several strongly oppose. <em>Walk through how an informed group conscience would handle this. What information would you gather? What Traditions apply?</em></div>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--danger);">
+        <div class="card-title">&#127917; The Dominant Personality</div>
+        <div class="card-text">One member with 20 years of sobriety speaks the longest at every business meeting. When they share their opinion, newer members go quiet and defer. Motions tend to go whichever way this person votes. <em>How does your group address this while honoring Tradition Two?</em></div>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">Quick Discussion &mdash; 3 Minutes</div>
+      <div class="discussion-prompt-text">"Has your home group ever had a group conscience vote that surprised you? What happened? What did you learn about Tradition Two?"</div>
+    </div>
+    <div style="text-align:center; margin-top:8px;">
+      <div class="activity-timer" id="timer9">3:00</div>
+      <button class="timer-btn" onclick="startTimer('timer9', 180)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer9')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 10: CHOOSING A HOME GROUP -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="10" data-title="Choosing a Home Group" data-time="8 min"
+  data-notes="PRACTICAL section. Reference Living Sober Ch.29 pp.75-81. Walk through 3 cards. 'I suggest people ask 3 questions: 1) Do I want what these people have? 2) Can I get there consistently? 3) Can I grow here — in recovery AND service?' READ Grapevine 'warts and all' quote. 'That's the key phrase. Your home group doesn't love the polished, performing version of you. They love the REAL you — tired, angry, confused, afraid, imperfect.' SCENARIO — THE NEW MEMBER'S DILEMMA: 'Someone with 90 days attends 3 different meetings weekly. Likes all three. Sponsor says get a home group. How should they decide?' Quick audience response 2 min. Feel warm and inviting here — we're welcoming people to find their home. TRANSITION: 'No home group is perfect. Every group faces challenges.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 10</span>
+    <h2 class="slide-title">Choosing a Home Group Wisely</h2>
+    <div class="timing-badge">&#9200; 8 minutes</div>
+    <p class="slide-subtitle">Practical guidance from AA literature</p>
+
+    <p><strong>Living Sober</strong> advises newcomers to try different meetings before settling (Chapter 29, pp. 75&ndash;81).</p>
+
+    <div class="card-grid cols-3">
+      <div class="card">
+        <span class="card-icon">&#128205;</span>
+        <div class="card-title">Practical Considerations</div>
+        <div class="card-text">
+          <ul style="padding-left:16px; margin-top:8px;">
+            <li>Meeting time and location for consistent attendance</li>
+            <li>Format that resonates (speaker, discussion, step study, Big Book)</li>
+            <li>Size that feels comfortable</li>
+            <li>Service positions appropriate to sobriety</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#129309;</span>
+        <div class="card-title">Fellowship Considerations</div>
+        <div class="card-text">
+          <ul style="padding-left:16px; margin-top:8px;">
+            <li>Members whose recovery you admire</li>
+            <li>Presence of potential sponsors</li>
+            <li>Welcoming atmosphere toward newcomers</li>
+            <li>Diversity of sobriety lengths</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#127760;</span>
+        <div class="card-title">Service Considerations</div>
+        <div class="card-text">
+          <ul style="padding-left:16px; margin-top:8px;">
+            <li>Active GSR attending district/area</li>
+            <li>Business meetings held regularly</li>
+            <li>Room to grow into responsibility</li>
+            <li>Connected to intergroup &amp; broader AA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:32px;">
+      <p class="quote-text">"The home group is where recovery begins; it is where AA members grow up in sobriety by the time-honored process of trial and error, to discover that they can be loved, warts and all. It is where they learn to put the needs of others, especially the needs of the group, ahead of their own desires."</p>
+      <p class="quote-source">&mdash; The Home Group: Heartbeat of AA (Grapevine), Foreword</p>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 11: COMMON CHALLENGES -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="11" data-title="Common Challenges" data-time="10 min"
+  data-notes="FRAMING: 'Every home group struggles. That's not failure — it's life. A group that never faces challenges isn't doing anything. The Traditions already contain the solutions.' For each card, ask show of hands: 'Has your group experienced this?' DOMINANT PERSONALITIES (T2): 'The solution isn't silence — it's structures where all voices are heard equally.' CLIQUES (T3): 'The antidote is intentional inclusion. Assign greeters. Circle the chairs. Invite newcomers to sit with different people.' OUTSIDE ISSUES (T6,10): 'This is getting harder in a polarized world. Our meetings are the ONE place we set all that aside.' FINANCES (T7): 'Transparency. Regular reports. Education about where 7th Tradition money goes.' APATHY: 'The silent killer. The cure is showing that service IS recovery.' SMALL GROUP ACTIVITY (7 min timer): 'Pick ONE challenge your group currently faces. Using the Traditions, brainstorm ONE concrete action for THIS MONTH. Be specific.' 3-4 groups report back 2 min each. TRANSITION: 'Let me close the presentation with the words that capture everything we've discussed.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 11</span>
+    <h2 class="slide-title">Common Challenges &amp; How Groups Address Them</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Every home group faces recurring tests of the Traditions</p>
+
+    <div class="card-grid cols-2">
+      <div class="card">
+        <span class="card-icon">&#128483;</span>
+        <div class="card-title">Dominant Personalities</div>
+        <div class="card-text">Threatens Tradition Two's servant leadership. The 12&amp;12 teaches: group conscience, properly informed, proves wiser than any individual.<br><br><strong>Solution:</strong> Ensure all voices are heard. Rotate leadership positions. Practice "principles before personalities."</div>
+        <p style="margin-top:8px;"><span class="pill">Tradition 2</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128274;</span>
+        <div class="card-title">Cliques &amp; Exclusivity</div>
+        <div class="card-text">Contradicts Tradition Three's open membership. P-16 reminds: <em>"We also learn firsthand, through the group's workings, how to place 'principles before personalities' in the interest of carrying the A.A. message."</em><br><br><strong>Solution:</strong> Assign greeters. Consciously include newcomers in fellowship.</div>
+        <p style="margin-top:8px;"><span class="pill">Tradition 3</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128240;</span>
+        <div class="card-title">Outside Issues</div>
+        <div class="card-text">Violates Traditions Six (no endorsement) and Ten (no opinion on outside issues). Groups must maintain focus on alcoholism recovery.<br><br><strong>Solution:</strong> Gently redirect. Read Tradition Ten at business meetings. Stay focused on primary purpose.</div>
+        <p style="margin-top:8px;"><span class="pill">Traditions 6 &amp; 10</span></p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128176;</span>
+        <div class="card-title">Financial Challenges</div>
+        <div class="card-text">Tests Tradition Seven (self-supporting through own contributions). Transparency and education are essential.<br><br><strong>Solution:</strong> Regular financial reports. Maintain prudent reserves. Educate members on service structure funding needs.</div>
+        <p style="margin-top:8px;"><span class="pill">Tradition 7</span></p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px; text-align:center;">
+      <span class="card-icon">&#128564;</span>
+      <div class="card-title">Apathy in Service</div>
+      <div class="card-text">Threatens group sustainability when few members participate. Groups address this by demonstrating how service strengthens recovery and creating welcoming entry points for new service commitment. Even making coffee is spiritually significant.</div>
+    </div>
+
+    <div class="activity-box">
+      <div class="activity-label">Small Group Activity</div>
+      <div class="activity-title">Challenge &amp; Solution Workshop</div>
+      <div class="activity-desc">In small groups: Pick one challenge your home group currently faces. Using the Traditions as your guide, brainstorm one concrete action your group could take. <strong>Report back in 5 minutes.</strong></div>
+      <div class="activity-timer" id="timer11">7:00</div>
+      <button class="timer-btn" onclick="startTimer('timer11', 420)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer11')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 12: KEY QUOTATIONS & REFLECTION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="12" data-title="Key Quotations" data-time="10 min"
+  data-notes="SPIRITUAL CLIMAX. Ask 7 volunteers in advance to each read one quote aloud. If not, read them yourself SLOWLY. Pause 5-10 seconds between each. No commentary needed — let the words do the work. After Big Book p.89: 'That's the promise of the home group.' After Dr. Bob p.338: 'Dr. Bob's final message. Three words that contain everything.' After Big Book p.164: 'That's the invitation. That's what the home group extends to every person who walks through the door.' After 12&12 p.151: 'We keep it by giving it away. And the home group is where we learn to give it away.' MOMENT OF SILENCE: 'Let's take 30 seconds of silence to reflect on what we've heard today.' TRANSITION: 'Let me leave you with the complete literature reference and a final reflection.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 12</span>
+    <h2 class="slide-title">Key Quotations for Reflection</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">The words that capture the essence of home group &mdash; read slowly, let them land</p>
+
+    <div class="quote-block">
+      <p class="quote-text">"We have a way out on which we can absolutely agree, and upon which we can join in brotherly and harmonious action. This is the great news this book carries to those who suffer from alcoholism."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 17</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"Practical experience shows that nothing will so much insure immunity from drinking as intensive work with other alcoholics."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 89</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"Life will take on new meaning. To watch people recover, to see them help others, to watch loneliness vanish, to see a fellowship grow up about you, to have a host of friends &mdash; this is an experience you must not miss. Frequent contact with newcomers and with each other is the bright spot of our lives."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 89</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"No satisfaction has been deeper and no joy greater than in a Twelfth Step job well done. To watch the eyes of men and women open with wonder as they move from darkness into light, to see their lives quickly fill with new purpose and meaning, and above all to watch them awaken to the presence of a loving God in their lives &mdash; these things are the substance of what we receive as we carry A.A.'s message."</p>
+      <p class="quote-source">&mdash; As Bill Sees It, p. 29</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"Let's not louse it all up with Freudian complexes and things that are interesting to the scientific mind, but have very little to do with our actual AA work. Our 12 Steps, when simmered down to the last, resolve themselves into the words love and service."</p>
+      <p class="quote-source">&mdash; Dr. Bob's final message, Dr. Bob and the Good Oldtimers, p. 338</p>
+    </div>
+
+    <div class="quote-block" style="border-left-color: #4caf50; background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(76,175,80,0.03));">
+      <p class="quote-text">"Abandon yourself to God as you understand God. Admit your faults to Him and to your fellows. Clear away the wreckage of your past. Give freely of what you find and join us. We shall be with you in the Fellowship of the Spirit."</p>
+      <p class="quote-source">&mdash; Alcoholics Anonymous (Big Book), p. 164 &mdash; The Great Invitation</p>
+    </div>
+
+    <div class="quote-block">
+      <p class="quote-text">"It is the great paradox of A.A. that we know we can seldom keep the precious gift of sobriety unless we give it away."</p>
+      <p class="quote-source">&mdash; Twelve Steps and Twelve Traditions, p. 151</p>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 13: LITERATURE REFERENCE GUIDE & CLOSING -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="13" data-title="Literature Guide & Closing" data-time="10 min"
+  data-notes="TAKEAWAY slide. 'On your handout, you have every literature reference with page numbers. I encourage you to read P-16 cover to cover — it's one of the most important pieces of AA literature most members have never read.' Point to Service Triangle on screen. Walk through reference table briefly. READ closing reflection slowly. PERSONAL COMMITMENT (2 min timer): 'What is ONE action you will take THIS WEEK to strengthen your home group connection? If you don't have one, what meeting will you visit? Write it on your handout.' CLOSE: Ask everyone to stand. Read Responsibility Statement together: 'I am responsible. When anyone, anywhere, reaches out for help, I want the hand of A.A. always to be there. And for that: I am responsible.' FINAL: 'Thank you for being here. Thank you for caring about your home group. District 22 is grateful for your service. Let's break for lunch — we reconvene at 1:00 PM for our history presentation on how AA came to Dallas and North East Texas.'">
+  <div class="slide-inner">
+    <span class="section-number">Section 13</span>
+    <h2 class="slide-title">Literature Reference Guide &amp; Closing</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Your complete guide for further study &mdash; take this with you</p>
+
+    <h3>Complete Literature Reference</h3>
+    <table class="ref-table">
+      <thead>
+        <tr><th>Source</th><th>Key Pages / Entries</th><th>Topics</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Alcoholics Anonymous (Big Book)</strong></td><td>pp. 17, 89, 97, 100, 164</td><td>Fellowship, working with others, invitation</td></tr>
+        <tr><td><strong>Twelve Steps &amp; Twelve Traditions</strong></td><td>pp. 106&ndash;125, 129&ndash;154, 189</td><td>Step 12, Traditions 1&ndash;5, long forms</td></tr>
+        <tr><td><strong>P-16 "The A.A. Group"</strong></td><td>pp. 12&ndash;16, 18&ndash;30</td><td>Definition, membership, service, conscience</td></tr>
+        <tr><td><strong>P-15 "Sponsorship Q&amp;A"</strong></td><td>pp. 7&ndash;8, 12, 23&ndash;26</td><td>Sponsor-home group connection</td></tr>
+        <tr><td><strong>As Bill Sees It</strong></td><td>pp. 9, 29, 50, 90, 117</td><td>Groups, service, loneliness, gratitude</td></tr>
+        <tr><td><strong>AA Service Manual</strong></td><td>Ch. 1&ndash;2, pp. S1, S15, S25&ndash;31</td><td>Service structure, GSR role</td></tr>
+        <tr><td><strong>Living Sober</strong></td><td>pp. 12&ndash;17, 75&ndash;81</td><td>Getting active, trying meetings</td></tr>
+        <tr><td><strong>AA Comes of Age</strong></td><td>pp. 99, 101, 163</td><td>Group conscience, history</td></tr>
+        <tr><td><strong>Dr. Bob and the Good Oldtimers</strong></td><td>pp. 101, 144, 167, 338</td><td>Early groups, final message</td></tr>
+        <tr><td><strong>Grapevine "Home Group: Heartbeat"</strong></td><td>Throughout</td><td>Stories, service, traditions</td></tr>
+        <tr><td><strong>Twelve Concepts for World Service</strong></td><td>Concept I</td><td>Ultimate authority in Fellowship</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The AA Service Triangle</h3>
+    <div class="triangle-container">
+      <svg width="320" height="300" viewBox="0 0 320 300">
+        <defs>
+          <linearGradient id="triGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4a84b;stop-opacity:0.3"/>
+            <stop offset="100%" style="stop-color:#1a3a5c;stop-opacity:0.3"/>
+          </linearGradient>
+        </defs>
+        <polygon points="160,20 30,270 290,270" fill="url(#triGrad)" stroke="#d4a84b" stroke-width="2"/>
+        <line x1="160" y1="20" x2="95" y2="145" stroke="#d4a84b" stroke-width="1" opacity="0.4"/>
+        <line x1="160" y1="20" x2="225" y2="145" stroke="#d4a84b" stroke-width="1" opacity="0.4"/>
+        <line x1="95" y1="145" x2="225" y2="145" stroke="#d4a84b" stroke-width="1" opacity="0.4"/>
+        <!-- Labels -->
+        <text x="160" y="100" text-anchor="middle" fill="#d4a84b" font-size="16" font-weight="700">RECOVERY</text>
+        <text x="90" y="230" text-anchor="middle" fill="#d4a84b" font-size="16" font-weight="700">UNITY</text>
+        <text x="232" y="230" text-anchor="middle" fill="#d4a84b" font-size="16" font-weight="700">SERVICE</text>
+        <!-- Circle in center -->
+        <circle cx="160" cy="175" r="30" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.5"/>
+        <text x="160" y="172" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">HOME</text>
+        <text x="160" y="186" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">GROUP</text>
+      </svg>
+    </div>
+
+    <h3>Closing Reflection</h3>
+    <div class="quote-block" style="border-left-color:#4caf50; background: linear-gradient(135deg, rgba(76,175,80,0.1), rgba(76,175,80,0.02));">
+      <p class="quote-text">The home group is where we learn to give it away &mdash; one meeting, one service commitment, one newcomer welcomed, one vote cast in group conscience, one day at a time.<br><br>
+      For the member new to recovery, the home group offers <strong>a place to belong</strong> after years of isolation.<br>
+      For the member growing in service, it provides <strong>the foundation</strong> for contribution to AA's mission.<br>
+      For the long-timer, it remains <strong>the place where fundamentals are practiced</strong> and newcomers welcomed.<br><br>
+      At every stage of recovery, the home group answers AA's central paradox: <em>"It is the great paradox of A.A. that we know we can seldom keep the precious gift of sobriety unless we give it away."</em> (12&amp;12, p. 151)</p>
+    </div>
+
+    <div class="activity-box">
+      <div class="activity-label">Closing Activity</div>
+      <div class="activity-title">Personal Commitment</div>
+      <div class="activity-desc">Take a moment of silence. Consider: What is one action you will take this week to strengthen your connection to your home group? If you don't have a home group, what meeting will you visit this week as a potential home?</div>
+      <div class="activity-timer" id="timer13">2:00</div>
+      <button class="timer-btn" onclick="startTimer('timer13', 120)">Start Silence</button>
+      <button class="timer-btn stop" onclick="stopTimer('timer13')">Stop</button>
+    </div>
+
+    <div style="text-align:center; margin-top:40px; padding:32px; background: var(--bg-card); border-radius: var(--radius); border: 1px solid var(--border);">
+      <p style="font-size:1.3rem; font-weight:700; color:var(--accent); margin-bottom:8px;">The Responsibility Statement</p>
+      <p style="font-size:1.15rem; color:#fff; font-style:italic; line-height:1.8;">"I am responsible. When anyone, anywhere, reaches out for help, I want the hand of A.A. always to be there. And for that: I am responsible."</p>
+      <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">30th Anniversary International Convention, 1965</p>
+    </div>
+
+    <h3>AA in Dallas &amp; District 22</h3>
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title">Our Local Legacy</div>
+      <div class="card-text">
+        <strong>1943</strong> &mdash; Esther E., whose story "A Flower of the South" appears in the Big Book (2nd &amp; 3rd editions), brought AA to Dallas. She started the first group in her living room after finding no active AA when she arrived from Houston. Her April 5, 1943 letter to New York: <em>"The new Dallas Group met for their first time last night!"</em><br><br>
+        <strong>1945</strong> &mdash; First meeting place outside a home: 912&frac12; Main Street, downtown Dallas. Fewer than 20 members sober by year's end.<br><br>
+        <strong>Sept 18, 1947</strong> &mdash; Dallas Central Office opened on Akard Street in the Davis Building. Dick P. was the first director.<br><br>
+        <strong>Today</strong> &mdash; NETA Area 65 encompasses <strong>29 districts</strong> and <strong>512+ groups</strong> across North East Texas. District 22 is part of that legacy &mdash; and every home group in our district carries forward what Esther started in her living room 80+ years ago.<br><br>
+        <em>Esther's inscribed Big Book, signed by Bill W., is on display at the Dallas Central Office.</em>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <p style="color:var(--text-muted); font-size:0.9rem;">Prepared for District 22 Mini Conference &mdash; North East Texas Area 65 (NETA 65)<br>
+      Saturday, April 4, 2026 &bull; Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401<br>
+      All quotations from AA Conference-approved literature with page references provided.<br>
+      neta65.org &bull; aadallas.org<br>
+      <strong>Not affiliated with A.A. World Services, Inc. &mdash; For use in AA service workshops only.</strong></p>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="goToSlide(0)">&#8634; Return to Start</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 14: BONUS SCENARIO BANK (for roundtables / extra time) -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="14" data-title="Scenario Bank (Bonus)" data-time="As needed"
+  data-notes="BONUS SLIDE for afternoon roundtables or if you have extra time. These scenarios can be printed on cards and placed at roundtable tables. Each scenario is designed to generate 10-15 minutes of discussion. Use selectively — you don't need all of them.">
+  <div class="slide-inner">
+    <span class="section-number">Bonus</span>
+    <h2 class="slide-title">Scenario Bank for Discussion</h2>
+    <div class="timing-badge">&#9200; Use as needed for roundtables</div>
+    <p class="slide-subtitle">Real-world situations for group discussion &mdash; click each to expand</p>
+
+    <div class="reveal-group">
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Relapsing Member</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>A home group member with 2 years of sobriety relapses. They come back to the meeting, visibly ashamed. Some members welcome them warmly. Others seem uncomfortable. One old-timer says at the business meeting, <em>"Maybe we need to be more careful about who we let share."</em></p>
+          <p><strong>Discussion:</strong> What Traditions apply? (3, 1, 5) What is the group's responsibility? What would your home group do?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Non-Alcoholic Attendee</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Someone attends your open home group regularly. They share that they're not an alcoholic but have a family member who is. They want to "join" the group. At the business meeting, a member asks whether this person should be allowed to vote.</p>
+          <p><strong>Discussion:</strong> What does Tradition Three say? What's the difference between an open and closed meeting? Can this person be a "member"?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Money Question</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Your home group has accumulated $3,000 in its treasury. Some members want to donate it all to intergroup. Others say keep a larger prudent reserve. The treasurer suggests splitting it between the district, NETA 65, and GSO.</p>
+          <p><strong>Discussion:</strong> What does Tradition Seven say? What does the AA Service Manual suggest about fund flow? What is a "prudent reserve"? How does your group currently handle excess funds?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Format War</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Half the home group wants to switch from a speaker meeting to a Big Book study. The other half loves the current format. The debate has been going on for three business meetings. Attendance is dropping because people are frustrated.</p>
+          <p><strong>Discussion:</strong> How does an informed group conscience handle this? What does Tradition Four allow? Could the group compromise? What if the group splits &mdash; is that failure or growth?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Online Question</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Since the pandemic, your home group has offered a hybrid option (in-person + Zoom). Some members think Zoom should be permanent. Others feel it reduces the quality of fellowship and that "real AA" is in person only.</p>
+          <p><strong>Discussion:</strong> What does Tradition Four say about group autonomy? How do you balance accessibility with the value of in-person fellowship? What does the 30th Anniversary "Home Group: Heartbeat" say about virtual meetings?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Anonymity Break</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>A home group member posts a photo from the meeting on social media, tagging other members by name. Some members are upset. Others say, <em>"It's just social media, relax."</em></p>
+          <p><strong>Discussion:</strong> What do Traditions 11 and 12 say about anonymity? What is the difference between personal anonymity and breaking others' anonymity? How should the group address this?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Crosstalk Debate</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>Your home group has always had a "no crosstalk" guideline. A newer member says this feels cold and clinical &mdash; they want people to respond to each other, ask follow-up questions, and have real dialogue. An old-timer says the no-crosstalk rule protects vulnerable members from unsolicited advice.</p>
+          <p><strong>Discussion:</strong> Is "no crosstalk" a Tradition or a group guideline? How does Tradition Four apply? How do you balance safety with genuine connection?</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#127917; The Dying Group</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>A home group that once had 30 regular members now averages 6. The remaining members are all old-timers. No newcomers have attended in months. The lease on the meeting space is expensive. Two members suggest closing the group.</p>
+          <p><strong>Discussion:</strong> What can a group do to revitalize? Should groups ever close? What is the group's responsibility to the alcoholic who might walk in next week? How does Tradition Five guide this decision?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="goToSlide(0)">&#8634; Return to Start</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ============================================================ -->
+<!-- SEGMENT 2: HOW AA GOT TO DALLAS & NORTH EAST TEXAS -->
+<!-- ============================================================ -->
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!-- SLIDE 15: HISTORY HERO / TRANSITION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="15" data-title="Dallas AA History" data-time="5 min"
+  data-notes="TRANSITION SLIDE: Welcome everyone back from lunch. Open with the Responsibility Statement read together. Say: 'This morning we explored what the home group IS. This afternoon we're going to explore where the home group concept CAME FROM — right here in Dallas. Every AA group in the Dallas-Fort Worth metroplex today traces its lineage to a single living room in 1943.' ENGAGEMENT: 'Before we begin — by show of hands: How many of you know who Esther E. is?' (Note the response.) 'How many know who brought AA to Texas?' 'By the end of this hour, you'll know these names like family — because they ARE our family in sobriety.' Click next.">
+  <div class="hero">
+    <div class="hero-badge">Segment 2 &bull; History Presentation &bull; District 22</div>
+    <h1 class="hero-title">How AA Got to Dallas<br>&amp; North East Texas</h1>
+    <p class="hero-sub">From one woman's living room in 1943 to over 160 groups today &mdash; the story of recovery in our backyard.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">75 min</span>
+        <span class="hero-meta-label">Presentation</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">1935</span>
+        <span class="hero-meta-label">AA Founded</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">1943</span>
+        <span class="hero-meta-label">Dallas AA Founded</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-value">160+</span>
+        <span class="hero-meta-label">DFW Groups Today</span>
+      </div>
+    </div>
+    <button class="hero-start" onclick="nextSlide()">Begin History &rarr;</button>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 16: LARRY J. & THE TEXAS ENTRY POINT -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="16" data-title="Larry J. & Houston (1940)" data-time="10 min"
+  data-notes="OPEN: 'Before Dallas could have AA, Texas itself needed the message. And that message arrived in the most unlikely way possible — carried by a man who had never attended a single AA meeting.' LARRY J. STORY: 'Picture this: Cleveland, Ohio, winter of 1939. A newspaper man named Larry Jewell is found in freezing weather with no coat. One lung collapsed from tuberculosis. The other has a tube protruding from his chest. He'd drunk himself into the gutter.' Let that image land. 'The editor of the Cleveland Press, Louis Seltzer, sent a search party to find him and paid for his hospitalization.' 'During his recovery, doctors told him to move to a warmer climate. The night before he left for Texas, his sponsors — Dr. Bob Smith, co-founder of AA, and Clarence Snyder — gave him a Big Book. That's it. One book.' 'On the train to Houston, reading that book, Larry had a spiritual awakening. He said he felt all in one piece again.' FUN FACT: 'Larry convinced the Houston Press to run 6 articles about AA. Those articles became the FIRST AA PAMPHLET EVER PUBLISHED — the only AA literature besides the Big Book until late 1940.' TEXAS PRAYER: 'On April 1, 1940, Larry wrote The Texas Prayer — used to open AA meetings throughout Texas for years. Texas had its own identity from Day One.' CAUTIONARY NOTE: 'But Larry struggled with his leadership style. He ran the Houston group with what they called an iron hand. When the group voted for a steering committee, Larry pulled out resentfully and relapsed. He died in 1943.' 'His legacy? The people he helped included a woman named Esther E. — who would carry the message to Dallas.' TRANSITION: 'But before Esther got to Dallas, someone else tried first. And failed spectacularly.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 1</span>
+    <h2 class="slide-title">Larry J.: The Man Who Carried AA to Texas with Only a Book</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Houston, 1940 &mdash; AA arrives in Texas through desperation, not planning</p>
+
+    <div class="card-grid cols-2">
+      <div class="card" style="border-left: 4px solid var(--danger);">
+        <span class="card-icon">&#128214;</span>
+        <div class="card-title">The Desperate Messenger</div>
+        <div class="card-text">Found in freezing Cleveland weather. One lung collapsed from TB. Tube protruding from his chest. "Drunk himself into the gutter." Louis Seltzer, editor of the Cleveland Press, sent a search party.</div>
+        <p style="margin-top:12px; font-size:0.85rem; color:var(--accent);">Sponsors: Dr. Bob Smith &amp; Clarence Snyder</p>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--success);">
+        <span class="card-icon">&#128645;</span>
+        <div class="card-title">Spiritual Awakening on a Train</div>
+        <div class="card-text"><strong>He had never attended a single AA meeting.</strong> His sponsors gave him a Big Book the night before he left for Texas. On the train to Houston, reading the book, Larry experienced a spiritual awakening &mdash; "all in one piece again."</div>
+        <p style="margin-top:12px; font-size:0.85rem; color:var(--accent);">Arrived Houston: January 1940</p>
+      </div>
+    </div>
+
+    <h3>What Larry J. Accomplished in Texas</h3>
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.5rem;">Mar 15, 1940</span>
+        <span class="stat-label">First Houston Meeting (YWCA)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.5rem;">Feb 8, 1940</span>
+        <span class="stat-label">First AA Pamphlet Ever</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.5rem;">Apr 1, 1940</span>
+        <span class="stat-label">"The Texas Prayer" Written</span>
+      </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(76,175,80,0.02)); border-color: rgba(76,175,80,0.3); margin-top:20px;">
+      <div class="card-title" style="color:var(--success);">&#128161; Did You Know?</div>
+      <div class="card-text">The Houston Press articles Larry arranged became <strong>the first AA pamphlet ever published</strong> &mdash; the only AA literature besides the Big Book until late 1940. By September 1940, Houston was listed among only <strong>9 "secure" AA groups</strong> in the entire United States, alongside Akron, New York, Cleveland, Detroit, Chicago, Los Angeles, Philadelphia, and Washington D.C.</div>
+    </div>
+
+    <div class="quote-block" style="margin-top:24px;">
+      <p class="quote-text">"Story of a 'Way Out' for Hopeless Drinkers: How an Idea Originated by Ex-Alcoholics Has Helped 2000 to Recover."</p>
+      <p class="quote-source">&mdash; Headline from Houston Press articles, February 1940</p>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, rgba(231,76,60,0.08), rgba(231,76,60,0.02)); border-color: rgba(231,76,60,0.3); margin-top:20px;">
+      <div class="card-title" style="color:var(--danger);">&#9888; The Cautionary Lesson</div>
+      <div class="card-text">Larry ran the Houston group with "something of an iron hand." When the group voted for a steering committee based on Eastern AA practices, Larry pulled out resentfully and <strong>relapsed</strong>. He returned in 1943 but died later that year. <em>His legacy endured: the people he helped included <strong>Esther E.</strong>, who would carry the message to Dallas.</em></div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 17: THE FALSE START - KENT W. (1941-1942) -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="17" data-title="Kent W. - The False Start" data-time="10 min"
+  data-notes="OPEN: 'The history of AA in Dallas does NOT begin with success. It begins with failure — and that failure teaches lessons still relevant today.' RUTH T.: 'The earliest recorded impulse for recovery in Dallas came from Ruth T., who on June 14, 1941, sent a letter to Ruth Hock — Bill Wilson's secretary in New York — asking about AA in her area. Think about that: a lone woman, desperately seeking help, in a city with NO meetings. The demand for recovery existed before any supply.' KENT W.: 'On December 1, 1941, Kent W. arrived in Dallas. He'd gotten sober in Florida and came with a public relations background. He called himself the CHIEF SPONSOR of Dallas AA.' Let that title land. 'Chief Sponsor. That directly contradicts Tradition Two — Our leaders are but trusted servants; they do not govern.' 'Kent organized a meeting at the White Plaza Hotel on January 7, 1942. Despite severe weather, twelve people showed up, and a Dallas Morning News story generated 72 inquiries. Looked promising, right?' Pause. 'The whole thing collapsed. Kent W. was never heard from again.' INTERACTIVE: Click through the comparison table on screen. Ask: 'Which approach sounds more like your home group — Kent's or what we talked about this morning?' DISCUSSION: 'Why did Kent's approach fail? What Traditions — even though they hadn't been written yet — was he violating?' Let 2-3 people respond. TRANSITION: 'Kent's failure cleared the ground. And in 1943, a woman arrived who would do it right.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 2</span>
+    <h2 class="slide-title">The False Start: Kent W. &amp; the Lessons of Promotion</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">Dallas, 1941&ndash;1942 &mdash; Why publicity alone cannot sustain a spiritual fellowship</p>
+
+    <div class="card" style="border-left: 4px solid var(--warning); margin-bottom:24px;">
+      <span class="card-icon">&#128232;</span>
+      <div class="card-title">Ruth T.'s Cry for Help &mdash; June 14, 1941</div>
+      <div class="card-text">The earliest recorded impulse for recovery in Dallas: <strong>Ruth T.</strong> sent a letter to Ruth Hock, Bill Wilson's secretary in New York, inquiring about AA in her area. A lone woman desperately seeking connection. <em>Demand for recovery existed in Dallas before any supply of meetings was available.</em> Remember her name &mdash; she'll appear again.</div>
+    </div>
+
+    <h3>"Chief Sponsor" Arrives &mdash; December 1, 1941</h3>
+    <div class="quote-block">
+      <p class="quote-text">Kent W. arrived in Dallas with sobriety from Florida, a public relations background, and a title he gave himself: <strong>"Chief Sponsor"</strong> of Dallas AA &mdash; a title that directly contradicts the spirit of rotating leadership and humility later codified in Tradition Two.</p>
+      <p class="quote-source">&mdash; AA History Presentation &amp; Script archives</p>
+    </div>
+
+    <div class="card-grid cols-2">
+      <div class="card" style="border-top: 3px solid var(--danger);">
+        <div class="card-title" style="color:var(--danger);">&#10060; What Kent W. Did</div>
+        <div class="card-text">
+          <p><strong>Venue:</strong> White Plaza Hotel &mdash; public, commercial, impersonal</p>
+          <p><strong>Method:</strong> Newspaper publicity in the Dallas Morning News</p>
+          <p><strong>Style:</strong> "Chief Sponsor" &mdash; hierarchical, personality-driven</p>
+          <p><strong>Result:</strong> 12 attendees, 72 inquiries from the newspaper... then complete collapse.</p>
+          <p style="margin-top:12px; font-weight:700; color:var(--danger);">Kent W. was "never heard from again."</p>
+        </div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--success);">
+        <div class="card-title" style="color:var(--success);">&#9989; What Would Work (Preview)</div>
+        <div class="card-text">
+          <p><strong>Venue:</strong> A living room &mdash; intimate, domestic, safe</p>
+          <p><strong>Method:</strong> Word of mouth, doctor referrals, personal contact</p>
+          <p><strong>Style:</strong> Service, humility, attraction not promotion</p>
+          <p><strong>Result:</strong> Slow but sustainable growth &mdash; still alive 80+ years later</p>
+          <p style="margin-top:12px; font-weight:700; color:var(--success);">This is what Esther E. would do next year.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Why It Failed &mdash; A Living Case Study in the Traditions</h3>
+    <table class="ref-table">
+      <thead><tr><th>Feature</th><th>Kent W.'s 1942 Approach</th><th>Why It Failed</th><th>Tradition Violated</th></tr></thead>
+      <tbody>
+        <tr><td>Leadership Style</td><td>"Chief Sponsor" (hierarchical)</td><td>Group dependent on single personality</td><td>Tradition 2</td></tr>
+        <tr><td>Venue</td><td>Hotel (public, commercial)</td><td>Lacked intimacy for vulnerable sharing</td><td>Tradition 5</td></tr>
+        <tr><td>Method</td><td>Newspaper publicity (promotion)</td><td>Attracted curiosity, not desperation</td><td>Tradition 11</td></tr>
+        <tr><td>Founder's Roots</td><td>Transient (from Florida)</td><td>No established community connections</td><td>Tradition 4</td></tr>
+      </tbody>
+    </table>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">&#128172; Table Talk</div>
+      <div class="discussion-prompt-text">"Kent W. promoted AA through newspaper articles and called himself 'Chief Sponsor.' Esther E. simply opened her home. Why do you think one approach failed and the other succeeded?" &mdash; Share with your neighbor (2 minutes)</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 18: ESTHER E. - THE TRUE FOUNDATION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="18" data-title="Esther E. - Dallas Founded" data-time="15 min"
+  data-notes="OPEN: 'If Kent W. represented the promotional false start, Esther E. represented the spiritual bedrock upon which ALL Dallas AA was built. Her story, A Flower of the South, appears in the Big Book.' ESTHER'S BACKGROUND: 'Raised in New Orleans. Social drinking was normal — wine with dinner, cordials after. At her own wedding, seeing her nervousness, her father ordered a servant to bring her something to drink. The servant brought a water glass full of bourbon.' Let the room react. 'She lived in Dallas 1927-1932, trying all the doctors, hospitals, and cures — the Sanitarium three times. Then moved to Houston where her drinking continued to escalate.' 'Her bottom? She was arrested while walking the dog. A patrol car saw her staggering.' SATURDAY EVENING POST: 'This is where history turns on a pivotal moment. A few weeks before Esther hit bottom, her husband read the Jack Alexander article in the Saturday Evening Post — March 1, 1941. This is the article that quadrupled AA membership in one year — from 2,000 to 8,000 members.' 'Her husband showed her the article with an ultimatum: If you will try this thing, I'll go along with you. If you don't, you will have to go home. I cannot sit by and watch you destroy yourself!' 'Esther wrote to New York. Within a week she received AA literature and a hand-written letter from Ruth Hock. That personal touch, she later said, did a lot to help.' SOBRIETY DATE: May 16, 1941. FOUNDING OF DALLAS AA: 'In her second year sober, Esther transferred to Dallas. She found a vacuum — Kent W.'s efforts had evaporated. The phone number Ruth Hock gave her was disconnected.' READ her March 29, 1943 letter: 'This is where I had been so sick for five years...' 'On April 2, 1943, the first meeting of The Dallas Group was held in Esther's home. And here's the beautiful part — Ruth T. was there. The woman who wrote that letter seeking help in 1941. The seeker and the carrier of the message finally united.' 'THIS DATE — April 2, 1943 — marks the lineage point for EVERY AA group in the Dallas metroplex today.' Let that land with weight. FUN FACTS: 'The group met Tuesdays and Fridays at 8 PM. Strictly speaker meetings. News spread by word of mouth only. By 1945, fewer than twenty people were sober in all of Dallas.' 'Esther's Big Book, inscribed by Bill Wilson, remains at the Dallas Central Office to this day.' 'She died June 3, 1960, with more than nineteen years of sobriety.' MOMENT: Ask for a moment of silence for Esther E. TRANSITION: 'From Esther's living room, the fellowship began to grow...'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 3</span>
+    <h2 class="slide-title">Esther E.: A Flower of the South</h2>
+    <div class="timing-badge">&#9200; 15 minutes</div>
+    <p class="slide-subtitle">The true foundation of Dallas AA &mdash; April 2, 1943</p>
+
+    <div class="card" style="background: linear-gradient(135deg, rgba(212,168,75,0.12), rgba(212,168,75,0.04)); border-color: var(--accent); margin-bottom:24px;">
+      <div class="card-title" style="font-size:1.2rem;">&#127803; "A Flower of the South"</div>
+      <div class="card-text">Esther E.'s story appears in the <strong>Second and Third Editions of the Big Book</strong> (pp. 384&ndash;392, 3rd Ed.). She is pictured with AA co-founder Bill Wilson. Her inscribed Big Book remains at the <strong>Dallas Central Office</strong> to this day &mdash; a physical link between the founders and our local fellowship.</div>
+    </div>
+
+    <h3>The Journey to Sobriety</h3>
+    <div class="timeline">
+      <div class="timeline-item visible">
+        <div class="timeline-year">New Orleans &mdash; Early Life</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Social Drinking Was Normal</div>
+          <p>Raised where wine with dinner and cordials afterward were standard. At her own <strong>wedding</strong>, seeing her nervousness, her father ordered a servant to bring her something to drink. <em>The servant brought a water glass full of bourbon.</em></p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1927&ndash;1932 &mdash; First Time in Dallas</div>
+        <div class="timeline-content">
+          <div class="timeline-title">"All the Doctors, Hospitals, and Cures"</div>
+          <p>Her drinking progressed severely. She tried every treatment available &mdash; <em>"the Sanitarium three times."</em> Eventually moved to Houston where her drinking continued to escalate.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">March 1, 1941</div>
+        <div class="timeline-content">
+          <div class="timeline-title">&#128240; The Saturday Evening Post Changes Everything</div>
+          <p>Esther's husband read the <strong>Jack Alexander article</strong> &mdash; the article that transformed AA from 2,000 members to 8,000 in one year.</p>
+          <div class="quote-block" style="margin:12px 0 0 0; padding:16px;">
+            <p class="quote-text" style="font-size:0.95rem;">"If you will try this thing, I'll go along with you. If you don't, you will have to go home. I cannot sit by and watch you destroy yourself!"</p>
+            <p class="quote-source">&mdash; Esther E.'s husband's ultimatum</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">May 16, 1941</div>
+        <div class="timeline-content" style="border-color: var(--accent); background: rgba(212,168,75,0.05);">
+          <div class="timeline-title" style="color:var(--accent); font-size:1.15rem;">&#127775; Esther E.'s Sobriety Date</div>
+          <p>Got sober in Houston after writing to the General Service Office in New York. Within a week she received AA literature and <strong>a hand-written letter from Ruth Hock</strong>. "That personal touch did a lot to help."</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">March 29, 1943</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Esther Writes to New York from Dallas</div>
+          <div class="quote-block" style="margin:8px 0 0 0; padding:16px;">
+            <p class="quote-text" style="font-size:0.95rem;">"This is where I had been so sick for five years. Where I started trying out all the doctors, hospitals and cures (the Sanitarium three times) so I've lots to do. First off, four doctors to call on and let them look over 'exhibit A' (me)! My minister (Episcopal) has two prospects for us."</p>
+            <p class="quote-source">&mdash; Esther E.'s letter to General Service Office</p>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">April 2, 1943</div>
+        <div class="timeline-content" style="border-color: var(--accent); background: linear-gradient(135deg, rgba(212,168,75,0.1), rgba(212,168,75,0.02));">
+          <div class="timeline-title" style="color:var(--accent); font-size:1.2rem;">&#127775; THE FOUNDING OF DALLAS AA</div>
+          <p>The first meeting of "The Dallas Group" in Esther's home. <strong>Ruth T. was present</strong> &mdash; the woman who had written the initial inquiry letter in 1941. The seeker and the carrier of the message finally united.</p>
+          <p style="margin-top:12px; font-weight:700; color:var(--accent); font-size:1.05rem;">This date marks the lineage point for EVERY AA group in the Dallas metroplex today.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.2rem;">Tues &amp; Fri</span>
+        <span class="stat-label">Meeting Days</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.2rem;">8:00 PM</span>
+        <span class="stat-label">Meeting Time</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.2rem;">&lt; 20</span>
+        <span class="stat-label">Sober by 1945</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:1.2rem;">19+ yrs</span>
+        <span class="stat-label">Esther's Sobriety</span>
+      </div>
+    </div>
+
+    <div class="card" style="background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(76,175,80,0.02)); border-color: rgba(76,175,80,0.3); margin-top:20px;">
+      <div class="card-title" style="color:var(--success);">&#128161; The Contrast That Teaches</div>
+      <div class="card-text">Kent W.'s hotel ballroom attracted curiosity. Esther's living room fostered intimacy. Kent called himself "Chief Sponsor." Esther simply said she had "lots to do." Kent used newspaper publicity. Esther visited doctors and her minister. <strong>The home group concept didn't begin in a conference room &mdash; it began in a home.</strong></div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 19: POST-WAR GROWTH - SEARCY W. & SUBURBAN GROUP -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="19" data-title="Searcy W. & Suburban Group" data-time="10 min"
+  data-notes="OPEN: 'World War II changed everything for America — and for AA. Veterans returned with trauma and alcoholism. The fellowship needed to grow and adapt. Enter one of the most important figures in Dallas AA history.' SEARCY W.: 'Searcy Whaley first heard about AA in 1945 from an old drinking buddy. After losing his job in November 1945, he stayed drunk until April 1946. When he came to Dallas to find AA, he was placed in a drying out place off Maple Street — the only facility in Dallas that would accept alcoholics. On his third day, someone took him to a meeting at 912½ Main Street.' SOBRIETY DATE: May 5, 1946. '57 years of continuous sobriety until his death in September 2003.' SUBURBAN GROUP: 'In September 1946, just four months after getting sober, Searcy and others founded the Suburban Group at Dickason and Sale Streets, near Lee Park. This was pivotal because it marked the FIRST DECENTRALIZATION of AA from downtown to neighborhoods. It created the prototype for the neighborhood group.' LIST THE OFFSPRING: Preston Group, Belmont, Belwood, Central, Town North, and many others. 'Your group may trace its lineage directly to the Suburban Group.' OAK CLIFF: 'The Oak Cliff Group formed around the same time — establishing AA south of downtown.' CENTRAL OFFICE: 'By 1947, with only TWO active groups, local leadership opened the Dallas Central Office on September 18, 1947, in the Davis Building on Akard Street. The first manager was Dick P., who suffered from Jamaica Ginger Paralysis — a permanent disability from toxic Prohibition-era alcohol. Despite his disability, he managed the phones and coordinated Twelfth Step calls.' 'Establishing a Central Office with only two groups was an act of profound faith.' GROWTH STATS: By 1968: 8-9 groups. By 1973: 30 groups. Today: 160+ groups. TRANSITION: 'But the most remarkable chapter in Dallas AA history involves a man whose name every AA member knows — even if they don't know his Dallas connection.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 4</span>
+    <h2 class="slide-title">Post-War Expansion: Searcy W. &amp; the Suburban Shift</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">1946&ndash;1947 &mdash; Decentralizing AA from downtown to where people lived</p>
+
+    <div class="card-grid cols-2">
+      <div class="card">
+        <span class="card-icon">&#128170;</span>
+        <div class="card-title">Searcy W. (Whaley) &mdash; Dallas's Elder Statesman</div>
+        <div class="card-text">First heard about AA in 1945 from an old drinking buddy. Lost his job in November 1945, stayed drunk until April 1946. Placed in a "drying out place" off Maple Street. On his <strong>third day</strong>, taken to a meeting at 912&frac12; Main Street.</div>
+        <p style="margin-top:12px; font-weight:700; color:var(--accent); font-size:1.1rem;">Sobriety date: May 5, 1946</p>
+        <p style="margin-top:4px; color:var(--text-muted); font-size:0.85rem;">57 years of continuous sobriety until death in September 2003</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#127968;</span>
+        <div class="card-title">The Suburban Group &mdash; September 1946</div>
+        <div class="card-text">Founded at the corner of <strong>Dickason and Sale Streets</strong>, near Lee Park, just north of downtown. <em>Just four months after getting sober</em>, Searcy helped create the prototype for the neighborhood group.</div>
+        <p style="margin-top:12px; color:var(--success); font-weight:600;">&#9989; First decentralization of AA from downtown to neighborhoods</p>
+      </div>
+    </div>
+
+    <h3>What the Suburban Group Birthed</h3>
+    <p>The Suburban Group became the <strong>mother of many Dallas groups</strong>. Out of it grew:</p>
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin:16px 0;">
+      <span class="pill">Preston Group</span>
+      <span class="pill">Belmont Group</span>
+      <span class="pill">Belwood Group</span>
+      <span class="pill">Central Group</span>
+      <span class="pill">Town North Group</span>
+      <span class="pill">Oak Cliff Group (same era)</span>
+      <span class="pill">Many others through subsequent decades</span>
+    </div>
+
+    <div class="discussion-prompt" style="margin:20px 0;">
+      <div class="discussion-prompt-label">&#129300; Quick Question</div>
+      <div class="discussion-prompt-text">"Does anyone here know which group YOUR home group descended from? Every group has a genealogy &mdash; and it may trace back to Esther's living room or the Suburban Group."</div>
+    </div>
+
+    <h3>The Dallas Central Office Opens &mdash; September 18, 1947</h3>
+    <div class="card-grid cols-2">
+      <div class="card">
+        <span class="card-icon">&#128222;</span>
+        <div class="card-title">A Musty Old Office, Filled with AA Caring</div>
+        <div class="card-text">Davis Building on <strong>Akard Street</strong>. With only <strong>two active groups</strong> (The Dallas Group &amp; the Suburban Group), local leadership established service infrastructure. <em>"An act of profound faith."</em></div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128588;</span>
+        <div class="card-title">Dick P. &mdash; First Office Manager</div>
+        <div class="card-text">Suffered from <strong>"Jamaica Ginger Paralysis" (Jake Leg)</strong> &mdash; a permanent disability caused by toxic Prohibition-era alcohol substitutes. Despite his physical limitations, he managed the phones, coordinated Twelfth Step calls, and sold literature. <em>A living embodiment of the Responsibility Statement.</em></div>
+      </div>
+    </div>
+
+    <h3>The Growth of Dallas AA</h3>
+    <div class="stat-row">
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:2rem;">2</span>
+        <span class="stat-label">Groups in 1947</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:2rem;">8</span>
+        <span class="stat-label">Groups by 1968</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:2rem;">30</span>
+        <span class="stat-label">Groups by 1973</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" style="font-size:2rem;">160+</span>
+        <span class="stat-label">Groups Today</span>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 20: EBBY THACHER & SEARCY W. AND THE TRADITIONS -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="20" data-title="Ebby Thacher in Dallas" data-time="10 min"
+  data-notes="OPEN: 'This is the story that gives me chills every time I tell it.' SETUP: 'How many of you know who Ebby Thacher is?' Likely many hands. 'Ebby is the man who FIRST carried the message to Bill Wilson in November 1934. Without Ebby, there is no Bill W. Without Bill W., there is no AA. Ebby is the spark that lit the fire.' 'But here's what most people don't know: Ebby struggled with sobriety for 18 YEARS after helping Bill get sober. Eighteen years.' SEARCY AND THE TRADITIONS: 'Before we get to Ebby, another Searcy W. story. In 1948, 25 AA members from across Texas met in Lubbock. Searcy arranged for Bill Wilson to attend. On the airplane, Bill showed Searcy his handwritten notes — the original Twelve Traditions.' 'Searcy's response? He said: We don't need this down here. We love each other.' 'At the 1950 International Convention in Cleveland — 8,000 to 9,000 people — the Twelve Traditions were adopted with NO dissenting votes. Dr. Bob and Bill personally schooled Searcy on the Traditions. He came to understand they weren't restrictions but protections.' EBBY'S DALLAS STORY: 'In early 1953, Bill Wilson visited Dallas and met with Searcy. Bill asked what he would most like to see happen in AA. Searcy asked the same of Bill. Bill's answer: I'd rather see Ebby have a chance to get sober.' 'Mutual friends found Ebby on the Bowery in New York City. Dried him out briefly. And sent him to Dallas with a pint of whiskey.' 'He arrived at Searcy's clinic in poor condition — cussing out Bill and Dr. Bob and everybody else. Eventually, he asked to attend a meeting.' 'He got sober at the Suburban Club.' Let that land. 'The same fellowship that had grown from HIS original message to Bill Wilson could later save HIM.' 'Ebby stayed sober in Dallas for 4-5 years, with a brief slip in 1954. He met Chloe K. in 1954 and maintained seven years of sobriety. He left Dallas around 1958 and died March 21, 1966, with 2½ years of sobriety.' REFLECTION: 'What does Ebby's story teach us about never giving up on anyone?' Let 2-3 people share. TRANSITION: 'Now let's look at the bigger picture — how all of this connects to where we are today.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 5</span>
+    <h2 class="slide-title">Ebby Thacher: Bill's Sponsor Saved in Dallas</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">The most remarkable chapter in Dallas AA history &mdash; and a lesson about never giving up</p>
+
+    <div class="card" style="background: linear-gradient(135deg, rgba(212,168,75,0.15), rgba(212,168,75,0.03)); border-color: var(--accent); margin-bottom:24px;">
+      <div class="card-title" style="font-size:1.2rem;">&#9997; First: Searcy W. and the Twelve Traditions</div>
+      <div class="card-text">
+        <p>In <strong>1948</strong>, 25 AA members from across Texas met in Lubbock. Searcy arranged for Bill Wilson to attend from Phoenix. On the airplane, Bill showed Searcy his handwritten notes &mdash; <strong>the original Twelve Traditions</strong>.</p>
+        <p style="margin-top:12px;">Searcy's initial response was dismissive:</p>
+      </div>
+      <div class="quote-block" style="margin:12px 0 0 0; padding:16px;">
+        <p class="quote-text" style="font-size:1.1rem;">"We don't need this down here. We love each other."</p>
+        <p class="quote-source">&mdash; Searcy W. to Bill Wilson, 1948</p>
+      </div>
+      <div class="card-text" style="margin-top:12px;">At the <strong>1950 International Convention in Cleveland</strong> (8,000&ndash;9,000 people), the Twelve Traditions were adopted with <strong>no dissenting votes</strong>. Searcy came to understand they weren't restrictions but protections &mdash; guidelines to let AA survive beyond any individual personality.</div>
+    </div>
+
+    <h3>The Man Who Started It All &mdash; Needed Dallas to Save Him</h3>
+    <div class="card-grid cols-2">
+      <div class="card" style="border-left: 4px solid var(--accent);">
+        <span class="card-icon">&#128161;</span>
+        <div class="card-title">Who Was Ebby Thacher?</div>
+        <div class="card-text">
+          <p>Ebby <strong>first carried the message to Bill Wilson</strong> in November 1934. Without Ebby, there is no Bill W. Without Bill W., there is no AA.</p>
+          <p style="margin-top:8px;">But Ebby <strong>struggled with sobriety for 18 years</strong> after helping Bill get sober.</p>
+        </div>
+      </div>
+      <div class="card" style="border-left: 4px solid var(--success);">
+        <span class="card-icon">&#128172;</span>
+        <div class="card-title">Bill Wilson's Request (1953)</div>
+        <div class="card-text">
+          <p>When Bill visited Dallas and Searcy asked what he would most like to see happen in AA, Bill replied:</p>
+          <p style="margin-top:8px; font-weight:700; color:var(--accent); font-size:1.05rem;">"I'd rather see Ebby have a chance to get sober."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top:24px;">
+      <div class="timeline-item visible">
+        <div class="timeline-year">1953</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Ebby Arrives in Dallas</div>
+          <p>Mutual friends found Ebby <strong>on the Bowery in New York City</strong>. Dried him out briefly. Sent him to Dallas <em>with a pint of whiskey</em>. He arrived at Searcy's clinic "cussing out Bill and Dr. Bob and me and everybody else."</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1953&ndash;1954</div>
+        <div class="timeline-content" style="border-color: var(--accent);">
+          <div class="timeline-title" style="color:var(--accent);">&#127775; Ebby Gets Sober at the Suburban Club</div>
+          <p>Eventually, he asked to attend a meeting. <strong>He got sober at the Suburban Club</strong> &mdash; the same fellowship that had grown from his original message to Bill Wilson could later save him.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1954&ndash;1958</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Sober in Dallas</div>
+          <p>After a brief slip in 1954, Ebby met Chloe K. and maintained seven years of sobriety. He left Dallas around 1958&ndash;1961.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">March 21, 1966</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Ebby Thacher Dies</div>
+          <p>Died with 2&frac12; years of sobriety. His story demonstrates that <strong>recovery is possible even after decades of struggle</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="discussion-prompt">
+      <div class="discussion-prompt-label">&#128172; Reflection</div>
+      <div class="discussion-prompt-text">"Ebby Thacher struggled for 18 years before getting sober in Dallas. What does his story teach us about never giving up on anyone?" &mdash; Share with the room (2 minutes)</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 21: FORT WORTH, NETA 65, & THE BIGGER PICTURE -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="21" data-title="Fort Worth & NETA 65" data-time="10 min"
+  data-notes="OPEN: 'While Dallas was organizing, Fort Worth was building its own recovery infrastructure — creating a dual-hub system across North Texas.' FORT WORTH: 'June 4, 1941 — AA's New York office answered George McL.'s handwritten letter, telling him the only Texas group was in Houston. On July 23, 1941, Fort Worth held its first group meeting. George wrote to New York the next day: I am happy to report that I have the A.A. well on its way in Fort Worth. At our meeting last night we had seven members.' 'Continuous AA activity in Fort Worth dates to August 28, 1943 — when Ralph, a railroad switchman and former deputy sheriff, sought George's help after a painful drunk. Ralph became an apostle for the Fellowship — one of the most zealous Twelfth-Steppers of all time.' 'The Fort Worth Central Office wasn't established until late summer 1977, after two previous attempts had failed.' NETA 65: 'Walk through the organizational evolution: Dallas Central Office evolved to Intergroup (1968), incorporated (1989), and renamed Dallas AA Central Office (2000). The 24/7 hotline is 214-887-6699.' 'NETA 65 connects the region to the General Service Conference. Covers northeast Texas from Texarkana to Abilene to Waco to the Texas/Louisiana border — 29 districts and over 512 groups.' 'The distinction is crucial: Intergroup is about CARRYING the message — Twelfth Step. General Service is about PROTECTING the message — Traditions and Concepts.' DISTRICT 22: 'This is US. District 22 is our home in the NETA 65 structure. Our groups, our GSRs, our DCM — all connecting us to the larger fellowship.' TRANSITION: 'Let's put this all together in a timeline...'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 6</span>
+    <h2 class="slide-title">Fort Worth, NETA 65 &amp; the Bigger Picture</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">A dual-hub system emerges &mdash; and Dallas AA connects to the worldwide fellowship</p>
+
+    <h3>Fort Worth's Parallel History</h3>
+    <div class="card-grid cols-2">
+      <div class="card">
+        <span class="card-icon">&#128220;</span>
+        <div class="card-title">George McL. Writes to New York</div>
+        <div class="card-text"><strong>June 4, 1941</strong> &mdash; AA's New York office answered his letter, telling him the only Texas group was in Houston. On <strong>July 23, 1941</strong>, Fort Worth held its first meeting. George wrote back: <em>"I am happy to report that I have the A.A. well on its way in Fort Worth. At our meeting last night we had seven members."</em></div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128643;</span>
+        <div class="card-title">Ralph &mdash; The Zealous 12th-Stepper</div>
+        <div class="card-text">Continuous AA activity in Fort Worth: <strong>August 28, 1943</strong>. <strong>Ralph</strong>, a railroad switchman and former deputy sheriff, became "an apostle for the Fellowship, one of the most zealous Twelfth-Steppers of all time." He and George met weekly at George's home, reading the Big Book, talking, meditating, and praying.</div>
+      </div>
+    </div>
+
+    <h3>The Organizational Evolution</h3>
+    <div class="timeline">
+      <div class="timeline-item visible">
+        <div class="timeline-year">1947</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Dallas Central Office Opens (Akard St.)</div>
+          <p>With only 2 groups. An act of faith in the future.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1968</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Central Office Becomes Intergroup</div>
+          <p>A local member loaned $2,000 to buy literature. 8&ndash;9 groups now operating.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1977</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Fort Worth Central Office Established</div>
+          <p>After two previous failed attempts. Western metroplex infrastructure complete.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">1989</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Dallas Intergroup Association Incorporated</div>
+          <p>501(c)(3) non-profit status. Formalizing decades of service.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2000</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Renamed: Dallas AA Central Office</div>
+          <p>Current name. Operates aadallas.org, 24/7 hotline (214-887-6699), meeting schedules.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Two Types of Service &mdash; One Fellowship</h3>
+    <div class="card-grid cols-2">
+      <div class="card" style="border-top: 3px solid var(--accent);">
+        <div class="card-title">Intergroup / Central Office</div>
+        <div class="card-text"><strong>Carrying the message</strong> (Twelfth Step): printing meeting schedules, maintaining the website, operating the 24/7 hotline, and serving as the "front door" for newcomers.</div>
+        <p style="margin-top:8px;"><span class="pill">aadallas.org</span> <span class="pill">214-887-6699</span></p>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--primary-light);">
+        <div class="card-title">General Service / NETA 65</div>
+        <div class="card-text"><strong>Protecting the message</strong> (Traditions &amp; Concepts): connecting the region to the General Service Conference in New York. Covers northeast Texas &mdash; <strong>29 districts, 512+ groups</strong>.</div>
+        <p style="margin-top:8px;"><span class="pill">neta65.org</span> <span class="pill">29 Districts</span></p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px; background: linear-gradient(135deg, rgba(212,168,75,0.1), rgba(212,168,75,0.02)); border-color: var(--accent);">
+      <div class="card-title" style="color:var(--accent);">&#127775; District 22 &mdash; That's Us</div>
+      <div class="card-text">District 22 is our home in the NETA 65 structure. Our groups, our GSRs, our DCM &mdash; all connecting us to the larger fellowship. Through your home group's GSR &rarr; District 22 &rarr; NETA Area 65 &rarr; General Service Conference, <strong>YOUR voice reaches all of AA</strong>.</div>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 22: INTERACTIVE TIMELINE & FUN FACTS -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="22" data-title="Timeline & Fun Facts" data-time="10 min"
+  data-notes="FUN INTERACTIVE SLIDE: 'Let's test what you've learned! I'm going to go through some fun facts and trivia about Dallas AA history. See how many you already knew.' Click through each reveal item on screen. After each one, ask: 'Did anyone know that?' or 'Raise your hand if that surprised you.' TIMELINE: Walk through the complete timeline on screen. Point out key dates. Ask: 'Where does YOUR sobriety date fall on this timeline? Think about the people in this room and how our stories connect to this larger history.' ACTIVITY: 'I want everyone to think about this: What stories from old-timers in YOUR home group should be preserved? What would you want someone to know 80 years from now about what AA means to you today?' Let 2-3 share. TRANSITION: 'Let's close this history segment with some reflection questions that connect what we've learned to our personal recovery.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Part 7</span>
+    <h2 class="slide-title">Dallas AA Fun Facts &amp; Trivia</h2>
+    <div class="timing-badge">&#9200; 10 minutes</div>
+    <p class="slide-subtitle">How well do you know your local AA history? Click each to reveal!</p>
+
+    <div class="reveal-group">
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; What was the FIRST AA pamphlet ever published?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>Larry J.'s Houston Press articles (February 1940)</strong> &mdash; six anonymous articles that became the only AA literature besides the Big Book until late 1940. AA's first pamphlet was born in Texas!</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; What year was Dallas AA founded &mdash; and by whom?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>April 2, 1943</strong> &mdash; by <strong>Esther E.</strong> in her living room. Her Big Book story is "A Flower of the South" (Big Book, 3rd Edition, pp. 384&ndash;392).</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; Who is the "Chief Sponsor" and what happened to him?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>Kent W.</strong> arrived December 1, 1941 and called himself "Chief Sponsor." His hotel-based, publicity-driven effort at the White Plaza Hotel <strong>collapsed entirely</strong>. He was "never heard from again." A cautionary tale about promotion vs. attraction.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; How many people were sober in Dallas by 1945?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>Fewer than twenty!</strong> Today there are <strong>160+ groups</strong> and thousands of members. Slow, steady growth through attraction, not promotion.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; What is "Jake Leg" and who at Dallas Central Office had it?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>"Jamaica Ginger Paralysis"</strong> &mdash; a permanent disability caused by toxic Prohibition-era alcohol substitutes. <strong>Dick P.</strong>, the first Dallas Central Office manager, suffered from it. Despite his disability, he managed phones and coordinated Twelfth Step calls.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; Who told Bill Wilson that Texas didn't need the Traditions?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>Searcy W.</strong> in 1948: <em>"We don't need this down here. We love each other."</em> Bill showed him the handwritten Traditions on an airplane. Searcy later came to understand they weren't restrictions but protections.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; Who was the man that first carried the message to Bill Wilson &mdash; and where did he later get sober?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p><strong>Ebby Thacher</strong> &mdash; he first carried the message to Bill W. in November 1934. After struggling with sobriety for <strong>18 years</strong>, he got sober <strong>at the Suburban Club in Dallas</strong> in 1953. The same fellowship that grew from his original message saved him.</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>&#129300; What article quadrupled AA membership &mdash; and directly led to Dallas AA's founding?</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>The <strong>Jack Alexander article in the Saturday Evening Post</strong> (March 1, 1941). It grew AA from 2,000 to 8,000 members in one year. <strong>Esther E.'s husband read this article</strong>, gave her an ultimatum, and she contacted the General Service Office &mdash; leading directly to Dallas AA's founding.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="activity-box" style="margin-top:32px;">
+      <div class="activity-label">Group Reflection</div>
+      <div class="activity-title">Where Is Your Story in This Timeline?</div>
+      <div class="activity-desc">Think about where YOUR sobriety date falls in this history. What stories from old-timers in your home group should be preserved? What would you want newcomers 80 years from now to know about what AA means to you today?</div>
+      <div class="activity-timer" id="historyReflectionTimer">2:00</div>
+      <button class="timer-btn" onclick="startTimer('historyReflectionTimer', 120)">Start Timer</button>
+      <button class="timer-btn stop" onclick="stopTimer('historyReflectionTimer')">Stop</button>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="nextSlide()">Next &#9654;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SLIDE 23: HISTORY CLOSING & DISCUSSION -->
+<!-- ============================================================ -->
+<section class="slide" data-slide="23" data-title="History Discussion & Closing" data-time="5 min"
+  data-notes="CLOSING SLIDE: Read the closing quote slowly. 'Every AA group in the Dallas-Fort Worth metroplex today is a leaf on a tree whose roots trace directly to Akron in 1935, through Houston in 1940, to Esther E.'s home on April 2, 1943.' 'The people attending meetings tonight inherit the legacy of Larry J. reading the Big Book on a train, of Esther working for two years with a patient at Terrell State Hospital, of Dick P. answering the phone despite his paralysis, of Searcy W. welcoming Ebby Thacher at the Suburban Club.' DISCUSSION QUESTIONS: Use 2-3 from the list on screen for open sharing. CLOSE: 'The Responsibility Statement was written decades after Dallas AA's founding. But Esther E. lived it before the words existed. By opening her home when there was nowhere else to go, she ensured that the hand of AA would be there for generations.' Read the Responsibility Statement together. 'Thank you. Let's take a 15-minute break before our afternoon roundtable discussions.'">
+  <div class="slide-inner">
+    <span class="section-number">History &bull; Closing</span>
+    <h2 class="slide-title">From One Woman's Living Room to a Thousand Meetings</h2>
+    <div class="timing-badge">&#9200; 5 minutes</div>
+
+    <div class="quote-block" style="margin-bottom:32px;">
+      <p class="quote-text" style="font-size:1.15rem; line-height:1.9;">Every AA group in the Dallas-Fort Worth metroplex today is a leaf on a tree whose roots trace directly to Akron in 1935, through Houston in 1940, to Esther E.'s home on April 2, 1943. The people attending meetings tonight inherit the legacy of Larry J. reading the Big Book on a train, of Esther working for two years with a patient at Terrell State Hospital, of Dick P. answering the phone despite his paralysis, of Searcy W. welcoming Ebby Thacher at the Suburban Club.</p>
+      <p class="quote-source">&mdash; Dallas AA History Research</p>
+    </div>
+
+    <h3>Discussion Questions &mdash; Connecting History to Recovery</h3>
+    <div class="reveal-group">
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>1. Heritage &amp; Identity</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>"Esther E. started Dallas AA in her home in 1943 when there were no other options. How does knowing this history affect how you view your own home group today?"</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>2. Attraction vs. Promotion</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>"How does your home group practice 'attraction rather than promotion' in the modern digital age? How do we balance letting people know we exist without violating the spirit of anonymity?"</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>3. Service &amp; Sacrifice</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>"Dick P. managed the Central Office phones despite suffering from Jamaica Ginger Paralysis. Searcy W. served for 57 years. What does their example teach us about service in spite of limitations?"</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>4. Never Give Up</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>"Ebby Thacher struggled for 18 years. Ruth T. waited two years from her first letter to the first meeting. What does persistence teach us about carrying the message?"</p>
+        </div>
+      </div>
+      <div class="reveal-item" onclick="this.classList.toggle('open')">
+        <div class="reveal-header">
+          <span>5. Looking Forward</span>
+          <span class="reveal-arrow">&#9660;</span>
+        </div>
+        <div class="reveal-body">
+          <p>"What would you want newcomers 80 years from now to know about what AA means to you today? Based on what we've discussed, what is one thing you want to do differently in your recovery this week?"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:32px; background: linear-gradient(135deg, rgba(212,168,75,0.15), rgba(212,168,75,0.05));">
+      <p class="quote-text" style="font-size:1.2rem; line-height:1.8;">"I am responsible. When anyone, anywhere, reaches out for help, I want the hand of A.A. always to be there. And for that: I am responsible."</p>
+      <p class="quote-source">&mdash; The Responsibility Statement (30th Anniversary International Convention, 1965)</p>
+    </div>
+
+    <p style="text-align:center; margin-top:32px; color:var(--text-muted); font-size:1rem;">
+      Esther E. lived the Responsibility Statement before the words existed.<br>
+      By opening her home when there was nowhere else to go,<br>
+      she ensured that the hand of AA would be there<br>
+      for generations of Dallas alcoholics not yet born.<br><br>
+      <strong style="color:var(--accent); font-size:1.15rem;">That hand remains extended today.</strong>
+    </p>
+
+    <div style="text-align:center; margin-top:32px;">
+      <p style="color:var(--text-muted); font-size:0.9rem;">
+        <strong>District 22 &mdash; North East Texas Area 65 (NETA 65)</strong><br>
+        Saturday, April 4, 2026 &bull; Los Tres Patrillos, Greenville, TX<br>
+        neta65.org &bull; aadallas.org
+      </p>
+    </div>
+
+    <div class="slide-footer">
+      <button class="nav-btn" onclick="prevSlide()">&#9664; Previous</button>
+      <button class="nav-btn" onclick="goToSlide(0)">&#8634; Return to Start</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // ============================
+  // SLIDE NAVIGATION
+  // ============================
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  const visited = new Set([0]);
+
+  function updateSlide() {
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === currentSlide);
+    });
+    visited.add(currentSlide);
+    document.getElementById('slideCounter').textContent = `${currentSlide + 1} / ${totalSlides}`;
+    document.getElementById('progressFill').style.width = `${((currentSlide) / (totalSlides - 1)) * 100}%`;
+    updatePresenterNotes();
+    window.scrollTo(0, 0);
+    // Animate timeline items
+    setTimeout(() => {
+      document.querySelectorAll('.slide.active .timeline-item').forEach((item, i) => {
+        setTimeout(() => item.classList.add('visible'), i * 200);
+      });
+      document.querySelectorAll('.slide.active .fade-up').forEach((item, i) => {
+        setTimeout(() => item.classList.add('visible'), i * 150 + 300);
+      });
+    }, 100);
+    // Animate stat counters
+    document.querySelectorAll('.slide.active .stat-number[data-target]').forEach(el => {
+      animateCounter(el, parseInt(el.dataset.target));
+    });
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) { currentSlide++; updateSlide(); }
+  }
+  function prevSlide() {
+    if (currentSlide > 0) { currentSlide--; updateSlide(); }
+  }
+  function goToSlide(n) {
+    currentSlide = n; updateSlide(); closeTOC();
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
+    else if (e.key === 'Escape') { closeTOC(); }
+  });
+
+  // ============================
+  // TABLE OF CONTENTS
+  // ============================
+  function buildTOC() {
+    const list = document.getElementById('tocList');
+    slides.forEach((s, i) => {
+      const item = document.createElement('div');
+      item.className = 'toc-item';
+      item.onclick = () => goToSlide(i);
+      item.innerHTML = `
+        <div class="toc-item-num">${i}</div>
+        <div class="toc-item-label">${s.dataset.title || 'Slide ' + i}</div>
+        <div class="toc-item-time">${s.dataset.time || ''}</div>
+      `;
+      list.appendChild(item);
+    });
+  }
+  function openTOC() {
+    // Update visited states
+    document.querySelectorAll('.toc-item').forEach((item, i) => {
+      item.classList.toggle('visited', visited.has(i));
+    });
+    document.getElementById('tocOverlay').classList.add('open');
+  }
+  function closeTOC() {
+    document.getElementById('tocOverlay').classList.remove('open');
+  }
+
+  // ============================
+  // TIMERS
+  // ============================
+  const timers = {};
+
+  function startTimer(id, seconds) {
+    stopTimer(id);
+    let remaining = seconds;
+    const el = document.getElementById(id);
+    updateTimerDisplay(el, remaining);
+    timers[id] = setInterval(() => {
+      remaining--;
+      updateTimerDisplay(el, remaining);
+      if (remaining <= 0) {
+        clearInterval(timers[id]);
+        el.style.color = '#e74c3c';
+        el.textContent = "TIME!";
+      }
+    }, 1000);
+  }
+
+  function stopTimer(id) {
+    if (timers[id]) { clearInterval(timers[id]); delete timers[id]; }
+  }
+
+  function updateTimerDisplay(el, seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    el.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+    el.style.color = seconds <= 30 ? '#ff9800' : seconds <= 10 ? '#e74c3c' : 'var(--accent)';
+  }
+
+  // ============================
+  // ANIMATED COUNTER
+  // ============================
+  function animateCounter(el, target) {
+    let current = 0;
+    const step = Math.ceil(target / 40);
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(interval); }
+      el.textContent = current + '%';
+    }, 30);
+  }
+
+  // ============================
+  // PRESENTER NOTES
+  // ============================
+  function toggleNotes() {
+    document.getElementById('presenterNotes').classList.toggle('open');
+  }
+  function updatePresenterNotes() {
+    const slide = slides[currentSlide];
+    const notes = slide.dataset.notes || 'No notes for this slide.';
+    const panel = document.getElementById('presenterNotes');
+    panel.innerHTML = `<h4>Presenter Notes &mdash; Slide ${currentSlide + 1}</h4><p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">${notes}</p>`;
+  }
+
+  // ============================
+  // INTERACTIVE CHECKLIST
+  // ============================
+  document.querySelectorAll('.checklist li').forEach(li => {
+    li.addEventListener('click', () => li.classList.toggle('checked'));
+  });
+
+  // ============================
+  // SCROLL-BASED VISIBILITY
+  // ============================
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.fade-up, .timeline-item').forEach(el => observer.observe(el));
+
+  // ============================
+  // NAV AUTO-HIDE ON SCROLL
+  // ============================
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('topNav');
+    const current = window.scrollY;
+    if (current > lastScroll && current > 200) nav.classList.add('hidden');
+    else nav.classList.remove('hidden');
+    lastScroll = current;
+  });
+
+  // ============================
+  // INIT
+  // ============================
+  buildTOC();
+  updateSlide();
+</script>
+</body>
+</html>
