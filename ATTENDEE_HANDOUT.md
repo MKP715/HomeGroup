@@ -1,6 +1,12 @@
 # Home Group: Where It All Begins
-### District 22 Mini Conference — NETA Area 65
-**Saturday, April 4, 2026** | Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
+### District 22 Full Day Event — NETA Area 65
+**Saturday, April 4, 2026 • 8:00 AM – 10:00 PM**
+Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
+
+**Three Comprehensive Presentations:**
+- 🌅 Morning (8:45 AM–12:00 PM): Home Group Workshop
+- 🌞 Afternoon (1:15–3:00 PM): Dallas AA History
+- 🌙 Evening (8:00–10:00 PM): Anonymity Panel Discussion
 
 ---
 
@@ -275,9 +281,189 @@ At the 1950 International Convention (8,000–9,000 people), the Traditions were
 
 ---
 
+## Anonymity: The Spiritual Foundation of AA Unity
+
+### What Is Anonymity?
+
+> *"Anonymity is the spiritual foundation of all our Traditions, ever reminding us to place principles before personalities."*
+> — Tradition Twelve
+
+**Anonymity has two distinct levels:**
+
+### 1. Personal Level (Your Choice)
+At the personal level, anonymity is **optional**. You decide who knows about your AA membership in your private life.
+
+**You MAY:**
+- Tell family, friends, coworkers, or employers
+- Discuss your recovery in private conversations
+- Wear AA-themed clothing or jewelry
+- Identify yourself as an AA member in non-public settings
+
+### 2. Public Media Level (Protected)
+At the level of public media, anonymity is **required**. This protects AA from individual relapses or misconduct.
+
+**You MAY NOT:**
+- Use your full name as an AA member in press, radio, films, TV, or internet
+- Post on social media (Facebook, Instagram, TikTok) using your real name and identifying as an AA member
+- Appear in documentaries identifying yourself with full name and face
+- Allow your face and full name to be connected to AA membership in permanent, public records
+
+> *"We need always maintain personal anonymity at the level of press, radio, and films."*
+> — Tradition Eleven
+
+---
+
+## Why Anonymity Exists
+
+### Three Fundamental Reasons:
+
+**1. Personal Protection**
+In 1935, alcoholism was considered a moral failing. Anonymity protected members from job loss, social ostracism, and family shame. This protection remains vital today.
+
+**2. Organizational Protection**
+AA feared becoming a cult of personality. If individual members became famous spokespeople, their relapses or misconduct could destroy public trust in AA itself.
+
+**3. Spiritual Practice**
+> *"Anonymity is real humility at work. It is an all-pervading spiritual quality which today keynotes A.A. life everywhere."*
+> — Twelve Steps and Twelve Traditions, p. 184
+
+Anonymity reminds us that **principles come before personalities** — the message matters more than the messenger.
+
+---
+
+## Anonymity vs. Confidentiality
+
+**CRITICAL DISTINCTION:**
+
+| **Anonymity** | **Confidentiality** |
+|---------------|---------------------|
+| Not revealing **your own** full name at public media level | Not revealing **someone else's** presence or story |
+| Your choice at personal level | **ALWAYS REQUIRED** — no exceptions |
+| Protects you & AA from public consequences | Protects safety & trust within the fellowship |
+
+### The Golden Rule of Confidentiality:
+> *"Who you see here, what you hear here, when you leave here, let it stay here."*
+
+**Examples:**
+- ✅ You tell your boss you attend AA (personal anonymity — your choice)
+- ❌ You post on Facebook: "I'm John Smith and I'm in AA" (public media break)
+- ❌ You tell a friend: "I saw our neighbor at an AA meeting" (confidentiality breach)
+
+---
+
+## Digital Age Anonymity
+
+### Common Breaks to Avoid:
+
+❌ **Facebook Anniversary Posts** — "Today I'm celebrating 5 years sober in Alcoholics Anonymous! My name is Jane Smith..."
+- ✅ Better: "Today I'm celebrating 5 years sober thanks to a 12-step program."
+
+❌ **Instagram Meeting Selfies** — Group photos showing faces with "My AA family!" caption
+- ✅ Better: Don't photograph meetings. If you must, keep it private with explicit consent.
+
+❌ **Location Check-Ins** — Checking in on Facebook at "Central AA Club"
+- ✅ Better: Don't use location services at meetings.
+
+❌ **Zoom Meeting Screenshots** — Posting participant grid with names/faces visible
+- ✅ Better: Never screenshot or record Zoom meetings.
+
+❌ **Recovery Blogs/Vlogs** — "John Smith's AA Recovery Journey" on YouTube
+- ✅ Better: Use pseudonym or first name only; say "12-step program" not "AA."
+
+### Home Group Technology Policy (Sample):
+
+> "To protect anonymity and confidentiality, [Group Name] prohibits:
+> - Photography, video, or audio recording during meetings
+> - Screenshots of virtual meetings
+> - Posting attendees' names or faces on social media
+> Violations will be addressed by group conscience."
+
+---
+
+## Principles Before Personalities
+
+**What it means:** When personalities clash with principles, **principles win**.
+
+### Examples in Your Home Group:
+
+✓ **Rotating Service Positions** — No one becomes "the face" of the group
+✓ **Equal Voice in Group Conscience** — One person, one vote (regardless of sobriety time or status)
+✓ **Conference-Approved Literature Only** — Principles (AA's wisdom) over personalities (individual interpretations)
+✓ **First Names Only** — Removes outside status; we're all equal here
+✓ **No Crosstalk** — What is shared matters more than who shares it
+
+---
+
+## Attraction Rather Than Promotion
+
+> *"Our public relations policy is based on attraction rather than promotion."*
+> — Tradition Eleven
+
+**Attraction means:** Letting our results speak for themselves. We don't advertise, hire spokespeople, or seek publicity. We simply live sober lives — and people notice.
+
+**Promotion means:** Actively marketing AA, seeking endorsements, campaigning for membership. AA does **none** of this.
+
+### Your Home Group Practices Attraction By:
+- Showing up consistently every week
+- Being welcoming to newcomers
+- Carrying the message to treatment centers, jails, hospitals (always using first names only)
+- Living transformed lives that inspire others without a single word of promotion
+
+---
+
+## Historical Lessons
+
+### The Cleveland Plain Dealer Break (1939)
+One member gave his full name and was photographed for a newspaper series. Within a year, he relapsed. The paper ran: "Former AA Member Dies Drunk." Cleveland AA nearly collapsed. **This is why Tradition Eleven exists.**
+
+### The Jack Alexander Article (1941)
+The Saturday Evening Post article (March 1, 1941) quadrupled AA membership overnight — from 2,000 to 8,000 members. **Critically, Alexander respected anonymity.** No full names. No faces. This was the model for all future public relations.
+
+**Dallas Connection:** Esther E.'s husband read the Jack Alexander article, gave her an ultimatum, and she contacted GSO — directly leading to Dallas AA's founding on April 2, 1943. The article's respectful approach to anonymity made it effective and safe.
+
+---
+
+## Key Quotes on Anonymity
+
+> *"The spiritual substance of anonymity is sacrifice. Because A.A.'s Twelve Traditions repeatedly ask us to give up personal ambitions and desires for the common good, we realize that the sacrificial spirit — well symbolized by anonymity — is the foundation of them all."*
+> — Bill W., "The Spiritual Substance of Anonymity," AA Grapevine, January 1955
+
+> *"Moved by the spirit of anonymity, we try to give up our natural desires for personal distinction as A.A. members both among fellow alcoholics and before the general public. As we lay aside these very human aspirations, we believe that each of us takes part in the weaving of a protective mantle which covers our whole Society and under which we may grow and work in unity."*
+> — Twelve Steps and Twelve Traditions, p. 184
+
+> *"Breaking another person's anonymity is a violation of their trust and our sacred responsibility as members. If we cannot trust that our presence and our shares will remain confidential, we cannot be honest. And without honesty, there is no recovery."*
+> — "Safety and AA: Our Common Welfare," AA bulletin
+
+---
+
+## Literature Reference Guide — Anonymity
+
+| Source | Key Pages | Topics |
+|--------|-----------|--------|
+| **Twelve Steps & Twelve Traditions** | pp. 180-183, 184-187 | Traditions Eleven & Twelve, full explanations |
+| **"Understanding Anonymity" Pamphlet** | All 22 pages | Most comprehensive modern resource; digital age challenges, FAQs |
+| **Alcoholics Anonymous (Big Book)** | Foreword p. xiii, pp. 89-103 | Early emphasis on anonymity for protection |
+| **AA Comes of Age** | pp. 135-141 | Historical context: Cleveland break, Jack Alexander article, Bill's struggles |
+| **The Language of the Heart** | pp. 67-72 | Bill W.'s writings on anonymity as spiritual discipline |
+| **"Anonymity Online" (GSO Bulletin)** | Available at aa.org | Social media, Zoom meetings, blogs, digital guidance |
+| **Pass It On (Bill W. Biography)** | pp. 282-283, 335-337 | Personal stories of anonymity breaks and consequences |
+
+---
+
 ## My Personal Action Plan
 
-After today's workshop, I commit to:
+After today's event, I commit to:
+
+**Regarding my home group:**
+- [ ] _______________________________________________
+- [ ] _______________________________________________
+
+**Regarding anonymity:**
+- [ ] Review my social media presence for potential breaks
+- [ ] Read "Understanding Anonymity" pamphlet
+- [ ] Discuss anonymity with my sponsor
+- [ ] Support my home group in creating/updating a technology policy
+- [ ] _______________________________________________
 
 - [ ] _______________________________________________
 - [ ] _______________________________________________

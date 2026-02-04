@@ -1,10 +1,11 @@
-# District 22 — NETA Area 65 Mini Conference
+# District 22 — NETA Area 65 Full Day Event
 ## "Home Group: Where It All Begins"
 
 **Date:** Saturday, April 4, 2026
 **Location:** Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
 **Hosted by:** District 22, North East Texas Area 65 (NETA 65)
-**Registration:** 9:30 AM | Event: 10:00 AM – 4:00 PM
+**Event Schedule:** 8:00 AM – 10:00 PM (14-hour comprehensive event)
+**Three Full Presentations:** Morning Workshop, Afternoon History, Evening Panel
 
 ---
 
@@ -12,31 +13,37 @@
 
 | Time | Duration | Session | Presenter / Lead |
 |------|----------|---------|-----------------|
-| **9:30 – 10:00 AM** | 30 min | **Registration, Coffee & Fellowship** | Greeters / Hospitality |
-| **10:00 – 10:15 AM** | 15 min | **Opening Ceremony** | District 22 DCM |
+| **8:00 – 8:30 AM** | 30 min | **Registration, Coffee & Fellowship** | Greeters / Hospitality |
+| **8:30 – 8:45 AM** | 15 min | **Opening Ceremony** | District 22 DCM |
 | | | - Serenity Prayer | |
 | | | - Welcome & Introductions | |
 | | | - Reading of Tradition Two (Short & Long Form) | |
 | | | - Housekeeping Announcements | |
-| **10:15 – 12:15 PM** | 120 min | **MAIN PRESENTATION: "Home Group — Where It All Begins"** | Main Presenter |
+| **8:45 – 12:00 PM** | ~195 min | **MORNING: "Home Group — Where It All Begins"** | Main Presenter |
 | | | *(See detailed breakdown below)* | |
-| **12:15 – 1:00 PM** | 45 min | **Lunch Break & Fellowship** | All |
+| **12:00 – 1:00 PM** | 60 min | **Lunch Break & Fellowship** | All |
 | **1:00 – 1:15 PM** | 15 min | **Return & Energizer** | District 22 Alt-DCM |
 | | | - Responsibility Statement read together | |
 | | | - Brief sharing: one takeaway from the morning | |
-| **1:15 – 2:30 PM** | 75 min | **HISTORY PRESENTATION: "How AA Got to Dallas & North East Texas"** | History Presenter |
+| **1:15 – 3:00 PM** | 105 min | **AFTERNOON: "How AA Got to Dallas & North East Texas"** | History Presenter |
 | | | *(See detailed breakdown below)* | |
-| **2:30 – 2:45 PM** | 15 min | **Break & Refreshments** | Hospitality |
-| **2:45 – 3:30 PM** | 45 min | **Workshop Roundtables** | Table Facilitators |
+| **3:00 – 3:30 PM** | 30 min | **Break & Refreshments** | Hospitality |
+| **3:30 – 4:15 PM** | 45 min | **Workshop Roundtables** | Table Facilitators |
 | | | - Small group discussions on home group topics | |
 | | | - Each table tackles one topic and reports back | |
-| **3:30 – 3:50 PM** | 20 min | **Roundtable Reports & Open Mic** | DCM (Moderator) |
+| **4:15 – 4:40 PM** | 25 min | **Roundtable Reports & Open Mic** | DCM (Moderator) |
 | | | - Each table shares key insights (2 min each) | |
 | | | - Open mic for additional sharing | |
-| **3:50 – 4:00 PM** | 10 min | **Closing Ceremony** | DCM |
+| **4:40 – 5:00 PM** | 20 min | **Afternoon Closing** | DCM |
 | | | - 7th Tradition | |
-| | | - Closing Remarks & Thank Yous | |
-| | | - Lord's Prayer / "We" version of Serenity Prayer | |
+| | | - Closing Remarks for Afternoon Session | |
+| | | - Reminder: Evening Panel at 8:00 PM | |
+| **5:00 – 7:30 PM** | 150 min | **DINNER BREAK & FREE TIME** | All |
+| | | *(Attendees may leave venue for dinner)* | |
+| **7:45 – 8:00 PM** | 15 min | **Evening Registration & Coffee** | Hospitality |
+| **8:00 – 10:00 PM** | 120 min | **EVENING PANEL: "Anonymity — The Spiritual Foundation"** | Panel Moderator |
+| | | *(See detailed breakdown below)* | |
+| **10:00 PM** | — | **Final Closing & Serenity Prayer** | DCM |
 
 ---
 
@@ -81,7 +88,28 @@
 
 ---
 
-## Afternoon Roundtable Topics (2:45 – 3:30 PM)
+## Detailed Breakdown: Evening Panel (8:00 – 10:00 PM)
+
+**"Anonymity: The Spiritual Foundation of AA Unity"** — 120 minutes (uses Slides 24–35 of the HTML presentation)
+
+| Time | Min | Slide | Section | Key Content |
+|------|-----|-------|---------|-------------|
+| 8:00 | 5 | 24 | **Panel Introduction** | Welcome back, evening format explained, ground rules ("what's shared here stays here"), connection to homegroup theme: "Your home group is where you first learn to practice anonymity" |
+| 8:05 | 10 | 25 | **The Foundation: Why Anonymity?** | Three reasons anonymity exists: (1) Personal protection from stigma, (2) Organizational protection from personalities, (3) Spiritual practice of humility; what anonymity is NOT (secrecy, loophole for bad behavior); how it shows up in home groups |
+| 8:15 | 10 | 26 | **Historical Evolution** | Timeline: 1935–1939 (safety from stigma), 1939–1941 (Cleveland Plain Dealer break, Jack Alexander article respected anonymity), 1944 (Bill W.'s break), 1946 (Traditions codified), 1955–present (digital age challenges); Esther E. connection: her story came through the respectful Saturday Evening Post article |
+| 8:25 | 15 | 27 | **The Two Levels of Anonymity** | CRITICAL DISTINCTION: Personal level (your choice who knows) vs. Public media level (protected); examples: talking to boss (OK), Facebook post with full name (NOT OK), Zoom meetings (gray area), celebrity disclosures (break); home group application |
+| 8:40 | 15 | 28 | **Tradition Eleven Deep Dive** | "Attraction rather than promotion" — what it means, why it matters; Washingtonian Society cautionary tale; personal anonymity at level of press/radio/films/TV/internet; modern applications: social media, podcasts, blogs; common Q&A |
+| 8:55 | 15 | 29 | **Tradition Twelve Deep Dive** | "Anonymity is the spiritual foundation of all our Traditions"; principles before personalities explained with real examples (long-winded speaker, wealthy donor, popular leader, celebrity member); spiritual discipline: humility, equality, protection from ego, unity; home group practices |
+| 9:10 | 10 | 30 | **Anonymity vs. Confidentiality** | KEY: Anonymity = your own identity; Confidentiality = others' presence/stories; "Who you see here, what you hear here, when you leave here, let it stay here"; scenarios: seeing boss at meeting, telling spouse what someone shared, celebrity attendance, relapse gossip |
+| 9:20 | 15 | 31 | **Digital Age Challenges** | Social media breaks (Facebook anniversaries, Instagram meeting selfies, location check-ins, Zoom screenshots, recovery blogs using full names, LinkedIn endorsements); best practices for individuals and home groups; sample technology policy |
+| 9:35 | 10 | 32 | **Anonymity & Your Home Group** | Practical applications: rotating service positions, equal voice in group conscience, conference-approved literature only, first names only, no crosstalk, no promotion/recognition; connecting to morning theme "where it all begins"; action items checklist; 5-minute open sharing |
+| 9:45 | 10 | 33 | **Common Anonymity Breaks & Solutions** | Real scenarios with loving correction approach: member posts meeting photo, gossips about relapse, newcomer doesn't understand, old-timer dominates, secret recording, media inquiry; when to involve group conscience |
+| 9:55 | 15 | 34 | **Panel Discussion Prompts** | Open floor discussion with 10 prompts (personal anonymity decisions, digital age challenges, attraction vs. promotion, principles before personalities, confidentiality in practice, celebrity anonymity, home group practices, gray areas, sponsorship, looking forward); 15-minute timer for sharing |
+| 10:10 | 5 | 35 | **Literature & Closing** | Comprehensive reference table (12&12, Big Book, Understanding Anonymity pamphlet, AA Comes of Age, Language of the Heart, etc.); action plan (this week, this month, this year); connection to full-day theme; Responsibility Statement; final thank yous |
+
+---
+
+## Afternoon Roundtable Topics (3:30 – 4:15 PM)
 
 Each table selects or is assigned one topic. A facilitator guides 30 minutes of discussion, then the table prepares a 2-minute summary to share.
 
@@ -102,32 +130,35 @@ Each table selects or is assigned one topic. A facilitator guides 30 minutes of 
 
 | Role | Person | Duties |
 |------|--------|--------|
-| **Event Chair** | _____________ | Overall coordination, MC duties |
-| **DCM (District 22)** | _____________ | Opening/closing ceremonies, moderating reports |
-| **Alt-DCM** | _____________ | Afternoon return, backup MC |
-| **Main Presenter** | _____________ | "Home Group" presentation (10:15–12:15) |
-| **History Presenter** | _____________ | "AA in Dallas/NETA" presentation (1:15–2:30) |
-| **Hospitality Chair** | _____________ | Coffee, refreshments, lunch coordination |
-| **Greeter(s)** | _____________ | Registration, welcome, handouts |
-| **Literature Table** | _____________ | Display conference-approved literature for sale/reference |
-| **7th Tradition** | _____________ | Collection during closing |
+| **Event Chair** | _____________ | Overall coordination, MC duties for full day |
+| **DCM (District 22)** | _____________ | Opening/closing ceremonies (morning & evening), moderating reports |
+| **Alt-DCM** | _____________ | Afternoon return energizer, backup MC |
+| **Morning Presenter** | _____________ | "Home Group" presentation (8:45 AM–12:00 PM) |
+| **Afternoon Presenter** | _____________ | "AA in Dallas/NETA" presentation (1:15–3:00 PM) |
+| **Evening Panel Moderator** | _____________ | "Anonymity" panel discussion (8:00–10:00 PM) |
+| **Hospitality Chair** | _____________ | Coffee, refreshments, lunch & dinner coordination |
+| **Greeter(s)** | _____________ | Registration (morning & evening sessions), welcome, handouts |
+| **Literature Table** | _____________ | Display conference-approved literature for sale/reference (all day) |
+| **7th Tradition** | _____________ | Collection during afternoon & evening closings |
 | **Table Facilitators (8)** | _____________ | Guide afternoon roundtable discussions |
-| **Timer/Timekeeper** | _____________ | Keep sessions on schedule |
-| **Setup/Cleanup** | _____________ | Arrive early / stay late |
+| **Timer/Timekeeper** | _____________ | Keep sessions on schedule throughout day |
+| **Setup/Cleanup** | _____________ | Arrive early / stay late (full 14-hour event support) |
+| **Evening Panel Support** | _____________ | Assist with evening registration, refreshments, tech setup |
 
 ---
 
 ## Supplies Checklist
 
-- [ ] Printed Attendee Handouts (enough for all)
-- [ ] Printed Agenda (table copies)
-- [ ] Conference-approved literature for display: P-16, P-15, Living Sober, Big Book, 12&12
-- [ ] Laptop + projector for HTML presentation
+### Morning Setup (8:00 AM)
+- [ ] Printed Attendee Handouts (enough for all — includes Anonymity section)
+- [ ] Printed Agenda (table copies — full 14-hour schedule)
+- [ ] Conference-approved literature for display: P-16, P-15, Living Sober, Big Book, 12&12, **"Understanding Anonymity" pamphlet**
+- [ ] Laptop + projector for HTML presentation (all 36 slides loaded)
 - [ ] Timer (phone or dedicated timer)
-- [ ] Coffee, water, cups, snacks
+- [ ] Coffee, water, cups, snacks (morning & afternoon)
 - [ ] Lunch arrangements (potluck or catered — confirm)
-- [ ] Sign-in sheet
-- [ ] 7th Tradition basket(s)
+- [ ] Sign-in sheets (morning & evening sessions)
+- [ ] 7th Tradition basket(s) (afternoon & evening)
 - [ ] Name tags
 - [ ] Pens/pencils for attendees
 - [ ] Table number cards (1–8) for roundtables
@@ -136,11 +167,19 @@ Each table selects or is assigned one topic. A facilitator guides 30 minutes of 
 - [ ] AA meeting lists (local)
 - [ ] District 22 / NETA 65 service pamphlets
 
+### Evening Setup (7:45 PM)
+- [ ] Fresh coffee, water, light refreshments
+- [ ] Evening sign-in sheet
+- [ ] Verify projector/laptop still working
+- [ ] Extra "Understanding Anonymity" pamphlets available
+- [ ] 7th Tradition basket for evening collection
+- [ ] Chairs reset for panel format (if needed)
+
 ---
 
 ## 7th Tradition Note
 
-This event is self-supporting through our own contributions (Tradition Seven). A 7th Tradition collection will be taken during the closing ceremony. Funds support District 22 operations and service work.
+This event is self-supporting through our own contributions (Tradition Seven). 7th Tradition collections will be taken during the afternoon closing (5:00 PM) and evening closing (10:00 PM). Funds support District 22 operations and service work. This is a **14-hour comprehensive event** with three full presentations — your contributions help make events like this possible.
 
 ---
 

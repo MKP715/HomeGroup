@@ -772,5 +772,652 @@ Use these if you want to supplement specific sections:
 
 ---
 
+# EVENING PANEL: "Anonymity — The Spiritual Foundation"
+## 8:00 PM – 10:00 PM | Panel Discussion Format
+
+### Panel Setup & Preparation
+
+**Pre-Panel Setup (Arrive 7:30 PM):**
+- [ ] Test laptop/projector again (Slides 24–35 ready)
+- [ ] Arrange seating in panel format if needed (or keep theater-style)
+- [ ] Fresh coffee, water, light refreshments available
+- [ ] Have "Understanding Anonymity" pamphlets on literature table
+- [ ] Brief evening greeters on format
+- [ ] Test timer for discussion segments
+
+**Personal Preparation:**
+- This is a **panel discussion**, not a lecture. You're facilitating dialogue about a sensitive topic.
+- Anonymity breaks often come from enthusiasm or ignorance, not malice. Set a tone of education, not shame.
+- Be prepared to share your own struggles with understanding anonymity (if applicable).
+- Have a copy of "Understanding Anonymity" pamphlet in hand for reference.
+
+---
+
+## SLIDE 24: Anonymity Panel Introduction (5 minutes)
+
+### What to Do
+- Welcome people back (or welcome evening-only attendees).
+- Acknowledge this is the final session of a 14-hour day — thank everyone for their commitment.
+- Explain panel format: "Tonight is structured as an interactive panel discussion. We'll explore anonymity from multiple angles, then open for questions and sharing."
+
+### Talking Points
+- "This morning we discussed how home groups are where it all begins. Tonight we explore the principle that holds it all together: **anonymity**."
+- "Anonymity is perhaps the most misunderstood principle in AA. Some think it means secrecy. Others think it's outdated in the modern age. Tonight, we'll clarify what anonymity really means — and why it matters more than ever."
+
+### What to Read
+> 📖 *"Anonymity is the spiritual foundation of all our Traditions, ever reminding us to place principles before personalities."* — Tradition Twelve, 12&12, p. 184
+
+### Ground Rules
+- "What's shared in this room tonight stays in this room. We'll be discussing real scenarios, but no names or identifying details should leave this workshop."
+- "This is a safe space to ask questions, admit confusion, and share experiences. There's no judgment here."
+
+### Connection to Home Group Theme
+- "Earlier we said your home group is where it all begins. Your home group is also where you first learn to practice anonymity — not as a rule to follow, but as a spiritual discipline to live."
+
+### Transition
+- "Let's start at the beginning: Why does anonymity even exist?"
+
+---
+
+## SLIDE 25: The Foundation — Why Anonymity? (10 minutes)
+
+### Opening Quote
+> 📖 *"Anonymity is the greatest protection our Society can ever have."* — Dr. Bob, AA Comes of Age, p. 139
+
+### Three Fundamental Reasons (Walk Through Each Card)
+
+**1. Personal Protection**
+- "In 1935, alcoholism wasn't seen as a disease — it was considered a moral failing. Alcoholics were fired from jobs, locked in institutions, cut off from families. **Anonymity was literally a matter of survival.**"
+- "That protection is still vital today. Stigma has lessened, but it hasn't disappeared. Many members still fear job loss, custody battles, or social consequences if their alcoholism becomes public."
+
+**2. Organizational Protection**
+- "AA feared becoming a cult of personality. Picture this: A famous member becomes AA's public spokesperson. They appear on TV, magazines, speaking tours. Then they relapse publicly. Suddenly, AA's entire reputation is tied to one person's failure."
+- "Anonymity protects AA from being judged by individual relapses. If we have no spokespeople, we have no spokespeople who can fall."
+
+**3. Spiritual Practice**
+- "This is the deepest reason. Anonymity is a daily discipline in humility. It reminds us that we're all equal in the rooms. The doctor and the dishwasher. The CEO and the unemployed. We're all just alcoholics trying to stay sober."
+
+### What Anonymity Is NOT (Expand Reveal Items)
+
+**NOT Secrecy Within the Fellowship:**
+- "We use first names at meetings not to hide, but to practice humility and equality. Within AA, we share openly. Anonymity protects us at the level of **press, radio, films** — public media."
+> 📖 *Reference: "Anonymity," The Language of the Heart, pp. 68-69*
+
+**NOT 'You Can't Tell Anyone':**
+- "Many members are open about their AA membership with family, friends, employers, doctors. Anonymity is about **public media**, not private conversations."
+- "You can be public about your own membership; you cannot be public about someone else's."
+
+**NOT a Loophole for Bad Behavior:**
+- "If someone harms another member, the group conscience can address it. Anonymity protects AA's public reputation, not individual misconduct within the fellowship."
+
+### Anonymity in Your Home Group
+- Walk through the list on screen: No last names, no crosstalk, rotation of service, conference-approved literature only, "Who you see here..."
+- "These aren't arbitrary rules. Each one is anonymity in action."
+
+### Closing Quote
+> 📖 *"The spiritual substance of anonymity is sacrifice. Because A.A.'s Twelve Traditions repeatedly ask us to give up personal ambitions and desires for the common good, we realize that the sacrificial spirit — well symbolized by anonymity — is the foundation of them all."* — Bill W., AA Grapevine, January 1955
+
+### Transition
+- "Now that we understand why anonymity exists, let's look at how it evolved — and the hard lessons AA learned along the way."
+
+---
+
+## SLIDE 26: Historical Evolution of Anonymity (10 minutes)
+
+### Opening Context
+- "Anonymity wasn't invented in 1935. It emerged gradually through trial, error, and sometimes painful mistakes. Bill W. himself broke anonymity multiple times before fully understanding its importance."
+
+### Timeline Talking Points
+
+**1935–1939: Safety from Stigma**
+- "In the 1930s, alcoholics were social outcasts. The first AA groups operated in complete secrecy. Members used only first names, even with each other."
+> 📖 *Reference: AA Comes of Age, pp. 135-136*
+
+**1939–1941: The Cleveland Plain Dealer Break**
+- "This is the cautionary tale everyone should know. In October 1939, the Cleveland Plain Dealer ran a series on AA. One member, Elgie R., gave his full name and was photographed."
+- "Within a year, Elgie relapsed. The paper ran another story: 'Former AA Member Dies Drunk.' Cleveland AA nearly collapsed. Bill W. later called this 'the greatest threat to AA's future we ever faced.'"
+> 📖 *Reference: Pass It On, pp. 282-283*
+- "**This is why Tradition Eleven exists.** To prevent individual relapses from becoming AA's public failures."
+
+**1941: The Saturday Evening Post (Jack Alexander Article)**
+- "March 1, 1941. This article quadrupled AA membership overnight — from 2,000 to 8,000 members."
+- "Critically, **Alexander respected anonymity.** No full names. No faces. The article promoted AA without promoting individuals."
+- **(Dallas Connection):** "Esther E.'s husband read this article, gave her an ultimatum, and she contacted GSO — directly leading to Dallas AA's founding on April 2, 1943. The article's respectful approach to anonymity made it effective and safe."
+> 📖 *Reference: AA Comes of Age, pp. 176-178*
+
+**1944: Bill W.'s Break (The Big World Film)**
+- "In 1944, a promotional film was planned. Bill W. agreed to appear on camera and reveal his full identity. Dr. Bob vehemently opposed. After intense debate, Bill backed down."
+- "Bill later wrote: 'I had been ready to place AA in serious jeopardy for my own sake. It was then I began to understand that anonymity was humility at the level of Tradition.'"
+> 📖 *Reference: 12&12, p. 187*
+
+**1946: Codification of Traditions**
+- "After a decade of painful lessons, Bill drafted the Twelve Traditions in 1946. Two focus specifically on anonymity: Eleven (public relations) and Twelve (spiritual foundation)."
+- "These weren't abstract ideals. They were lessons **written in blood** — relapses, broken trust, damaged groups."
+> 📖 *Reference: AA Comes of Age, pp. 137-141*
+
+**1955–Present: Digital Age Challenges**
+- "Bill and Dr. Bob died maintaining complete anonymity. Neither ever revealed their full names in press, radio, or film."
+- "Today we face challenges they couldn't have imagined: social media, smartphones, Zoom meetings. The principle hasn't changed — but the application requires constant vigilance."
+
+### Activity: Reflection Question (2 minutes — use timer)
+- "Think about how attitudes toward alcoholism have evolved in your lifetime. When you first came to AA, did you tell anyone? Would you today? How does your home group navigate the tension between attraction and anonymity?"
+
+### Transition
+- "We've seen how anonymity evolved. Now let's get crystal clear on what it actually means — because this is where most confusion happens."
+
+---
+
+## SLIDE 27: The Two Levels of Anonymity (15 minutes)
+
+### CRITICAL CONCEPT
+- "This is the most misunderstood aspect of anonymity. If you remember nothing else from tonight, remember this: **Anonymity has two distinct levels.**"
+
+### Two Cards Side-by-Side (Walk Through Carefully)
+
+**Personal Level: Your Choice**
+> 📖 *"Many of us are willing to declare our membership in Alcoholics Anonymous in our ordinary affairs."* — 12&12, p. 184
+
+- "At the personal level, anonymity is **optional**. You decide who knows about your AA membership in your private life."
+- "You MAY tell your family, friends, employer, doctor. You MAY wear AA-themed clothing. You MAY discuss your recovery in private conversations."
+- "This is between you and your conscience. No one in AA can tell you to hide your membership from your personal life."
+
+**Public Media Level: Protected**
+> 📖 *"We must always maintain personal anonymity at the level of press, radio, and films."* — Tradition Eleven
+
+- "At the level of **public media**, anonymity is **required**. This protects AA from individual consequences."
+- "You MAY NOT use your full name and face together with AA membership in: newspapers, TV, radio, films, social media, blogs, podcasts, any permanent public record."
+- "Why? Because if you relapse, it becomes AA's problem. 'AA Member John Doe Arrested for DUI — Does AA Work?'"
+
+### Why the Distinction Matters (Read This Example)
+- "Imagine a well-known actor holds a press conference: 'I'm John Doe, and I'm a member of Alcoholics Anonymous.' Six months later, he's arrested for drunk driving. The headlines: 'AA Member John Doe Fails.' His relapse is now AA's failure in the public eye."
+- "If he'd maintained anonymity, his relapse would be a private matter. **This is why Tradition Eleven exists.**"
+
+### Real-World Examples (Click Through Each Reveal Item)
+
+**✅ Example 1: Talking to Your Boss**
+- "You need Tuesday afternoons off for your home group. You tell your boss: 'I attend AA meetings.' This is NOT an anonymity break. It's a private conversation to support your recovery."
+> 📖 *Reference: "Questions & Answers on Sponsorship," p. 28*
+
+**❌ Example 3: Facebook Post with Full Name**
+- "You post: 'Today I'm celebrating 10 years sober in Alcoholics Anonymous! My name is Jane Smith.' **This is a Tradition Eleven violation.** Social media is public media — even if your profile is 'Friends Only.'"
+- "Alternative: 'Today I'm celebrating 10 years sober in a 12-step program' — or use a pseudonym."
+> 📖 *Reference: "Anonymity Online," GSO pamphlet*
+
+**❌ Example 4: Celebrity on TV**
+- "A musician appears on a talk show: 'I've been sober for five years thanks to Alcoholics Anonymous.'"
+- "**This is a break.** Television is explicitly mentioned in Tradition Eleven. If they relapse publicly, it harms AA."
+- "What they should say: 'I've been sober thanks to a 12-step program' or 'I respect the tradition of anonymity and won't say more.'"
+> 📖 *Reference: 12&12, pp. 184-187*
+
+**⚠️ Example 5: Zoom Meetings & Screenshots**
+- "You attend a Zoom meeting. Someone screenshots the participant grid and posts it on Instagram: 'My AA family!'"
+- "**This is a break.** AA's guidance: Treat virtual meetings like in-person meetings. No recording. No screenshots. No posting images online."
+> 📖 *Reference: "Safety and AA: Our Common Welfare," bulletin*
+
+### Home Group Application
+- "How can your home group help members understand the two levels?"
+- Walk through the two cards: Education (newcomer orientations, Traditions discussions) and Written Reminders (signs, tech policies).
+
+### Discussion Prompt (5 minutes)
+- "Has your home group ever had to address an anonymity break? How was it handled? What would you do if you saw a member breaking anonymity on social media?"
+- Let 3-4 people share briefly.
+
+### Transition
+- "We've talked about the two levels. Now let's dive deep into Tradition Eleven — our public relations policy."
+
+---
+
+## SLIDE 28: Tradition Eleven Deep Dive (15 minutes)
+
+### Read the Tradition Slowly
+> 📖 *"Our public relations policy is based on attraction rather than promotion; we need always maintain personal anonymity at the level of press, radio, and films."* — Tradition Eleven
+
+### Two Distinct Parts
+
+**Part 1: Attraction Rather Than Promotion**
+- "Attraction means letting our results speak for themselves. We don't advertise. We don't hire spokespeople. We don't campaign for membership. We simply live sober lives — and people notice."
+- "Promotion means actively marketing AA, seeking endorsements, celebrity spokespeople. AA does **none** of this."
+
+> 📖 *"The public needs to understand that we have no membership drives, that we do not solicit members, that we wish our affairs to remain uncluttered by politics and religious disputes."* — 12&12, p. 180
+
+**Part 2: Personal Anonymity at Public Level**
+- "We maintain anonymity at the level of press, radio, films — and today, TV, internet, social media."
+- "Why? Because individual relapses harm AA's public image."
+
+### Historical Lesson: The Washingtonian Society
+- "In the 1840s, the Washingtonian Society — a temperance group — grew rapidly through promotion. Massive rallies. Celebrity speakers. Published names of reformed drunkards."
+- "Within five years, they collapsed. Their celebrity speakers relapsed publicly. Internal power struggles erupted. They endorsed political candidates and divided the membership."
+- "**Bill W. studied the Washingtonians closely.** He vowed AA would never repeat their mistakes. That's why we have 'attraction, not promotion.'"
+> 📖 *Reference: Big Book, Appendix II: Spiritual Experience*
+
+### How Your Home Group Practices Attraction
+- "Your home group doesn't need to advertise. It practices attraction by:"
+  - "Showing up consistently — the meeting is there every week, rain or shine"
+  - "Being welcoming — greeting newcomers, offering phone numbers, making coffee"
+  - "Carrying the message — speaking at treatment centers, jails, hospitals (first names only)"
+  - "Living sober — members' transformed lives inspire without a word of promotion"
+
+### Applying Tradition Eleven Today
+- Walk through the three cards: Press/Print Media, Radio/Films, Social Media.
+- "Tradition Eleven was written in 1946. How do we apply it to TikTok, Instagram, podcasts?"
+- "The answer: The principle hasn't changed. Press = online news. Radio = podcasts. Films = YouTube. **Social media is public media.**"
+
+### Common Questions (Click Through Reveal Items)
+
+**Q: Can I share my AA story on my blog?**
+- "If you use your full name and identify as an AA member, this is a break. Blogs are public media."
+- "Alternative: Use a pseudonym, or say 'I attend a 12-step program' instead of naming AA."
+
+**Q: Can my home group have a Facebook page?**
+- "Yes, but with caution. Never post photos showing faces without consent. Never tag members. Never share private meeting details."
+- "Safest: Post only meeting times, AA-approved literature quotes, generic recovery images."
+> 📖 *Reference: "Anonymity Online," GSO bulletin*
+
+### Closing Quote
+> 📖 *"Moved by the spirit of anonymity, we try to give up our natural desires for personal distinction as A.A. members both among fellow alcoholics and before the general public. As we lay aside these very human aspirations, we believe that each of us takes part in the weaving of a protective mantle which covers our whole Society and under which we may grow and work in unity."* — 12&12, p. 184
+
+### Transition
+- "Tradition Eleven protects our public relations. Tradition Twelve is the spiritual foundation underneath it all."
+
+---
+
+## SLIDE 29: Tradition Twelve Deep Dive (15 minutes)
+
+### Read Slowly, With Weight
+> 📖 *"Anonymity is the spiritual foundation of all our Traditions, ever reminding us to place principles before personalities."* — Tradition Twelve
+
+### Why Tradition Twelve Is the "Crown"
+- "Bill W. deliberately made anonymity the final Tradition because it undergirds all the others. Without anonymity, the other 11 would eventually fail."
+
+### Walk Through the Three Cards
+- "Look at how anonymity supports every other Tradition:"
+  - **Traditions 1-3 (Unity):** Anonymity ensures no individual is more important than the group. No charismatic leaders dominating. Everyone equal.
+  - **Traditions 4-6 (Autonomy):** Anonymity prevents outside interests or personal agendas from infiltrating groups.
+  - **Traditions 7-11 (Humility):** Anonymity prevents wealthy members from buying influence. Service is about humility, not prestige.
+
+### Principles Before Personalities: What Does It Mean?
+- "This is the most quoted phrase in AA — and the most misunderstood."
+- "It doesn't mean we ignore individual needs or suppress personality. It means when personalities clash with principles, **principles win**."
+
+### Real Examples (Click Through Reveal Items)
+
+**Example 1: The Long-Winded Speaker**
+- "A member regularly speaks for 10-15 minutes. Some love his shares; others feel silenced."
+- "**Personality approach:** 'John is great. Let him talk.'"
+- "**Principle approach:** 'Our principle is that everyone gets a turn (Tradition 1: common welfare). We enforce a 3-5 minute limit — for everyone, including John.'"
+- "**Principle wins.** John's personality doesn't override the group's unity."
+
+**Example 2: The Wealthy Donor**
+- "A wealthy member donates $500/month, far exceeding the suggested contribution limit. He begins dictating how the money should be spent."
+- "**Personality approach:** 'He's so generous! We should listen to him.'"
+- "**Principle approach:** 'Tradition Seven asks that no member contribute more than the limit. Your voice in group conscience equals everyone else's — one person, one vote.'"
+- "**Principle wins.** Wealth doesn't buy influence."
+> 📖 *Reference: 12&12, p. 160*
+
+**Example 3: The Popular Group Leader**
+- "Your secretary has served five years. She's beloved, organized, the 'face' of the group. Some say, 'We could never replace her.'"
+- "**Personality approach:** 'She's irreplaceable. Let her stay forever.'"
+- "**Principle approach:** 'Rotation of service is core (Tradition Two: trusted servants, not governors). After her term, we rotate. No one is indispensable.'"
+- "**Principle wins.** Service rotates, even when the servant is excellent."
+> 📖 *Reference: AA Service Manual, p. S19*
+
+### The Spiritual Discipline of Anonymity
+- Walk through the four cards: Humility, Equality, Protection from Ego, Unity.
+- "Anonymity is a spiritual discipline — not a rule, but a practice that shapes our character."
+
+### Practicing Tradition Twelve in Your Home Group
+- Read through the checklist on screen.
+- "Each of these is anonymity in action: rotation, no last names, equal voice, conference-approved literature, gentle correction of breaks."
+
+### Activity: Reflection (2 minutes — use timer)
+- "How does your home group place principles before personalities? Think of a recent group conscience decision. Was it driven by a strong personality or by principles?"
+
+### Transition
+- "We've talked about anonymity — your own identity at the public level. Now let's talk about confidentiality — protecting others' identities and stories."
+
+---
+
+## SLIDE 30: Anonymity vs. Confidentiality (10 minutes)
+
+### CRITICAL DISTINCTION
+- "Anonymity and confidentiality are NOT the same thing. This confusion causes real harm. Let's get crystal clear."
+
+### Two Cards Side-by-Side (Explain Carefully)
+
+**Anonymity:**
+- "Not revealing **your own** full name and face at the public media level."
+- "Scope: Your own identity. Level: Public media. Optional? At personal level, yes. At public level, no."
+
+**Confidentiality:**
+- "Not revealing **someone else's** presence, story, or identifying details — ever, anywhere, to anyone."
+- "Scope: Others' identities. Level: Everywhere. Optional? **NEVER. Confidentiality is absolute.**"
+
+### Why Confidentiality Is Absolute
+> 📖 *"Without confidentiality, AA cannot function. Newcomers must feel safe to share their darkest secrets. If they worry their words will be repeated outside the room, they won't share honestly — and honest sharing is the lifeblood of recovery."*
+
+### Real Scenarios (Click Through Reveal Items)
+
+**Scenario 1: "I Saw My Boss at a Meeting"**
+- "You attend your home group and see your boss. You had no idea they were in recovery."
+- "❌ **WRONG:** Next day at work, you say, 'Hey, I didn't know you were in AA!'"
+- "✅ **CORRECT:** You say nothing. You wait for them to bring it up. If they never mention it, you never mention it."
+- "**Why?** They may not be ready to be 'out' as an AA member at work. Respecting confidentiality protects their job, privacy, and dignity."
+
+**Scenario 2: "Can I Tell My Spouse What Someone Shared?"**
+- "At your home group, someone shares a shocking relapse story. You want to process it with your spouse."
+- "❌ **WRONG:** 'Honey, John shared at the meeting tonight that he got drunk and crashed his car...'"
+- "✅ **CORRECT:** 'Someone at the meeting shared a really intense story. It affected me. I can't tell you details, but I'm processing it.' If you need to debrief, call your sponsor — not someone outside the fellowship."
+- "**Why?** 'What you hear here, stays here.' Even your spouse doesn't get to know someone else's story."
+> 📖 *Reference: "Understanding Anonymity," pamphlet, p. 18*
+
+**Scenario 3: "A Celebrity Came to My Meeting"**
+- "A famous actor attends your home group."
+- "❌ **WRONG:** Post on social media: 'OMG, [Celebrity Name] was at my AA meeting!'"
+- "✅ **CORRECT:** You tell no one. Even if the celebrity has publicly disclosed AA membership, you don't confirm their attendance at your meeting."
+- "**Why?** Confirming someone's presence is a confidentiality breach — even if they're a public figure."
+
+**Scenario 4: "I Saw Someone Drinking"**
+- "You see a home group member drinking at a bar."
+- "❌ **WRONG:** Tell other members: 'Did you know Sarah relapsed?'"
+- "✅ **CORRECT:** If you're close, reach out privately: 'I saw you the other night. I'm here if you want to talk.' If not close, do nothing — or mention to her sponsor if it's an emergency. But don't gossip."
+- "**Why?** Relapse is personal. Broadcasting it could shame Sarah away from returning."
+
+### "Who You See Here, What You Hear Here..."
+- "This phrase is the essence of confidentiality."
+- "It means: Don't reveal anyone's attendance. Don't repeat anyone's shares. The room is sacred, confidential space."
+
+### Home Group Reinforcement
+- Walk through the four cards: Include in format, Post visual reminders, Address breaches promptly, Educate newcomers.
+
+### Transition
+- "We've covered the foundations of anonymity. Now let's talk about the elephant in the room: the internet."
+
+---
+
+## SLIDE 31: Digital Age Challenges (15 minutes)
+
+### Opening
+- "The founders could not have imagined smartphones, Zoom meetings, or TikTok. Yet the principle of anonymity remains unchanged. The application, however, requires vigilance."
+
+### The Digital Landscape (Three Cards)
+
+**Social Media (High Risk):**
+- "Platforms: Facebook, Instagram, TikTok, Twitter/X, LinkedIn, Snapchat."
+- "Risk: Posts are permanent, searchable, shareable — often public even when you think they're private."
+- "Common breaks: Anniversary posts with full names, meeting check-ins, photos showing faces."
+
+**Virtual Meetings (Medium Risk):**
+- "Platforms: Zoom, Google Meet, Teams."
+- "Risk: Can be recorded/screenshot, but groups can set policies."
+- "Common breaks: Screenshots of participant grids, recordings shared online, unmuted background conversations."
+
+**Blogs/Podcasts/YouTube (Very High Risk):**
+- "These are permanent, public records."
+- "Common breaks: 'My AA Journey' videos using full names, recovery podcasts identifying as AA members."
+
+### Common Digital Anonymity Breaks (Click Through Each)
+
+**❌ Break 1: Facebook Anniversary Post**
+- "The break: 'Today I'm celebrating 5 years sober in Alcoholics Anonymous! My name is Jane Smith and I'm grateful!'"
+- "Why it's a break: Full name + AA identification + public platform = Tradition Eleven violation."
+- "✅ Better: 'Today I'm celebrating 5 years sober thanks to a 12-step program. #Recovery' (No full name visible, no AA named)."
+
+**❌ Break 2: Instagram Meeting Selfie**
+- "The break: Group photo from home group posted to Instagram showing faces, caption: 'My AA family! ❤️'"
+- "Why it's a break: You've outed everyone in the photo. Even if they consented, posting it publicly violates anonymity because others can now see who attends."
+- "✅ Better: Don't photograph meetings. If you must, keep it private with explicit consent."
+
+**❌ Break 3: Location Check-Ins**
+- "The break: Checking in on Facebook at 'Central AA Club.'"
+- "Why it's a break: You're publicly announcing your AA attendance. Friends scrolling see: 'John Doe is at Central AA Club.'"
+- "✅ Better: Don't use location services at meetings."
+
+**❌ Break 4: Zoom Screenshot**
+- "The break: Screenshot of Zoom participant grid posted to social media: 'Great meeting tonight!'"
+- "Why it's a break: You've outed every person in that screenshot without consent."
+- "✅ Better: Never screenshot or record Zoom meetings."
+> 📖 *Reference: "Anonymity Online," GSO pamphlet*
+
+**❌ Break 5: Recovery Blog with Full Name**
+- "The break: YouTube channel titled 'John Smith's AA Recovery Journey' using full name and face."
+- "Why it's a break: YouTube is public media. Full name + face + AA = Tradition Eleven violation."
+- "✅ Better: Use pseudonym or first name only. Title it 'My Recovery Journey,' not 'My AA Journey.'"
+
+### Best Practices (Two Cards)
+
+**For Individual Members:**
+- "Use privacy settings (but remember: nothing online is truly private)."
+- "Post generically ('grateful for my program') not specifically ('grateful for AA')."
+- "Never post photos showing faces without explicit written consent."
+- "Never tag other members."
+- "Use first name only in online recovery spaces."
+
+**For Home Groups:**
+- "Create a written technology/social media policy."
+- "Read the policy at the beginning of every meeting."
+- "Post signs: 'No photos, recordings, or social media posts.'"
+- "For Zoom: disable screen-sharing and recording by default."
+- "Address digital breaks promptly and lovingly."
+
+### Sample Home Group Tech Policy (Read This)
+- "To protect anonymity and confidentiality, [Group Name] prohibits: photography, video, audio recording, screenshots of virtual meetings, posting attendees' names/faces on social media. Violations will be addressed by group conscience."
+
+### Discussion (5 minutes)
+- "Has your home group experienced digital anonymity breaks? How did you handle them? Does your group have a tech policy? If not, how might you start that conversation?"
+
+### Transition
+- "We've covered a lot of ground. Now let's bring it all back to where it matters most: your home group."
+
+---
+
+## SLIDE 32: Anonymity & Your Home Group (10 minutes)
+
+### Connection to Morning Theme
+- "This morning we said your home group is 'where it all begins.' Tonight we see that anonymity is woven into that foundation."
+
+### How Your Home Group Practices Anonymity (Six Cards)
+
+**1. Rotating Service Positions**
+- "Why: Ensures no one becomes indispensable or 'the face' of the group. Anonymity in action."
+- "Recommended terms: GSR (2 years), Secretary/Treasurer (1-2 years), Greeter/Coffee (6 months-1 year)."
+> 📖 *Reference: AA Service Manual, p. S19*
+
+**2. Equal Voice in Group Conscience**
+- "Why: In group conscience, everyone's vote is equal — regardless of sobriety time, outside status, or how loudly they speak. One person, one vote."
+- "The member with 40 years and the newcomer with 40 days both get one vote. No hierarchy."
+
+**3. Conference-Approved Literature Only**
+- "Why: Using only AA-approved literature ensures we follow principles (AA's collective wisdom) rather than personalities (individual interpretations)."
+
+**4. First Names Only**
+- "Why: Removes outside status. We're all just alcoholics. No 'Dr. Smith' or 'Professor Jones' — just 'Bob' and 'Mary.'"
+
+**5. No Crosstalk**
+- "Why: Ensures what is shared matters more than who shares it. We listen without rebutting. Principle over personality."
+
+**6. No Promotion/Recognition**
+- "Why: We don't celebrate individuals publicly in ways that create 'stars.' Sobriety anniversaries are acknowledged humbly — a coin, not a trophy ceremony."
+
+### Connecting to "Where It All Begins"
+- Read through the checklist on screen: Belonging, Service, Sponsorship, Unity, Carrying the Message.
+- "Each of these shows how anonymity strengthens your home group."
+
+### Action Items Checklist
+- "What can you do this week to strengthen anonymity in your home group?"
+- Read through the checklist, encourage people to check items as they commit.
+
+### Open Sharing Activity (5 minutes — use timer)
+- "Let's hear from you. How does your home group practice anonymity successfully? What challenges have you faced? What creative solutions have worked?"
+- Let 4-5 people share briefly.
+
+### Transition
+- "We've covered principles. Now let's get practical: What do you do when anonymity breaks happen?"
+
+---
+
+## SLIDE 33: Common Anonymity Breaks & How to Address Them (10 minutes)
+
+### Opening
+- "Even with the best intentions, anonymity breaks happen. Most occur out of enthusiasm or ignorance — not malice."
+- "Our job isn't to shame. It's to educate with love."
+
+### The "Loving Correction" Approach
+> 📖 *"When addressing anonymity breaks, lead with love and education, not shame or punishment. Remember: we're all learning. Even Bill W. broke anonymity multiple times before fully understanding its importance."*
+
+### Common Scenarios (Click Through Each)
+
+**Scenario 1: Member Posts Meeting Photo on Facebook**
+- "What happened: Sarah posts a group photo on Facebook showing faces, caption: 'Love my Tuesday night AA crew!'"
+- "❌ Wrong response: Call her out publicly at the next meeting."
+- "✅ Right response: Pull her aside privately. 'Hey Sarah, I saw your post. I know you were excited, but posting photos with faces violates our members' anonymity. Would you mind deleting it?'"
+- "Follow-up: Suggest the group add a tech policy if one doesn't exist."
+
+**Scenario 2: Member Gossips About Relapse**
+- "What happened: John tells several members outside meetings: 'Did you hear? Mike relapsed last week.'"
+- "❌ Wrong response: Ignore it or participate."
+- "✅ Right response: Speak to John privately. 'John, I understand you're concerned about Mike, but sharing his relapse is a breach of confidentiality. If you're worried, reach out to him directly or his sponsor — but don't discuss it with others.'"
+
+**Scenario 3: Newcomer Doesn't Understand**
+- "What happened: A newcomer with 2 weeks posts on Instagram: 'Just left my AA meeting! My name is Alex Johnson and I'm an alcoholic. #AA #Recovery'"
+- "❌ Wrong response: Public shaming or ignoring it."
+- "✅ Right response: Reach out gently (sponsor should do this): 'Hey Alex, I'm so glad you're hopeful! In AA, we practice anonymity at the public level — which includes social media. You're welcome to post about recovery, but we suggest not using your full name and 'AA' together.'"
+- "This is a teaching moment, not punishment. Newcomers don't know better."
+
+**Scenario 4: Old-Timer Dominates**
+- "What happened: Bob has 35 years and is beloved. But he regularly speaks for 10-15 minutes, interrupts others, gives unsolicited advice. Newer members feel intimidated."
+- "❌ Wrong response: 'Bob's earned the right to talk.'"
+- "✅ Right response: Speak to Bob privately. 'Bob, we love you. Your experience is invaluable. But we've noticed shares run long, and newer members aren't getting a turn. Would you keep shares to 3-5 minutes?'"
+- "If behavior continues, bring it to group conscience: 'We need to enforce a 5-minute sharing limit for everyone.'"
+- "Key point: Seniority doesn't grant privilege. **Principles win.**"
+
+**Scenario 5: Secret Recording**
+- "What happened: You discover someone has been recording Zoom meetings without consent."
+- "❌ Wrong response: Handle it informally."
+- "✅ Right response: Address immediately. 'We learned you've been recording. This is a serious violation. Why were you doing this?' Listen. 'All recordings must be deleted immediately. If you need accommodations, let's discuss alternatives.'"
+- "If they refuse or shared recordings, bring to group conscience: The group may need to ask them to leave for safety."
+
+**Scenario 6: Media Inquiry**
+- "What happened: A local reporter contacts your group: 'We want to do a story on AA. Can we interview members and photograph your meeting?'"
+- "❌ Wrong response: Agree because 'it's good publicity.'"
+- "✅ Right response: 'We appreciate your interest, but AA has a public relations policy. We don't promote ourselves in media. Our members maintain anonymity. We can provide you with conference-approved literature or connect you with our district's PI chair.'"
+- "Do NOT allow them to photograph or interview members using full names and faces."
+> 📖 *Reference: "Understanding Anonymity," pp. 13-15*
+
+### When to Involve Group Conscience
+- "Most breaks can be handled with private conversations. Bring it to group conscience if:"
+  - "Breaks are repeated after being addressed"
+  - "Breaks are serious (recording meetings, outing others publicly)"
+  - "Person refuses to acknowledge the break or change behavior"
+  - "Multiple members affected"
+  - "Group needs to establish a new policy"
+
+### Closing Quote
+> 📖 *"We approach anonymity breaks with the same spirit we approach relapse: with compassion, not judgment. We educate, we love, we set boundaries when necessary. But we never shame. Shame is not the AA way."*
+
+### Transition
+- "We've covered principles, history, applications. Now it's your turn. Let's open the floor for discussion."
+
+---
+
+## SLIDE 34: Panel Discussion Prompts (15 minutes)
+
+### Opening
+- "We've covered a lot tonight. Now I want to hear from you. What questions do you have? What challenges has your home group faced? What solutions have worked?"
+
+### Format
+- "I'm going to display 10 discussion prompts on screen. We have 15 minutes for open sharing. Please raise your hand if you'd like to share. Keep shares to 2-3 minutes so everyone gets a turn."
+- "No crosstalk — just as in a meeting. What's shared here stays here."
+
+### Facilitation Tips
+- You're the moderator. Keep discussion on topic, ensure no one dominates, gently redirect if needed.
+- If someone shares a personal anonymity break, thank them for their honesty. No judgment.
+- If the room is quiet, pick one prompt and ask: "Who has experience with this?"
+- If discussion is robust, let it flow. You can extend beyond 15 minutes if needed.
+
+### Discussion Prompts (On Screen — Click to Expand Each)
+
+1. **Personal Anonymity Decisions** — Have you struggled with deciding whether to disclose your AA membership? What factors helped you decide?
+2. **Digital Age Challenges** — Has your home group dealt with social media breaks? How did you handle them?
+3. **Attraction vs. Promotion** — How does your home group practice "attraction rather than promotion"?
+4. **Principles Before Personalities** — Can you share an example of when your group had to place principles before personalities?
+5. **Confidentiality in Practice** — How do you navigate confidentiality when you see a fellow member outside meetings?
+6. **Celebrity Anonymity** — What do you think when a celebrity publicly discloses their AA membership? Does it help or harm?
+7. **Home Group Practices** — Does your group have a tech policy? How's it working? Should you discuss Traditions more often?
+8. **Gray Areas** — What anonymity situations have you encountered that felt like "gray areas" without clear answers?
+9. **Anonymity & Sponsorship** — How do you maintain confidentiality with sponsees? Do you discuss your sponsees with your own sponsor?
+10. **Looking Forward** — Based on tonight's discussion, what's one thing you'll do differently regarding anonymity?
+
+### Activity: Open Panel Discussion (15 minutes — use timer)
+- Start the timer. Open the floor.
+- After each share, thank the person: "Thank you for sharing."
+- When timer goes off: "We have time for one or two more shares if anyone has something urgent."
+
+### Transition
+- "Thank you all for your honesty and courage tonight. Let's wrap up with some resources and action steps."
+
+---
+
+## SLIDE 35: Literature & Closing (5 minutes)
+
+### Closing Quote (Read Slowly)
+> 📖 *"Anonymity is real humility at work. It is an all-pervading spiritual quality which today keynotes A.A. life everywhere. Moved by the spirit of anonymity, we try to give up our natural desires for personal distinction as A.A. members both among fellow alcoholics and before the general public. As we lay aside these very human aspirations, we believe that each of us takes part in the weaving of a protective mantle which covers our whole Society and under which we may grow and work in unity."* — Bill W., 12&12, p. 184
+
+### Essential Literature (Briefly Mention)
+- "All of tonight's content comes from AA conference-approved literature. The table on screen lists the key sources."
+- "If you take one pamphlet home, make it 'Understanding Anonymity.' It's comprehensive, clear, and covers everything we discussed tonight."
+
+### Bringing It Back to Home Group
+- "This morning we said your home group is 'where it all begins.' Tonight we've explored how anonymity is the foundation that holds it all together."
+
+### Action Plan (Three Cards — Briefly Walk Through)
+- **This week:** Review social media, read Traditions Eleven & Twelve, discuss with sponsor
+- **This month:** Propose a Traditions meeting, suggest a tech policy, volunteer for PI committee
+- **This year:** Serve without seeking credit, place principles before personalities, model anonymity for those you sponsor
+
+### Final Connection to Full-Day Theme
+- "We began today at 8:45 AM exploring where it all begins — your home group. We end tonight at 10:00 PM with the principle that protects it all — anonymity."
+- "May we all go forward placing principles before personalities, carrying the message with humility, and safeguarding the fellowship that saved our lives."
+
+### Closing
+- "Thank you for spending this Saturday with us. From 8:00 AM to 10:00 PM. Fourteen hours. Three presentations. One theme: **Where it all begins.**"
+
+### The Responsibility Statement (Read Together)
+- "Let's close by reading the Responsibility Statement together."
+> 📖 *"I am responsible. When anyone, anywhere, reaches out for help, I want the hand of A.A. always to be there. And for that: I am responsible."*
+
+### Thank Yous
+- Thank the venue, hospitality, presenters, DCM, table facilitators, attendees.
+- Remind about 7th Tradition if not yet collected.
+
+### Final Words
+- "Drive safely. Keep coming back."
+- **Serenity Prayer** (everyone stands).
+
+---
+
+## Post-Event Debrief
+
+After the panel, take 10 minutes to reflect:
+- What questions came up repeatedly? (Note for future presentations)
+- Were there any anonymity breaks during the discussion itself? (Gently address if needed)
+- What resources do members need? (Order more "Understanding Anonymity" pamphlets?)
+- What worked well? What would you change?
+
+---
+
+## Quick Reference: Anonymity Literature
+
+| Source | Key Pages | Topics |
+|--------|-----------|--------|
+| **Twelve Steps & Twelve Traditions** | pp. 180-183, 184-187 | Traditions Eleven & Twelve |
+| **"Understanding Anonymity" Pamphlet** | All 22 pages | Comprehensive modern resource |
+| **Alcoholics Anonymous (Big Book)** | Foreword p. xiii, pp. 89-103 | Early emphasis on anonymity |
+| **AA Comes of Age** | pp. 135-141 | Historical context, Cleveland break |
+| **The Language of the Heart** | pp. 67-72 | Bill W.'s writings on anonymity |
+| **Pass It On (Bill W. Biography)** | pp. 282-283, 335-337 | Personal stories of breaks |
+| **"Anonymity Online" (GSO Bulletin)** | Available at aa.org | Digital age guidance |
+
+---
+
 *Prepared for District 22, NETA Area 65. All quotations from AA Conference-approved literature.*
 *Not affiliated with A.A. World Services, Inc.*
