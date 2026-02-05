@@ -598,10 +598,12 @@
   @media print {
     @page {
       size: letter portrait;
-      margin: 0.35in 0.4in;
+      margin: 0.25in;
     }
 
-    html { font-size: 10px; }
+    * { animation: none !important; transition: none !important; }
+
+    html { font-size: 9px; }
 
     body {
       background: #fff !important;
@@ -609,37 +611,44 @@
       padding: 0 !important;
       min-height: auto;
       display: block;
-      line-height: 1.3;
+      line-height: 1.2;
     }
 
     .print-btn { display: none !important; }
 
+    /* Force JS-animated elements visible for print */
+    .pillar-card,
+    .schedule-item {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
     .flyer {
       max-width: 100%;
-      border: 2px solid #333 !important;
-      border-radius: 8px !important;
+      border: 2px solid #444 !important;
+      border-radius: 6px !important;
       box-shadow: none !important;
       background: #fff !important;
-      page-break-inside: avoid;
     }
 
     .flyer-accent-bar {
-      background: #333 !important;
+      background: #444 !important;
       height: 3px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    .flyer-header { padding: 10px 16px 8px; }
+    /* --- HEADER --- */
+    .flyer-header { padding: 8px 16px 6px; }
     .flyer-header::after { background: #ccc !important; }
 
     .org-badge {
-      background: #f0f0f0 !important;
+      background: #eee !important;
       color: #333 !important;
       border-color: #999 !important;
-      padding: 3px 12px;
+      padding: 2px 10px;
       font-size: 0.6rem;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -648,15 +657,15 @@
       background: none !important;
       -webkit-text-fill-color: #1a1a1a !important;
       color: #1a1a1a !important;
-      font-size: 1.6rem;
-      margin-bottom: 4px;
+      font-size: 1.8rem;
+      margin-bottom: 2px;
       line-height: 1.1;
     }
 
     .flyer-subtitle {
       color: #444 !important;
       font-size: 0.85rem;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .flyer-tagline {
@@ -664,96 +673,94 @@
       font-size: 0.7rem;
     }
 
+    /* --- EVENT META --- */
     .event-meta {
-      margin: 6px 16px 8px;
-      gap: 20px;
+      margin: 4px 16px 6px;
+      gap: 16px;
+      flex-wrap: nowrap;
     }
 
     .meta-value {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       color: #333 !important;
     }
 
     .meta-label {
       color: #666 !important;
-      font-size: 0.55rem;
+      font-size: 0.5rem;
+      margin-top: 1px;
     }
 
+    /* --- DATE & VENUE --- */
     .event-details {
       border-color: #999 !important;
       background: #f8f8f8 !important;
-      margin: 0 16px 10px;
+      margin: 0 16px 6px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
 
-    .detail-block { padding: 8px 12px; }
+    .detail-block { padding: 6px 10px; }
     .detail-block:first-child { border-right-color: #999 !important; }
-    .detail-icon { font-size: 1.1rem; margin-bottom: 2px; }
-    .detail-label { color: #333 !important; font-size: 0.55rem; margin-bottom: 2px; }
+    .detail-icon { font-size: 1rem; margin-bottom: 1px; }
+    .detail-label { color: #333 !important; font-size: 0.55rem; margin-bottom: 1px; }
     .detail-value { color: #1a1a1a !important; font-size: 0.85rem; }
-    .detail-sub { color: #555 !important; font-size: 0.65rem; margin-top: 2px; line-height: 1.2; }
+    .detail-sub { color: #555 !important; font-size: 0.6rem; margin-top: 1px; line-height: 1.15; }
 
-    .pillars-section { padding: 8px 16px; page-break-inside: avoid; }
+    /* --- THREE PILLARS --- */
+    .pillars-section { padding: 6px 16px; }
     .pillars-section::before { background: #ccc !important; }
-    .section-heading { color: #333 !important; font-size: 0.8rem; margin-bottom: 6px; font-weight: 700; }
+    .section-heading { color: #333 !important; font-size: 0.8rem; margin-bottom: 4px; font-weight: 700; }
     .pillars-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr) !important;
-      gap: 6px !important;
-      margin-bottom: 8px;
+      gap: 5px !important;
+      margin-bottom: 0;
     }
     .pillar-card {
       background: #fff !important;
-      border-color: #ccc !important;
-      padding: 6px 6px;
-      page-break-inside: avoid;
+      border-color: #bbb !important;
+      padding: 5px 5px;
       display: block !important;
     }
-    .pillar-emoji { font-size: 1.1rem; margin-bottom: 2px; }
-    .pillar-label { color: #333 !important; font-size: 0.5rem; margin-bottom: 2px; font-weight: 600; }
-    .pillar-title { color: #1a1a1a !important; font-size: 0.75rem; margin-bottom: 2px; font-weight: 700; line-height: 1.1; }
-    .pillar-time { color: #666 !important; font-size: 0.6rem; margin-bottom: 2px; }
-    .pillar-desc { color: #555 !important; font-size: 0.6rem; line-height: 1.2; }
+    .pillar-emoji { font-size: 1rem; margin-bottom: 1px; }
+    .pillar-label { color: #333 !important; font-size: 0.5rem; margin-bottom: 1px; font-weight: 600; }
+    .pillar-title { color: #1a1a1a !important; font-size: 0.72rem; margin-bottom: 1px; font-weight: 700; line-height: 1.1; }
+    .pillar-time { color: #666 !important; font-size: 0.55rem; margin-bottom: 1px; }
+    .pillar-desc { color: #555 !important; font-size: 0.55rem; line-height: 1.15; }
 
+    /* --- SCHEDULE (2-col compact grid) --- */
     .schedule-section {
-      padding: 8px 16px !important;
+      padding: 6px 16px !important;
       background: #f9f9f9 !important;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      page-break-inside: avoid !important;
     }
 
     .schedule-grid {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
-      gap: 4px 12px !important;
-      column-gap: 12px !important;
+      gap: 3px 8px !important;
     }
 
     .schedule-item {
       background: #fff !important;
       border-color: #ccc !important;
-      padding: 5px 6px !important;
-      page-break-inside: avoid !important;
-      break-inside: avoid !important;
+      padding: 3px 5px !important;
       display: block !important;
       text-align: center !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 2px !important;
       margin: 0 !important;
     }
 
     .schedule-time {
       color: #333 !important;
-      font-size: 0.55rem !important;
+      font-size: 0.5rem !important;
       font-weight: 700 !important;
       min-width: auto !important;
       width: 100% !important;
       display: block !important;
       text-align: center !important;
-      margin-bottom: 2px !important;
+      margin-bottom: 1px !important;
       white-space: normal !important;
     }
 
@@ -766,9 +773,9 @@
 
     .schedule-name {
       color: #1a1a1a !important;
-      font-size: 0.7rem !important;
+      font-size: 0.65rem !important;
       font-weight: 700 !important;
-      margin-bottom: 1px !important;
+      margin-bottom: 0 !important;
       text-align: center !important;
       display: block !important;
       line-height: 1.1 !important;
@@ -776,43 +783,45 @@
 
     .schedule-desc {
       color: #555 !important;
-      font-size: 0.55rem !important;
-      line-height: 1.2 !important;
+      font-size: 0.5rem !important;
+      line-height: 1.15 !important;
       text-align: center !important;
       display: block !important;
     }
 
-    .features { padding: 6px 16px; gap: 12px; }
-    .feature-icon { font-size: 0.9rem; margin-bottom: 1px; }
-    .feature-text { color: #555 !important; font-size: 0.5rem; }
+    /* --- FEATURES: hidden in print (redundant with pillars) --- */
+    .features { display: none !important; }
 
-    .quote-section { padding: 6px 16px; }
+    /* --- QUOTE --- */
+    .quote-section { padding: 5px 16px; }
     .quote-section::before { background: #ccc !important; }
-    .quote-mark { color: #bbb !important; font-size: 1.4rem; margin-bottom: -6px; }
-    .quote-text { color: #333 !important; font-size: 0.7rem; line-height: 1.3; margin-bottom: 3px; }
-    .quote-source { color: #666 !important; font-size: 0.6rem; }
+    .quote-mark { color: #bbb !important; font-size: 1.2rem; margin-bottom: -4px; }
+    .quote-text { color: #333 !important; font-size: 0.65rem; line-height: 1.25; margin-bottom: 2px; }
+    .quote-source { color: #666 !important; font-size: 0.55rem; }
 
+    /* --- RESPONSIBILITY --- */
     .responsibility {
-      padding: 6px 16px;
+      padding: 4px 16px;
       background: #f0f8f0 !important;
       border-color: #999 !important;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .responsibility-text { color: #2d662d !important; font-size: 0.65rem; line-height: 1.3; }
+    .responsibility-text { color: #2d662d !important; font-size: 0.6rem; line-height: 1.2; }
 
+    /* --- FOOTER --- */
     .flyer-footer {
       background: #f5f5f5 !important;
-      padding: 6px 16px;
+      padding: 5px 16px;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    .footer-info { color: #444 !important; font-size: 0.65rem; margin-bottom: 4px; line-height: 1.3; }
+    .footer-info { color: #444 !important; font-size: 0.6rem; margin-bottom: 3px; line-height: 1.2; }
     .footer-info strong { color: #1a1a1a !important; }
-    .footer-links { margin-bottom: 4px; gap: 12px; }
-    .footer-link { color: #333 !important; text-decoration: underline !important; font-size: 0.6rem; }
-    .footer-tradition { color: #555 !important; font-size: 0.55rem; margin-bottom: 2px; }
-    .footer-disclaimer { color: #888 !important; font-size: 0.5rem; margin-top: 2px; }
+    .footer-links { margin-bottom: 3px; gap: 10px; }
+    .footer-link { color: #333 !important; text-decoration: underline !important; font-size: 0.55rem; }
+    .footer-tradition { color: #555 !important; font-size: 0.5rem; margin-bottom: 1px; }
+    .footer-disclaimer { color: #888 !important; font-size: 0.45rem; margin-top: 1px; }
   }
 </style>
 </head>
