@@ -1,12 +1,15 @@
-# Home Group: Where It All Begins
+# Foundation, Heritage, Humility
 ### District 22 Full Day Event — NETA Area 65
 **Saturday, April 4, 2026 • 8:00 AM – 10:00 PM**
 Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
 
 **Three Comprehensive Presentations:**
-- 🌅 Morning (8:45 AM–12:00 PM): Home Group Workshop
-- 🌞 Afternoon (1:15–3:00 PM): Dallas AA History
-- 🌙 Evening (8:00–10:00 PM): Anonymity Panel Discussion
+- 🌅 **Morning (8:45 AM–12:00 PM):** Survivors of the Same Shipwreck
+  *Why Belonging to a Home Group Saves Lives*
+- 🌞 **Afternoon (1:15–3:00 PM):** April 2, 1943: From One Living Room to 160 Groups
+  *How Esther E.'s Attraction Succeeded Where Kent W.'s Promotion Failed*
+- 🌙 **Evening (8:00–10:00 PM):** First Names Only: The Spiritual Discipline We Practice at Home
+  *Two Levels of Anonymity in the Digital Age*
 
 ---
 

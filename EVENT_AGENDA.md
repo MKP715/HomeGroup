@@ -1,5 +1,5 @@
 # District 22 — NETA Area 65 Full Day Event
-## "Home Group: Where It All Begins"
+## "Foundation, Heritage, Humility"
 
 **Date:** Saturday, April 4, 2026
 **Location:** Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
@@ -19,13 +19,13 @@
 | | | - Welcome & Introductions | |
 | | | - Reading of Tradition Two (Short & Long Form) | |
 | | | - Housekeeping Announcements | |
-| **8:45 – 12:00 PM** | ~195 min | **MORNING: "Home Group — Where It All Begins"** | Main Presenter |
+| **8:45 – 12:00 PM** | ~195 min | **MORNING: "Survivors of the Same Shipwreck"** | Main Presenter |
 | | | *(See detailed breakdown below)* | |
 | **12:00 – 1:00 PM** | 60 min | **Lunch Break & Fellowship** | All |
 | **1:00 – 1:15 PM** | 15 min | **Return & Energizer** | District 22 Alt-DCM |
 | | | - Responsibility Statement read together | |
 | | | - Brief sharing: one takeaway from the morning | |
-| **1:15 – 3:00 PM** | 105 min | **AFTERNOON: "How AA Got to Dallas & North East Texas"** | History Presenter |
+| **1:15 – 3:00 PM** | 105 min | **AFTERNOON: "April 2, 1943: From One Living Room to 160 Groups"** | History Presenter |
 | | | *(See detailed breakdown below)* | |
 | **3:00 – 3:30 PM** | 30 min | **Break & Refreshments** | Hospitality |
 | **3:30 – 4:15 PM** | 45 min | **Workshop Roundtables** | Table Facilitators |
@@ -41,7 +41,7 @@
 | **5:00 – 7:30 PM** | 150 min | **DINNER BREAK & FREE TIME** | All |
 | | | *(Attendees may leave venue for dinner)* | |
 | **7:45 – 8:00 PM** | 15 min | **Evening Registration & Coffee** | Hospitality |
-| **8:00 – 10:00 PM** | 120 min | **EVENING PANEL: "Anonymity — The Spiritual Foundation"** | Panel Moderator |
+| **8:00 – 10:00 PM** | 120 min | **EVENING PANEL: "First Names Only: The Spiritual Discipline We Practice at Home"** | Panel Moderator |
 | | | *(See detailed breakdown below)* | |
 | **10:00 PM** | — | **Final Closing & Serenity Prayer** | DCM |
 
@@ -49,7 +49,8 @@
 
 ## Detailed Breakdown: Main Presentation (10:15 AM – 12:15 PM)
 
-**"Home Group — Where It All Begins"** — 120 minutes (presenter) + audience participation = ~150 min total
+**"Survivors of the Same Shipwreck"** — Why Belonging to a Home Group Saves Lives — 120 minutes (presenter) + audience participation = ~150 min total
+*Tagline: From loneliness to accountability — where recovery begins*
 
 | Time | Min | Section | Key Content |
 |------|-----|---------|-------------|
@@ -72,7 +73,8 @@
 
 ## Detailed Breakdown: History Presentation (1:15 – 2:30 PM)
 
-**"How AA Got to Dallas & North East Texas"** — 75 minutes (uses Slides 15–23 of the HTML presentation)
+**"April 2, 1943: From One Living Room to 160 Groups"** — How Esther E.'s Attraction Succeeded Where Kent W.'s Promotion Failed — 75 minutes (uses Slides 15–23 of the HTML presentation)
+*Tagline: The Dallas lineage every home group inherits today*
 
 | Time | Min | Slide | Section | Key Content |
 |------|-----|-------|---------|-------------|
@@ -90,7 +92,8 @@
 
 ## Detailed Breakdown: Evening Panel (8:00 – 10:00 PM)
 
-**"Anonymity: The Spiritual Foundation of AA Unity"** — 120 minutes (uses Slides 24–35 of the HTML presentation)
+**"First Names Only: The Spiritual Discipline We Practice at Home"** — Two Levels of Anonymity in the Digital Age — 120 minutes (uses Slides 24–35 of the HTML presentation)
+*Tagline: Personal protection, organizational humility, spiritual practice*
 
 | Time | Min | Slide | Section | Key Content |
 |------|-----|-------|---------|-------------|

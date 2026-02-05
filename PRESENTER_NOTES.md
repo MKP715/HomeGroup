@@ -1,6 +1,13 @@
-# Presenter's Guide — "Home Group: Where It All Begins"
+# Presenter's Guide — "Foundation, Heritage, Humility"
 ## District 22 Mini Conference | NETA Area 65
 **Saturday, April 4, 2026** | Los Tres Patrillos, 2520 E I-30 Frontage Rd, Greenville, TX 75401
+
+### Full-Day Theme: **Foundation, Heritage, Humility**
+- 🌅 **Morning:** Survivors of the Same Shipwreck — *Why Belonging to a Home Group Saves Lives*
+- 🌞 **Afternoon:** April 2, 1943: From One Living Room to 160 Groups — *How Esther E.'s Attraction Succeeded Where Kent W.'s Promotion Failed*
+- 🌙 **Evening:** First Names Only: The Spiritual Discipline We Practice at Home — *Two Levels of Anonymity in the Digital Age*
+
+---
 
 ### How to Use This Guide
 
@@ -40,9 +47,13 @@ This document provides **detailed speaking notes** for every slide of the HTML p
 - Open with the **Serenity Prayer** (ask everyone to stand).
 - After the prayer, introduce yourself: first name, alcoholic, your home group name, and your service position.
 
-### Talking Points
+### Talking Points — Introducing the Full-Day Theme
 - "Welcome to the District 22 Mini Conference here at Los Tres Patrillos in Greenville on this beautiful April 4th. We are part of NETA Area 65 — the North East Texas Area — one of 93 Areas in the AA General Service structure."
-- "Today's theme is **Home Group: Where It All Begins.** Everything we're going to explore today comes from AA Conference-approved literature — the Big Book, the Twelve and Twelve, the AA pamphlets, the Service Manual, and more."
+- "Today's theme is **Foundation, Heritage, Humility** — three words that capture the essence of what we'll explore together across 14 hours."
+- "**Foundation** — This morning we'll discover why the home group is the bedrock of recovery."
+- "**Heritage** — This afternoon we'll trace our Dallas AA lineage back to a single living room in 1943."
+- "**Humility** — This evening we'll explore how anonymity keeps us spiritually grounded."
+- "Everything we're going to explore today comes from AA Conference-approved literature — the Big Book, the Twelve and Twelve, the AA pamphlets, the Service Manual, and more."
 - "This isn't a lecture — it's a workshop. I'm going to ask you to participate, share, discuss, and think. The best insights today will come from you, not from me."
 
 ### Quick Engagement
@@ -55,7 +66,16 @@ This document provides **detailed speaking notes** for every slide of the HTML p
 
 ---
 
-## SLIDE 1: Opening & Workshop Overview (10 minutes)
+## SLIDE 1: "Survivors of the Same Shipwreck" — Morning Presentation Opening (10 minutes)
+
+### Introducing the Morning Title: "Survivors of the Same Shipwreck"
+
+**Why this title:**
+- "The title of our morning presentation comes directly from page 17 of the Big Book. Let me read it to you:"
+- (Read slowly) *"We are people who normally would not mix. But there exists among us a fellowship, a friendliness, and an understanding which is indescribably wonderful. We are like the passengers of a great liner the moment after rescue from shipwreck when camaraderie, joyousness and democracy pervade the vessel from steerage to Captain's table."*
+- "**Survivors of the Same Shipwreck** — that's what we are. Not by choice, but by grace. The home group is the lifeboat where we found each other."
+- "Our subtitle is: *Why Belonging to a Home Group Saves Lives* — because that's not hyperbole. It's literal. As Bill Sees It tells us on page 90: 'Almost without exception, alcoholics are tortured by loneliness.' The home group cures that loneliness. It transforms isolation into accountability. It turns attending into belonging."
+- "This morning, we'll explore the journey *from loneliness to accountability — where recovery begins.*"
 
 ### What to Read (slowly, with weight)
 > 📖 *"Traditionally, most A.A. members through the years have found it important to belong to one group that they call their 'home group.' This is the group where they accept service responsibilities and try to sustain friendships."* — P-16, page 15
@@ -481,6 +501,21 @@ Read all seven quotes on screen, slowly and with feeling. The most important one
 
 ---
 
+## SLIDE 15: "April 2, 1943: From One Living Room to 160 Groups" — History Presentation Opening (5 minutes)
+
+### Introducing the Afternoon Title: "April 2, 1943: From One Living Room to 160 Groups"
+
+**Why this title:**
+- "Welcome back from lunch. This morning we explored the **foundation** — what the home group is and why it matters. This afternoon, we explore our **heritage** — where Dallas AA came from."
+- "The title of this presentation is a date and a number: **April 2, 1943: From One Living Room to 160 Groups.**"
+- "April 2, 1943 is **the founding date of Dallas AA** — the day the first meeting of 'The Dallas Group' was held in Esther E.'s home. Every AA group in the Dallas-Fort Worth metroplex today traces its lineage back to that one living room."
+- "From fewer than twenty people sober by 1945, we now have over **160 groups** serving thousands of alcoholics across North Texas."
+- "Our subtitle is: *How Esther E.'s Attraction Succeeded Where Kent W.'s Promotion Failed.*"
+- "You'll learn about two attempts to bring AA to Dallas: Kent W. arrived first in 1941 with a hotel ballroom, newspaper publicity, and the title 'Chief Sponsor.' His effort collapsed entirely. Esther E. arrived in 1943 with a living room, word of mouth, and humble service. Her foundation endures today."
+- "This is **the Dallas lineage every home group inherits today.** Promotion failed. Attraction won. Let's explore why."
+
+---
+
 ## SLIDE 16: Larry J. & Houston — 1940 (10 minutes)
 
 ### Setting the Scene
@@ -793,11 +828,20 @@ Use these if you want to supplement specific sections:
 
 ---
 
-## SLIDE 24: Anonymity Panel Introduction (5 minutes)
+## SLIDE 24: "First Names Only: The Spiritual Discipline We Practice at Home" — Anonymity Panel Opening (5 minutes)
+
+### Introducing the Evening Title: "First Names Only: The Spiritual Discipline We Practice at Home"
+
+**Why this title:**
+- "Welcome to our evening session — or welcome back if you've been here all day. Thank you for your commitment to this full exploration of home group principles."
+- "This morning we discussed **foundation** — why belonging to a home group saves lives. This afternoon we explored **heritage** — how Dallas AA was built on attraction, not promotion. Tonight we complete the triangle with **humility** — the spiritual practice that holds it all together."
+- "The title of tonight's panel is: **First Names Only: The Spiritual Discipline We Practice at Home.**"
+- "Why 'First Names Only'? Because that's the practical, visible manifestation of anonymity that everyone in AA experiences from day one. We don't ask for last names. We don't share others' identities. We practice humility by making ourselves equal — no titles, no credentials, no status. Just first names and a common problem."
+- "Our subtitle is: *Two Levels of Anonymity in the Digital Age.* Tonight we'll clarify the distinction between personal anonymity (your choice who knows in your private life) and public anonymity (protection at the level of press, radio, films, and now social media)."
+- "And our tagline captures why anonymity exists: *Personal protection, organizational humility, spiritual practice.* It protects you as an individual. It protects AA from becoming a cult of personality. And it keeps us spiritually grounded in principles before personalities."
+- "Your **home group is where you first learn to practice anonymity** — not as a rule to follow, but as a spiritual discipline to live."
 
 ### What to Do
-- Welcome people back (or welcome evening-only attendees).
-- Acknowledge this is the final session of a 14-hour day — thank everyone for their commitment.
 - Explain panel format: "Tonight is structured as an interactive panel discussion. We'll explore anonymity from multiple angles, then open for questions and sharing."
 
 ### Talking Points
