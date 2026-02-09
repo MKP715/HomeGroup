@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Guide — Foundation, Heritage, Humility | District 22 NETA 65</title>
+<style>
+  @page { size: letter; margin: 0.6in 0.65in; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a1a; line-height: 1.5; font-size: 15px;
+    background: #f4f5f7;
+  }
+
+  /* ===== PLAYER BAR (sticky top) ===== */
+  #player-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5c 100%);
+    border-bottom: 3px solid #c8a84b;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  #player-bar.minimized #player-main { max-height: 0; overflow: hidden; }
+  #player-bar.minimized #player-controls { border-top: none; }
+
+  #player-main {
+    display: flex; gap: 0;
+    max-height: 260px;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  #player-video-wrap {
+    width: 380px; min-width: 300px; flex-shrink: 0;
+    background: #000; position: relative;
+    height: 214px;
+  }
+  #player-video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+  #player-video-wrap.empty::after {
+    content: 'Click a song to start playing';
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: #667; font-size: 14px; text-align: center; padding: 20px;
+  }
+
+  #player-info {
+    flex: 1; padding: 18px 24px;
+    display: flex; flex-direction: column; justify-content: center;
+    min-width: 0;
+  }
+  #np-section {
+    font-size: 11px; font-weight: 700; color: #c8a84b;
+    text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;
+  }
+  #np-title {
+    font-size: 22px; font-weight: 800; color: #fff;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  #np-artist {
+    font-size: 15px; color: #99aabb; margin-top: 2px;
+  }
+  #np-reason {
+    font-size: 12px; color: #667; font-style: italic; margin-top: 8px;
+  }
+  #player-status {
+    font-size: 11px; color: #c8a84b; margin-top: 10px;
+    min-height: 16px;
+  }
+
+  /* Controls bar */
+  #player-controls {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 16px;
+    border-top: 1px solid rgba(200,168,75,0.2);
+    background: rgba(0,0,0,0.2);
+  }
+  .ctrl-btn {
+    background: none; border: 1px solid rgba(255,255,255,0.15);
+    color: #ddd; width: 38px; height: 34px;
+    border-radius: 6px; cursor: pointer;
+    font-size: 16px; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .ctrl-btn:hover { background: rgba(200,168,75,0.2); border-color: #c8a84b; color: #fff; }
+  .ctrl-btn:active { transform: scale(0.95); }
+  .ctrl-btn.active { background: #c8a84b; color: #0d1b2a; border-color: #c8a84b; }
+
+  #ctrl-track-info {
+    flex: 1; color: #99aabb; font-size: 13px;
+    padding: 0 12px; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  #ctrl-track-info strong { color: #fff; font-weight: 600; }
+
+  #btn-section-play {
+    background: rgba(200,168,75,0.15); border: 1px solid rgba(200,168,75,0.3);
+    color: #c8a84b; padding: 6px 14px; border-radius: 6px;
+    cursor: pointer; font-size: 12px; font-weight: 600;
+    white-space: nowrap; transition: all 0.2s;
+  }
+  #btn-section-play:hover { background: #c8a84b; color: #0d1b2a; }
+
+  /* ===== MAIN CONTENT ===== */
+  #playlist-content {
+    padding-top: 310px;
+    max-width: 1100px; margin: 0 auto;
+    padding-left: 20px; padding-right: 20px; padding-bottom: 60px;
+  }
+  #player-bar.minimized ~ #playlist-content { padding-top: 60px; }
+
+  .page-header {
+    text-align: center; padding: 24px 0 18px;
+    border-bottom: 3px solid #1a3a5c; margin-bottom: 24px;
+  }
+  .page-header h1 {
+    font-size: 28px; font-weight: 800; color: #1a3a5c;
+    letter-spacing: 0.5px; margin-bottom: 4px;
+  }
+  .page-header .subtitle { font-size: 16px; color: #555; }
+  .page-header .event-info { font-size: 13px; color: #888; margin-top: 4px; }
+
+  /* ===== SECTIONS ===== */
+  .section-block { margin-bottom: 28px; }
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 6px; flex-wrap: wrap;
+  }
+  .time-badge {
+    font-size: 12px; font-weight: 700; color: #fff;
+    background: #1a3a5c; padding: 4px 12px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .section-title { font-size: 17px; font-weight: 700; color: #1a3a5c; }
+  .section-play-btn {
+    margin-left: auto; background: #1a3a5c; border: none;
+    color: #c8a84b; padding: 5px 14px; border-radius: 5px;
+    cursor: pointer; font-size: 12px; font-weight: 600; transition: all 0.2s;
+  }
+  .section-play-btn:hover { background: #c8a84b; color: #1a3a5c; }
+  .mood-note {
+    font-size: 12px; color: #999; font-style: italic; margin-bottom: 8px;
+    padding-left: 2px;
+  }
+
+  /* ===== SONG ROWS ===== */
+  .song-table {
+    width: 100%; border-collapse: collapse;
+    background: #fff; border-radius: 8px;
+    overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .song-table thead th {
+    text-align: left; font-size: 11px; font-weight: 700;
+    color: #888; text-transform: uppercase; letter-spacing: 0.8px;
+    padding: 8px 10px; background: #f8f9fa;
+    border-bottom: 2px solid #e8e8e8;
+  }
+  .song-table thead th:first-child { width: 50px; text-align: center; }
+  .song-table thead th:nth-child(2) { width: 30%; }
+  .song-table thead th:nth-child(3) { width: 24%; }
+
+  .song-row {
+    cursor: pointer; transition: all 0.15s;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .song-row:last-child { border-bottom: none; }
+  .song-row:hover { background: #f0f6ff; }
+  .song-row.playing {
+    background: linear-gradient(90deg, #fff8e7, #fffdf5);
+    border-left: 3px solid #c8a84b;
+  }
+  .song-row.playing .play-icon { color: #c8a84b; }
+  .song-row.needs-id .s-title::after {
+    content: ' (needs ID)'; font-size: 10px; color: #ccc; font-weight: 400;
+  }
+  .song-row td { padding: 10px 10px; vertical-align: middle; }
+  .song-row td:first-child { text-align: center; width: 50px; }
+  .play-icon {
+    font-size: 18px; color: #bbb; transition: color 0.2s;
+    display: inline-block; width: 24px; text-align: center;
+  }
+  .song-row:hover .play-icon { color: #1a3a5c; }
+  .song-row .s-num {
+    font-size: 12px; color: #aaa; display: inline-block; width: 24px; text-align: center;
+  }
+  .song-row:hover .s-num { display: none; }
+  .song-row .s-play-hover { display: none; }
+  .song-row:hover .s-play-hover { display: inline-block; }
+  .song-row.playing .s-num { display: none; }
+  .song-row.playing .s-play-hover { display: inline-block; }
+
+  .s-title { font-weight: 600; color: #1a1a1a; font-size: 14px; }
+  .s-artist { color: #555; font-size: 14px; }
+  .s-reason { color: #888; font-size: 13px; }
+
+  .song-row.loading .play-icon { animation: pulse 1s infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    margin-top: 32px; padding: 20px 24px;
+    background: #fff; border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .page-footer h3 { font-size: 15px; color: #1a3a5c; margin-bottom: 10px; }
+  .tips-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px 24px; font-size: 13px; color: #666;
+  }
+  .tip { padding-left: 16px; text-indent: -16px; }
+  .tip::before { content: "\25B8 "; color: #c8a84b; }
+  .closing-quote {
+    text-align: center; font-style: italic; color: #555;
+    margin-top: 20px; font-size: 14px; line-height: 1.6;
+  }
+  .closing-credit {
+    text-align: center; font-size: 12px; color: #aaa; margin-top: 12px;
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; font-size: 9.5pt; line-height: 1.4; }
+    #player-bar { display: none !important; }
+    #playlist-content { padding-top: 0 !important; max-width: 100%; }
+    .page-header { padding: 10px 0; margin-bottom: 14px; }
+    .page-header h1 { font-size: 18pt; }
+    .page-header .subtitle { font-size: 11pt; }
+    .page-header .event-info { font-size: 8.5pt; }
+    .section-block { margin-bottom: 12px; break-inside: avoid; }
+    .section-play-btn { display: none !important; }
+    .song-table { box-shadow: none; font-size: 9pt; }
+    .song-table thead th { font-size: 7.5pt; padding: 3px 6px; }
+    .song-row td { padding: 3px 6px; }
+    .song-row:hover { background: none; }
+    .song-row.needs-id .s-title::after { display: none; }
+    .s-play-hover { display: none !important; }
+    .s-num { display: inline-block !important; }
+    .play-icon { display: none !important; }
+    .s-title { font-size: 9pt; }
+    .s-artist { font-size: 9pt; }
+    .s-reason { font-size: 8.5pt; }
+    .page-footer { box-shadow: none; padding: 10px 0; }
+    .tips-grid { font-size: 8pt; }
+    .closing-quote { font-size: 8.5pt; }
+    .closing-credit { font-size: 7.5pt; }
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    #player-main { flex-direction: column; }
+    #player-video-wrap { width: 100%; min-width: unset; height: 220px; }
+    #player-info { padding: 12px 16px; }
+    #np-title { font-size: 18px; }
+    #playlist-content { padding-top: 420px; }
+    #player-bar.minimized ~ #playlist-content { padding-top: 55px; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .section-play-btn { margin-left: 0; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .s-reason { display: none; }
+    .song-table thead th:nth-child(4) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== STICKY PLAYER BAR ===== -->
+<div id="player-bar">
+  <div id="player-main">
+    <div id="player-video-wrap" class="empty">
+      <div id="yt-player"></div>
+    </div>
+    <div id="player-info">
+      <div id="np-section">Ready to play</div>
+      <div id="np-title">Click any song below to begin</div>
+      <div id="np-artist"></div>
+      <div id="np-reason"></div>
+      <div id="player-status"></div>
+    </div>
+  </div>
+  <div id="player-controls">
+    <button type="button" class="ctrl-btn" id="btn-prev" title="Previous">&#9198;</button>
+    <button type="button" class="ctrl-btn" id="btn-play" title="Play / Pause">&#9654;</button>
+    <button type="button" class="ctrl-btn" id="btn-next" title="Next">&#9197;</button>
+    <button type="button" class="ctrl-btn" id="btn-stop" title="Stop">&#9632;</button>
+    <span id="ctrl-track-info">55 songs &bull; 14 hours</span>
+    <button type="button" id="btn-section-play">&#9654; Play Section</button>
+    <button type="button" class="ctrl-btn" id="btn-minimize" title="Minimize / Expand player">&#9660;</button>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div id="playlist-content">
+  <div class="page-header">
+    <h1>Music Guide &amp; Player</h1>
+    <div class="subtitle">Foundation, Heritage, Humility &mdash; District 22 Full Day Event</div>
+    <div class="event-info">Saturday, April 4, 2026 &bull; 8:00 AM &ndash; 10:00 PM &bull; Los Tres Patrillos, Greenville, TX</div>
+  </div>
+
+  <div id="playlist-container"></div>
+
+  <div class="page-footer">
+    <h3>Tips for the Sound Person</h3>
+    <div class="tips-grid">
+      <div class="tip"><strong>Volume:</strong> Background during fellowship/breaks at conversational level; transition music between sections slightly louder; silence during presentations and prayer.</div>
+      <div class="tip"><strong>Avoid:</strong> Songs explicitly about drinking, partying, or that could be triggering.</div>
+      <div class="tip"><strong>Instrumental versions</strong> of any song on this list work great if lyrics feel too distracting.</div>
+      <div class="tip"><strong>Playlists:</strong> Search "recovery playlist" or "sober living playlist" on Spotify/YouTube to supplement.</div>
+    </div>
+    <div class="closing-quote">
+      &ldquo;I am responsible. When anyone, anywhere, reaches out for help, I want the hand of A.A. always to be there. And for that: I am responsible.&rdquo;
+    </div>
+    <div class="closing-credit">
+      District 22 &mdash; North East Texas Area 65 (NETA 65) &bull; neta65.org &bull; aadallas.org<br>
+      55 songs &bull; 14 hours &bull; One day at a time
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// SONG DATA — id = YouTube video ID (empty string = needs ID)
+// ============================================================
+const SECTIONS = [
+  {
+    title: "Registration, Coffee & Fellowship",
+    time: "8:00 \u2013 8:30 AM",
+    mood: "Warm, welcoming, gentle energy \u2014 background volume",
+    songs: [
+      { id: "co6WMzDOh1o", title: "Beautiful Day",          artist: "U2",              reason: "Optimistic opener, sets a hopeful tone" },
+      { id: "zaGUr6wzyT8", title: "Three Little Birds",     artist: "Bob Marley",      reason: "\u201CEvery little thing gonna be alright\u201D" },
+      { id: "KQetemT1sWc", title: "Here Comes the Sun",     artist: "The Beatles",     reason: "Gentle, warm \u2014 new day, new beginning" },
+      { id: "A3yCcXgbKrE", title: "What a Wonderful World", artist: "Louis Armstrong",  reason: "Gratitude and appreciation" },
+      { id: "fOZ-MySzAQo", title: "Lean on Me",             artist: "Bill Withers",    reason: "Fellowship, relying on one another" },
+      { id: "hwZNL7QVJjE", title: "Stand By Me",            artist: "Ben E. King",     reason: "Community, not standing alone anymore" },
+      { id: "seZMOTGCDag", title: "Better Together",        artist: "Jack Johnson",    reason: "Easy-going, perfect coffee background" }
+    ]
+  },
+  {
+    title: "Opening Ceremony",
+    time: "8:30 \u2013 8:45 AM",
+    mood: "Reverent, grounding \u2014 play before the Serenity Prayer",
+    songs: [
+      { id: "",            title: "Amazing Grace (instrumental)", artist: "Traditional",     reason: "Spiritual without being denominational" },
+      { id: "ttEMYvpoR-k", title: "Hallelujah (acoustic)",       artist: "Leonard Cohen",   reason: "Reflective, contemplative tone" }
+    ]
+  },
+  {
+    title: "Morning: \u201CSurvivors of the Same Shipwreck\u201D",
+    time: "8:45 AM \u2013 12:00 PM",
+    mood: "Transitions between sections only \u2014 not during the presentation",
+    songs: [
+      { id: "4G-YQA_bsOU", title: "Bridge Over Troubled Water", artist: "Simon & Garfunkel", reason: "Being there in the darkest hour \u2014 sponsorship" },
+      { id: "",            title: "You've Got a Friend",          artist: "Carole King",       reason: "Fellowship and accountability" },
+      { id: "PKfD8d3XJok", title: "We're Going to Be Friends",   artist: "The White Stripes", reason: "Simple, earnest \u2014 home group friendships" },
+      { id: "nvlTJrNJ5lA", title: "I Won't Back Down",           artist: "Tom Petty",         reason: "Resilience, determination in recovery" },
+      { id: "FBuIBaDSOa4", title: "Rise Up",                     artist: "Andra Day",         reason: "Overcoming struggle \u2014 \u201Cshipwreck survivors\u201D" },
+      { id: "",            title: "People Get Ready",             artist: "Curtis Mayfield",   reason: "Spiritual journey, faith, hope" }
+    ]
+  },
+  {
+    title: "Lunch Break & Fellowship",
+    time: "12:00 \u2013 1:00 PM",
+    mood: "Upbeat, social, conversational volume \u2014 energize the room",
+    songs: [
+      { id: "iPUmE-tne5U", title: "Walking on Sunshine",           artist: "Katrina & The Waves",       reason: "Pure joy, midday energy boost" },
+      { id: "1k8craCGpgs", title: "Don't Stop Believin'",          artist: "Journey",                   reason: "Hope, perseverance" },
+      { id: "ZbZSe6N_BXs", title: "Happy",                         artist: "Pharrell Williams",         reason: "Feel-good, celebratory" },
+      { id: "bEeaS6fuUoA", title: "Lovely Day",                    artist: "Bill Withers",              reason: "Gratitude, positivity" },
+      { id: "FscIgtDJFXg", title: "I Can See Clearly Now",         artist: "Johnny Nash",               reason: "\u201CGone are the dark clouds\u201D \u2014 clarity" },
+      { id: "Gs069dndIYk", title: "September",                     artist: "Earth, Wind & Fire",        reason: "Fun, gets people smiling" },
+      { id: "",            title: "Signed, Sealed, Delivered",      artist: "Stevie Wonder",             reason: "Upbeat energy, joy" },
+      { id: "",            title: "Soul Man",                       artist: "Sam & Dave",                reason: "Classic feel-good soul" },
+      { id: "",            title: "Ain't No Mountain High Enough",  artist: "Marvin Gaye & Tammi Terrell", reason: "Nothing can keep us apart \u2014 fellowship" }
+    ]
+  },
+  {
+    title: "Return & Energizer",
+    time: "1:00 \u2013 1:15 PM",
+    mood: "Re-centering, purposeful \u2014 gather everyone back",
+    songs: [
+      { id: "M9BNoNFKCBI", title: "We Are the World", artist: "USA for Africa", reason: "Collective responsibility \u2014 ties to the Responsibility Statement" },
+      { id: "q7yCLn-O-Y0", title: "Carry On",         artist: "fun.",           reason: "\u201CIf you're lost and alone\u2026 carry on\u201D" }
+    ]
+  },
+  {
+    title: "Afternoon: \u201CApril 2, 1943 \u2014 From One Living Room to 160 Groups\u201D",
+    time: "1:15 \u2013 3:00 PM",
+    mood: "Transitions only \u2014 Texas-rooted or era-appropriate for atmosphere",
+    songs: [
+      { id: "",            title: "Deep in the Heart of Texas (instrumental)", artist: "Traditional",    reason: "Dallas/Texas history \u2014 sets the regional tone" },
+      { id: "wxiMrvDbq3s", title: "This Land Is Your Land",                   artist: "Woody Guthrie",  reason: "Americana, 1940s era, belonging" },
+      { id: "_CI-0E_jses", title: "In the Mood (instrumental)",               artist: "Glenn Miller",   reason: "1940s ambiance \u2014 matches the WWII timeline" },
+      { id: "",            title: "Georgia on My Mind",                        artist: "Ray Charles",    reason: "Southern charm \u2014 \u201CFlower of the South\u201D" },
+      { id: "wEBlaMOmKV4", title: "A Change Is Gonna Come",                   artist: "Sam Cooke",      reason: "Transformation, hope \u2014 post-war growth" },
+      { id: "90WD_ats6eE", title: "The Times They Are A-Changin'",            artist: "Bob Dylan",      reason: "Evolution \u2014 one living room to 160 groups" }
+    ]
+  },
+  {
+    title: "Break & Refreshments",
+    time: "3:00 \u2013 3:30 PM",
+    mood: "Relaxed, reflective \u2014 processing what\u2019s been learned",
+    songs: [
+      { id: "QDYfEBY9NM4", title: "Let It Be",                  artist: "The Beatles",              reason: "Acceptance, peace \u2014 \u201Cthere will be an answer\u201D" },
+      { id: "V1bFr2SWP1I", title: "Somewhere Over the Rainbow", artist: "Israel Kamakawiwo\u02BBole", reason: "Gentle, hopeful" },
+      { id: "",            title: "Peaceful Easy Feeling",       artist: "Eagles",                   reason: "Calm, grounded" },
+      { id: "",            title: "Take It Easy",                artist: "Eagles",                   reason: "Mellow break music" },
+      { id: "",            title: "Fire and Rain",               artist: "James Taylor",             reason: "Reflection, gratitude for making it through" }
+    ]
+  },
+  {
+    title: "Workshop Roundtables & Reports",
+    time: "3:30 \u2013 4:40 PM",
+    mood: "Soft instrumental only \u2014 very low so groups can discuss",
+    songs: [
+      { id: "",            title: "Lo-fi Acoustic Guitar Mix", artist: "Various",     reason: "Unobtrusive background" },
+      { id: "CvFH_6DNRCY", title: "Clair de Lune",            artist: "Debussy",     reason: "Gentle classical \u2014 won\u2019t distract discussion" },
+      { id: "S-Xm7s9eGxU", title: "Gymnop\u00E9die No. 1",   artist: "Erik Satie",  reason: "Peaceful, contemplative" }
+    ]
+  },
+  {
+    title: "Afternoon Closing & 7th Tradition",
+    time: "4:40 \u2013 5:00 PM",
+    mood: "Grateful, warm \u2014 day-well-spent feeling",
+    songs: [
+      { id: "",            title: "Grateful",               artist: "John Bucchino", reason: "Gratitude \u2014 often used in recovery circles" },
+      { id: "",            title: "Thank You",              artist: "Led Zeppelin",  reason: "Devotion and gratitude" },
+      { id: "",            title: "Wind Beneath My Wings",  artist: "Bette Midler",  reason: "Honoring those who serve humbly (Tradition 12)" }
+    ]
+  },
+  {
+    title: "Evening Registration & Coffee",
+    time: "7:45 \u2013 8:00 PM",
+    mood: "Intimate, contemplative \u2014 more subdued than morning",
+    songs: [
+      { id: "NAEppFUWLfc", title: "The Sound of Silence",  artist: "Simon & Garfunkel", reason: "Anonymity theme \u2014 contemplative" },
+      { id: "5rOiW_xY-kc", title: "Everybody Hurts",       artist: "R.E.M.",            reason: "Compassion, shared humanity" },
+      { id: "ujNeHIo7oTE", title: "With or Without You",    artist: "U2",                reason: "Understated, spiritual undertone" }
+    ]
+  },
+  {
+    title: "Evening Panel: \u201CFirst Names Only\u201D",
+    time: "8:00 \u2013 10:00 PM",
+    mood: "Transitions only \u2014 humility, identity, principles over fame",
+    songs: [
+      { id: "awzNHuGqoMc", title: "Humble and Kind",    artist: "Tim McGraw",       reason: "Humility as a way of life \u2014 Tradition 12" },
+      { id: "PivWY9wn5ps", title: "Man in the Mirror",   artist: "Michael Jackson",  reason: "Change starts with self, not public recognition" },
+      { id: "LPn0KFlbqX8", title: "True Colors",         artist: "Cyndi Lauper",     reason: "Authentic self, not public image" },
+      { id: "",            title: "Behind Closed Doors",  artist: "Charlie Rich",     reason: "What happens here stays here" },
+      { id: "lXgkuM2NhYI", title: "Heroes",              artist: "David Bowie",      reason: "\u201CWe can be heroes\u201D \u2014 anonymous heroism" },
+      { id: "_Yhyp-_hX2s", title: "Lose Yourself",       artist: "Eminem",           reason: "Surrender to the moment \u2014 authenticity over ego" }
+    ]
+  },
+  {
+    title: "Final Closing & Serenity Prayer",
+    time: "10:00 PM",
+    mood: "Unity, peace \u2014 sending everyone off with hope",
+    songs: [
+      { id: "fOZ-MySzAQo", title: "Lean on Me",              artist: "Bill Withers",              reason: "Bookend with morning \u2014 fellowship start to finish" },
+      { id: "OV5_LQArLa0", title: "You'll Never Walk Alone", artist: "Gerry & The Pacemakers",    reason: "\u201CWalk on with hope in your heart\u201D" },
+      { id: "A3yCcXgbKrE", title: "What a Wonderful World",  artist: "Louis Armstrong",           reason: "Full circle \u2014 gratitude to close the day" }
+    ]
+  }
+];
+
+// Build flat song list with global indices
+const allSongs = [];
+SECTIONS.forEach((sec, si) => {
+  sec.songs.forEach((song) => {
+    allSongs.push({
+      ...song,
+      sectionIndex: si,
+      sectionTitle: sec.title,
+      sectionTime: sec.time,
+      globalIndex: allSongs.length
+    });
+  });
+});
+
+// ============================================================
+// STATE
+// ============================================================
+let currentIndex = -1;
+let ytPlayer = null;
+let ytReady = false;
+let videoCache = {};  // search query -> videoId
+let isPlaying = false;
+
+// ============================================================
+// YOUTUBE IFRAME API (lazy init — player created on first play)
+// ============================================================
+const tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(tag);
+
+window.onYouTubeIframeAPIReady = function() {
+  ytReady = true;
+  // Don't create the player yet — wait until a song is clicked
+};
+
+// Ensure the player is created or updated correctly
+function ensurePlayer(videoId) {
+  if (ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
+    ytPlayer.loadVideoById(videoId);
+  } else {
+    // If player doesn't exist or isn't fully ready, create it
+    ytPlayer = new YT.Player('yt-player', {
+      height: '100%',
+      width: '100%',
+      videoId: videoId,
+      playerVars: {
+        'autoplay': 1,
+        'controls': 1,
+        'rel': 0,
+        'playsinline': 1
+      },
+      events: {
+        'onReady': (event) => event.target.playVideo(),
+        'onStateChange': onPlayerStateChange,
+        'onError': onPlayerError
+      }
+    });
+  }
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.ENDED) {
+    if (currentIndex < allSongs.length - 1) {
+      playSong(currentIndex + 1);
+    } else {
+      setStatus('Playlist complete');
+      isPlaying = false;
+      updatePlayButton();
+    }
+  } else if (event.data === YT.PlayerState.PLAYING) {
+    isPlaying = true;
+    updatePlayButton();
+    setStatus('');
+  } else if (event.data === YT.PlayerState.PAUSED) {
+    isPlaying = false;
+    updatePlayButton();
+  }
+}
+
+function onPlayerError(event) {
+  const song = allSongs[currentIndex];
+  if (song) {
+    setStatus('Video unavailable \u2014 <a href="https://www.youtube.com/results?search_query=' +
+      encodeURIComponent(song.title + ' ' + song.artist) +
+      '" target="_blank" style="color:#c8a84b">Search YouTube</a>');
+  }
+}
+
+// ============================================================
+// VIDEO SEARCH (fallback for songs without hardcoded ID)
+// ============================================================
+const PIPED_INSTANCES = [
+  'https://pipedapi.kavin.rocks',
+  'https://pipedapi.adminforge.de',
+  'https://pipedapi-libre.kavin.rocks'
+];
+
+async function searchVideoId(query) {
+  if (videoCache[query]) return videoCache[query];
+
+  for (const instance of PIPED_INSTANCES) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      const resp = await fetch(
+        instance + '/search?q=' + encodeURIComponent(query) + '&filter=music_songs',
+        { signal: controller.signal }
+      );
+      clearTimeout(timeout);
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      const items = data.items || data;
+      if (items && items.length > 0) {
+        const url = items[0].url || items[0].id || '';
+        const vidId = url.includes('v=') ? url.split('v=')[1] : url.replace('/watch?v=', '').replace('/', '');
+        if (vidId) { videoCache[query] = vidId; return vidId; }
+      }
+    } catch (e) { /* try next instance */ }
+  }
+
+  const INVIDIOUS = ['https://inv.tux.pizza', 'https://invidious.fdn.fr'];
+  for (const instance of INVIDIOUS) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      const resp = await fetch(
+        instance + '/api/v1/search?q=' + encodeURIComponent(query) + '&type=video',
+        { signal: controller.signal }
+      );
+      clearTimeout(timeout);
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      if (data && data.length > 0 && data[0].videoId) {
+        videoCache[query] = data[0].videoId;
+        return data[0].videoId;
+      }
+    } catch (e) { /* try next */ }
+  }
+
+  return null;
+}
+
+// ============================================================
+// PLAYBACK
+// ============================================================
+async function playSong(index) {
+  if (index < 0 || index >= allSongs.length) return;
+
+  const song = allSongs[index];
+  currentIndex = index;
+  updateNowPlaying(song);
+  highlightRow(index);
+
+  // Use hardcoded ID if available, otherwise search
+  let videoId = song.id || null;
+
+  if (videoId) {
+    setStatus('');
+    loadVideo(videoId);
+  } else {
+    setStatus('Searching YouTube...');
+    const row = document.querySelector('[data-index="' + index + '"]');
+    if (row) row.classList.add('loading');
+
+    const query = song.title + ' ' + song.artist + ' official audio';
+    videoId = await searchVideoId(query);
+
+    if (row) row.classList.remove('loading');
+
+    if (videoId) {
+      loadVideo(videoId);
+      setStatus('');
+    } else {
+      setStatus('Could not find video \u2014 <a href="https://www.youtube.com/results?search_query=' +
+        encodeURIComponent(song.title + ' ' + song.artist) +
+        '" target="_blank" style="color:#c8a84b">Search YouTube manually</a>');
+    }
+  }
+}
+
+// Improved loadVideo with safety checks
+function loadVideo(videoId) {
+  const wrap = document.getElementById('player-video-wrap');
+  if (wrap) wrap.classList.remove('empty');
+
+  if (ytReady && window.YT && window.YT.Player) {
+    ensurePlayer(videoId);
+    isPlaying = true;
+    updatePlayButton();
+  } else {
+    setStatus('Waiting for YouTube API...');
+    const waitForReady = setInterval(() => {
+      if (ytReady && window.YT && window.YT.Player) {
+        clearInterval(waitForReady);
+        ensurePlayer(videoId);
+        isPlaying = true;
+        updatePlayButton();
+        setStatus('');
+      }
+    }, 200);
+  }
+}
+
+function playSectionFrom(sectionIndex) {
+  const firstInSection = allSongs.findIndex(s => s.sectionIndex === sectionIndex);
+  if (firstInSection >= 0) playSong(firstInSection);
+}
+
+// ============================================================
+// UI UPDATES
+// ============================================================
+function updateNowPlaying(song) {
+  document.getElementById('np-section').textContent = song.sectionTime + ' \u2014 ' + song.sectionTitle;
+  document.getElementById('np-title').textContent = song.title;
+  document.getElementById('np-artist').textContent = song.artist;
+  document.getElementById('np-reason').textContent = song.reason;
+  document.getElementById('ctrl-track-info').innerHTML =
+    '<strong>' + (song.globalIndex + 1) + '/' + allSongs.length + '</strong> \u2014 ' +
+    song.title + ' \u2022 ' + song.artist;
+}
+
+function highlightRow(index) {
+  document.querySelectorAll('.song-row.playing').forEach(r => r.classList.remove('playing'));
+  const row = document.querySelector('[data-index="' + index + '"]');
+  if (row) {
+    row.classList.add('playing');
+    row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+function setStatus(html) {
+  document.getElementById('player-status').innerHTML = html;
+}
+
+function updatePlayButton() {
+  document.getElementById('btn-play').innerHTML = isPlaying ? '&#10074;&#10074;' : '&#9654;';
+}
+
+// ============================================================
+// CONTROLS
+// ============================================================
+document.getElementById('btn-play').addEventListener('click', () => {
+  if (!ytPlayer || currentIndex < 0) { playSong(0); return; }
+  if (isPlaying) { ytPlayer.pauseVideo(); }
+  else { ytPlayer.playVideo(); }
+});
+
+document.getElementById('btn-prev').addEventListener('click', () => {
+  if (currentIndex > 0) playSong(currentIndex - 1);
+});
+
+document.getElementById('btn-next').addEventListener('click', () => {
+  if (currentIndex < allSongs.length - 1) playSong(currentIndex + 1);
+});
+
+document.getElementById('btn-stop').addEventListener('click', () => {
+  if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
+  isPlaying = false;
+  updatePlayButton();
+  setStatus('Stopped');
+});
+
+document.getElementById('btn-section-play').addEventListener('click', () => {
+  if (currentIndex >= 0) {
+    playSectionFrom(allSongs[currentIndex].sectionIndex);
+  } else {
+    playSong(0);
+  }
+});
+
+document.getElementById('btn-minimize').addEventListener('click', () => {
+  const bar = document.getElementById('player-bar');
+  bar.classList.toggle('minimized');
+  document.getElementById('btn-minimize').innerHTML = bar.classList.contains('minimized') ? '&#9650;' : '&#9660;';
+  document.getElementById('playlist-content').style.paddingTop =
+    bar.classList.contains('minimized') ? '60px' : '310px';
+});
+
+// ============================================================
+// RENDER PLAYLIST
+// ============================================================
+function renderPlaylist() {
+  const container = document.getElementById('playlist-container');
+  let songNum = 0;
+  let html = '';
+
+  SECTIONS.forEach((sec, si) => {
+    html += '<div class="section-block">';
+    html += '<div class="section-header">';
+    html += '<span class="time-badge">' + sec.time + '</span>';
+    html += '<span class="section-title">' + sec.title + '</span>';
+    html += '<button type="button" class="section-play-btn" onclick="playSectionFrom(' + si + ')">&#9654; Play Section</button>';
+    html += '</div>';
+    html += '<div class="mood-note">' + sec.mood + '</div>';
+    html += '<table class="song-table">';
+    html += '<thead><tr><th>#</th><th>Song</th><th>Artist</th><th>Why It Fits</th></tr></thead>';
+    html += '<tbody>';
+
+    sec.songs.forEach((song) => {
+      const gi = songNum;
+      const needsId = !song.id;
+      html += '<tr class="song-row' + (needsId ? ' needs-id' : '') + '" data-index="' + gi + '" onclick="playSong(' + gi + ')">';
+      html += '<td>';
+      html += '<span class="s-num">' + (gi + 1) + '</span>';
+      html += '<span class="s-play-hover play-icon">&#9654;</span>';
+      html += '</td>';
+      html += '<td class="s-title">' + escHtml(song.title) + '</td>';
+      html += '<td class="s-artist">' + escHtml(song.artist) + '</td>';
+      html += '<td class="s-reason">' + escHtml(song.reason) + '</td>';
+      html += '</tr>';
+      songNum++;
+    });
+
+    html += '</tbody></table></div>';
+  });
+
+  container.innerHTML = html;
+}
+
+function escHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.code === 'Space') { e.preventDefault(); document.getElementById('btn-play').click(); }
+  if (e.code === 'ArrowRight' || e.code === 'KeyN') { document.getElementById('btn-next').click(); }
+  if (e.code === 'ArrowLeft' || e.code === 'KeyP') { document.getElementById('btn-prev').click(); }
+});
+
+// Initialize
+renderPlaylist();
+</script>
+
+</body>
+</html>
