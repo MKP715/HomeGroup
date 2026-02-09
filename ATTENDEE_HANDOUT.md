@@ -110,24 +110,30 @@ From P-16 "The A.A. Group," pages 19–27:
 ## AA's Upside-Down Service Structure
 
 ```
-    ╔══════════════════════════════════════╗
-    ║    A.A. GROUPS (Ultimate Authority)  ║  <-- YOUR HOME GROUP
-    ╠══════════════════════════════════════╣
-    ║         Group GSRs                   ║
-    ╠════════════════════════════════╣
-    ║       Districts (DCMs)         ║  <-- DISTRICT 22
-    ╠══════════════════════════╣
-    ║     Area Assemblies      ║  <-- NETA 65
-    ╠════════════════════╣
-    ║  General Service   ║
-    ║   Conference       ║
-    ╠══════════════╣
-    ║  Gen. Service║
-    ║    Board     ║
-    ╠════════╣
-    ║ AAWS / ║
-    ║Grapevne║
-    ╚════════╝
+    ╔═════════════════════════════════════════════╗
+    ║    A.A. GROUPS — Ultimate Authority         ║  ← YOUR HOME GROUP
+    ╚═════════════════════════════════════════════╝
+        ╔═════════════════════════════════════╗
+        ║ Group GSRs (General Service Reps)   ║
+        ╚═════════════════════════════════════╝
+            ╔═════════════════════════════╗
+            ║      Districts (DCMs)       ║  ← DISTRICT 22
+            ╚═════════════════════════════╝
+                ╔═════════════════════╗
+                ║   Area Assemblies   ║  ← NETA 65
+                ╚═════════════════════╝
+                  ╔═════════════════╗
+                  ║ General Service ║
+                  ║   Conference    ║
+                  ╚═════════════════╝
+                    ╔══════════════╗
+                    ║ Gen. Service ║
+                    ║    Board     ║
+                    ╚══════════════╝
+                     ╔════════════╗
+                     ║   AAWS /   ║
+                     ║ Grapevine  ║
+                     ╚════════════╝
 ```
 
 > *"Alcoholics Anonymous has been called an upside-down organization because... the groups are on top and the [service entities] are at the bottom."*
