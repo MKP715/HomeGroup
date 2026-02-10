@@ -32,6 +32,7 @@ Personal protection, organizational humility, spiritual practice. An interactive
 
 ## Files in This Repository
 
+- **[Draft_Foundation_Heritage_Humility.pptx](Draft_Foundation_Heritage_Humility.pptx)** — PowerPoint presentation (36 slides with presenter notes across all 3 segments)
 - **[index.html](https://mkp715.github.io/HomeGroup/index.html)** — Full interactive presentation (all 3 segments, 36 slides)
 - **[music_list.html](https://mkp715.github.io/HomeGroup/music_list.html)** — Curated event playlist with embedded YouTube player (58 songs organized by session)
 - **[flyer.html](https://mkp715.github.io/HomeGroup/flyer.html)** — Event Sample WebPage
