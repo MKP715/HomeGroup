@@ -34,7 +34,7 @@ Personal protection, organizational humility, spiritual practice. An interactive
 
 - **[index.html](https://mkp715.github.io/HomeGroup/index.html)** — Full interactive presentation (all 3 segments, 36 slides)
 - **[music_list.html](https://mkp715.github.io/HomeGroup/music_list.html)** — Curated event playlist with embedded YouTube player (58 songs organized by session)
-- **[flyer.html](https://mkp715.github.io/HomeGroup/flyer.html)** — Event promotional flyer
+- **[flyer.html](https://mkp715.github.io/HomeGroup/flyer.html)** — Event Sample WebPage
 - **[EVENT_AGENDA.md](https://mkp715.github.io/HomeGroup/EVENT_AGENDA.md)** — Complete 14-hour schedule with timing breakdowns
 - **[PRESENTER_NOTES.md](https://mkp715.github.io/HomeGroup/PRESENTER_NOTES.md)** — Detailed speaker notes with talking points, quotes, and activities
 - **[ATTENDEE_HANDOUT.md](https://mkp715.github.io/HomeGroup/ATTENDEE_HANDOUT.md)** — Takeaway reference guide with key quotes and resources
